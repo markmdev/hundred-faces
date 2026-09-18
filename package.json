@@ -14,7 +14,7 @@
     "start": "NODE_ENV=production node server/main.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --test 'test/**/*.test.ts'",
-    "check": "npm run typecheck && npm test",
+    "check": "npm run typecheck && npm test && npm run build",
     "measure": "node scripts/measure-batching.ts",
     "record": "node scripts/record-fixture.ts",
     "probe": "node scripts/probe.ts"

@@ -76,22 +76,23 @@ export class FaceWall {
     if (distributions.length !== this.#faces.length) {
       throw new Error(`expected ${this.#faces.length} distributions, got ${distributions.length}`);
     }
-    this.#retarget((node, i) => blendFace(distributions[i]!));
+    this.#retarget((i) => blendFace(distributions[i]!));
   }
 
   rest(): void {
     this.#retarget(() => RESTING_PARAMS);
   }
 
-  #retarget(target: (node: FaceNode, index: number) => FaceParams): void {
+  #retarget(target: (index: number) => FaceParams): void {
     this.#faces.forEach((node, i) => {
       node.from = node.current;
-      node.to = target(node, i);
+      node.to = target(i);
     });
     cancelAnimationFrame(this.#tweenHandle);
     this.#tweenStart = performance.now();
     const step = (now: number) => {
-      const t = Math.min(1, (now - this.#tweenStart) / TWEEN_MS);
+      // The first frame's timestamp can precede the performance.now() taken above.
+      const t = Math.min(1, Math.max(0, (now - this.#tweenStart) / TWEEN_MS));
       for (const node of this.#faces) {
         node.current = t >= 1 ? node.to : lerpFace(node.from, node.to, t);
         this.#draw(node, node.current);

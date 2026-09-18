@@ -8,11 +8,14 @@ Mark's global contract applies; this file holds what is specific to this repo.
 - `README.md`: what it is, how to run and check it, layout.
 - `log/`: dated entries, newest first. Measurements, decisions, and what was
   verified live there with their numbers. Read the newest entry before resumed work.
-- `src/shared/wall.ts`: `BATCH_SIZE`, the one measured tunable. Change it only
-  with a new measurement (`npm run measure`) and a log entry.
+- `src/shared/wall.ts`: `BATCH_SIZE`, the one measured tunable. The reasoning
+  and the numbers behind it live only in the log; change it with a new
+  measurement (`npm run measure`) and a new log entry.
 - `test/fixtures/jev-presets.json`: Jev's real answers for the presets. The
-  suite runs against it offline. Re-record (`npm run record`) after changing
-  personas, question wording, or presets, and re-run the suite; the preset
+  suite runs against it offline. The fixture carries a hash of the personas,
+  the questions, and the batch size it was recorded against, and the loader
+  refuses to serve it when the code no longer matches, so a change to any of
+  them means `npm run record` before the suite passes again. The preset
   assertions in `test/wall.test.ts` are the demo's claims about its own presets.
 
 ## Rules
@@ -30,7 +33,7 @@ Mark's global contract applies; this file holds what is specific to this repo.
 
 ## Verification
 
-`npm run check` (typecheck + offline tests) before any report. Behaviour that
-touches the API or the page is verified on the real surface: `npm run probe`
-against Jev, and the real flow in a real browser (type, presets, hover,
-aggregates against per-face numbers).
+`npm run check` (typecheck, offline tests, build) before any report. Behaviour
+that touches the API or the page is verified on the real surface: `npm run
+probe` against Jev, and the real flow in a real browser (type, presets, hover,
+clear mid-flight, a failed request, aggregates against per-face numbers).

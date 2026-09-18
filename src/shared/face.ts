@@ -33,10 +33,9 @@ export function blendFace(distribution: ReactionDistribution): FaceParams {
 }
 
 // Linear interpolation between two parameter sets, for animating a face from
-// its last answer to the new one.
+// its last answer to the new one; t is expected in [0, 1].
 export function lerpFace(from: FaceParams, to: FaceParams, t: number): FaceParams {
-  const k = Math.min(1, Math.max(0, t));
-  const mix = (a: number, b: number) => a + (b - a) * k;
+  const mix = (a: number, b: number) => a + (b - a) * t;
   return {
     mouthCurve: mix(from.mouthCurve, to.mouthCurve),
     mouthOpen: mix(from.mouthOpen, to.mouthOpen),
@@ -60,8 +59,12 @@ export interface FaceGeometry {
 
 const r1 = (n: number) => Math.round(n * 10) / 10;
 
+export function rgbCss(tint: readonly [number, number, number]): string {
+  return `rgb(${Math.round(tint[0])}, ${Math.round(tint[1])}, ${Math.round(tint[2])})`;
+}
+
 export function faceGeometry(p: FaceParams): FaceGeometry {
-  const fill = `rgb(${Math.round(p.tint[0])}, ${Math.round(p.tint[1])}, ${Math.round(p.tint[2])})`;
+  const fill = rgbCss(p.tint);
 
   // Eyes: horizontal radius fixed, vertical radius follows openness.
   const eyeY = 27;

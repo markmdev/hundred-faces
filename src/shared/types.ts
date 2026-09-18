@@ -1,8 +1,13 @@
 // Wire contract between the server (`POST /api/react`) and the browser. Both
-// sides import this file, and the contract test in test/ checks a recorded
-// server response parses through the client's reader.
+// sides import this file, and the contract test in test/ drives the real
+// `fetchWall` against the server with a fake Jev.
 
 import type { FaceAnswer } from "./questions.ts";
+
+// Longest message accepted, counted in code points. Jev's context is 64k
+// tokens in total, of which the state plus the longest question may take 32k;
+// a batch of five personas with a 4,000-character message stays far inside both.
+export const MAX_MESSAGE_CHARS = 4_000;
 
 export interface WallRequest {
   message: string;

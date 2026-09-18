@@ -1,6 +1,7 @@
 // The seven reactions a face can show, the contrastive descriptions Jev judges
-// against, and the face parameters each pure reaction draws with. A face on the
-// wall is the probability-weighted blend of these parameter sets.
+// against, the face parameters each pure reaction draws with, and the helpers
+// that read a reaction distribution. A face on the wall is the
+// probability-weighted blend of these parameter sets.
 
 export const REACTIONS = [
   "delighted",
@@ -15,6 +16,38 @@ export const REACTIONS = [
 export type Reaction = (typeof REACTIONS)[number];
 
 export type ReactionDistribution = Record<Reaction, number>;
+
+export function emptyDistribution(): ReactionDistribution {
+  return Object.fromEntries(REACTIONS.map((r) => [r, 0])) as ReactionDistribution;
+}
+
+export function topReaction(distribution: ReactionDistribution): Reaction {
+  let best: Reaction = REACTIONS[0];
+  for (const name of REACTIONS) {
+    if (distribution[name] > distribution[best]) best = name;
+  }
+  return best;
+}
+
+// Integer percentages that total exactly 100: the distribution is normalised,
+// each share is floored, and the units left over go to the largest remainders.
+export function percentages(distribution: ReactionDistribution): Record<Reaction, number> {
+  let total = 0;
+  for (const name of REACTIONS) total += distribution[name];
+  if (!(total > 0)) throw new Error("reaction distribution has no mass");
+  const out = emptyDistribution();
+  const remainders: { name: Reaction; remainder: number }[] = [];
+  let assigned = 0;
+  for (const name of REACTIONS) {
+    const share = (distribution[name] / total) * 100;
+    out[name] = Math.floor(share);
+    assigned += out[name];
+    remainders.push({ name, remainder: share - out[name] });
+  }
+  remainders.sort((a, b) => b.remainder - a.remainder);
+  for (let i = 0; i < 100 - assigned; i++) out[remainders[i]!.name]++;
+  return out;
+}
 
 // Each description says what the option covers and what belongs to its
 // neighbour instead, because Jev reads literally and confuses adjacent options

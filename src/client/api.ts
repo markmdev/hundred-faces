@@ -3,20 +3,28 @@
 
 import type { WallErrorResponse, WallRequest, WallResponse } from "../shared/types.ts";
 
-export async function fetchWall(message: string, expectedFaces: number, baseUrl = ""): Promise<WallResponse> {
+// A response that was not a wall: the HTTP status and the server's reason.
+export class WallRequestError extends Error {
+  readonly status: number;
+
+  constructor(status: number, detail: string) {
+    super(detail);
+    this.name = "WallRequestError";
+    this.status = status;
+  }
+}
+
+export async function fetchWall(message: string, signal: AbortSignal, baseUrl = ""): Promise<WallResponse> {
   const body: WallRequest = { message };
   const res = await fetch(`${baseUrl}/api/react`, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
+    signal,
   });
   const payload = (await res.json()) as WallResponse | WallErrorResponse;
   if (!res.ok || "error" in payload) {
-    const detail = "error" in payload ? payload.error : `HTTP ${res.status}`;
-    throw new Error(res.status === 429 ? `Jev is rate-limiting us; keep typing and it will catch up (${detail})` : detail);
-  }
-  if (!Array.isArray(payload.faces) || payload.faces.length !== expectedFaces) {
-    throw new Error(`server returned ${Array.isArray(payload.faces) ? payload.faces.length : "no"} faces, expected ${expectedFaces}`);
+    throw new WallRequestError(res.status, "error" in payload ? payload.error : `HTTP ${res.status}`);
   }
   return payload;
 }

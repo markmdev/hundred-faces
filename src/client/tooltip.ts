@@ -1,14 +1,11 @@
 // The hover card for one face: who they are, their seven-way reaction
 // distribution, and the three yes/no probabilities.
 
+import { rgbCss } from "../shared/face.ts";
 import type { Persona } from "../shared/personas.ts";
-import type { FaceAnswer } from "../shared/questions.ts";
-import { REACTION_FACES, REACTIONS } from "../shared/reactions.ts";
-
-export function tintCss(name: (typeof REACTIONS)[number]): string {
-  const [r, g, b] = REACTION_FACES[name].tint;
-  return `rgb(${r}, ${g}, ${b})`;
-}
+import { NOULS, type FaceAnswer } from "../shared/questions.ts";
+import { percentages, REACTION_FACES, REACTIONS } from "../shared/reactions.ts";
+import { barRow } from "./bars.ts";
 
 export class Tooltip {
   readonly #el: HTMLElement;
@@ -62,27 +59,20 @@ function render(persona: Persona, answer: FaceAnswer | undefined): Node[] {
 
   const reactions = document.createElement("div");
   reactions.className = "bars";
+  const pct = percentages(answer.reaction);
   for (const name of REACTIONS) {
-    reactions.append(...bar(name, answer.reaction[name], tintCss(name)));
+    const row = barRow(name, rgbCss(REACTION_FACES[name].tint));
+    row.set(pct[name] / 100, `${pct[name]}%`);
+    reactions.append(row.root);
   }
 
   const nouls = document.createElement("div");
-  nouls.className = "bars nouls-mini";
-  nouls.append(...bar("understands", answer.understands), ...bar("trusts", answer.trusts), ...bar("would share", answer.shares));
+  nouls.className = "bars";
+  for (const { id, label } of NOULS) {
+    const row = barRow(label);
+    row.set(answer[id], `${Math.round(answer[id] * 100)}%`);
+    nouls.append(row.root);
+  }
 
   return [title, bio, reactions, nouls];
-}
-
-function bar(label: string, value: number, color?: string): Node[] {
-  const name = document.createElement("span");
-  name.textContent = label;
-  const track = document.createElement("div");
-  track.className = "track";
-  const fill = document.createElement("span");
-  fill.style.width = `${Math.round(value * 100)}%`;
-  if (color) fill.style.background = color;
-  track.append(fill);
-  const num = document.createElement("b");
-  num.textContent = `${Math.round(value * 100)}%`;
-  return [name, track, num];
 }

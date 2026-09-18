@@ -1,10 +1,9 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { blendFace, faceGeometry, lerpFace } from "../src/shared/face.ts";
-import { REACTION_FACES, REACTIONS, type ReactionDistribution } from "../src/shared/reactions.ts";
+import { blendFace, faceGeometry, lerpFace, rgbCss } from "../src/shared/face.ts";
+import { emptyDistribution, REACTION_FACES, REACTIONS, type ReactionDistribution } from "../src/shared/reactions.ts";
 
-const distribution = (weights: Partial<ReactionDistribution>): ReactionDistribution =>
-  Object.fromEntries(REACTIONS.map((r) => [r, weights[r] ?? 0])) as ReactionDistribution;
+const distribution = (weights: Partial<ReactionDistribution>): ReactionDistribution => ({ ...emptyDistribution(), ...weights });
 
 const close = (a: number, b: number, message?: string) => assert.ok(Math.abs(a - b) < 1e-9, message ?? `${a} != ${b}`);
 
@@ -41,12 +40,11 @@ describe("blendFace", () => {
 });
 
 describe("lerpFace", () => {
-  it("returns the endpoints at 0 and 1 and clamps outside", () => {
+  it("returns the endpoints at 0 and 1 and the midpoint at 0.5", () => {
     const from = REACTION_FACES.neutral;
     const to = REACTION_FACES.offended;
     assert.deepEqual(lerpFace(from, to, 0), { ...from, tint: [...from.tint] });
     assert.deepEqual(lerpFace(from, to, 1), { ...to, tint: [...to.tint] });
-    assert.deepEqual(lerpFace(from, to, 7), { ...to, tint: [...to.tint] });
     close(lerpFace(from, to, 0.5).mouthCurve, (from.mouthCurve + to.mouthCurve) / 2);
   });
 });
@@ -72,6 +70,7 @@ describe("faceGeometry", () => {
   });
 
   it("emits an rgb() fill from the blended tint", () => {
+    assert.equal(rgbCss(REACTION_FACES.delighted.tint), "rgb(255, 214, 102)");
     assert.equal(faceGeometry(REACTION_FACES.delighted).fill, "rgb(255, 214, 102)");
     assert.equal(faceGeometry(blendFace(distribution({ delighted: 0.5, offended: 0.5 }))).fill, "rgb(249, 163, 107)");
   });

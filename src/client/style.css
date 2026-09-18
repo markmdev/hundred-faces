@@ -178,31 +178,36 @@ textarea:focus {
   gap: 8px 18px;
 }
 
-.nouls li {
+.nouls .bar {
   flex: 1 1 180px;
+}
+
+.bar {
   display: grid;
-  grid-template-columns: 8ch 1fr 5ch;
+  grid-template-columns: 9ch 1fr 5ch;
   align-items: center;
   gap: 8px;
+  font-size: 13px;
   color: var(--muted);
 }
 
-.nouls .track {
+.bar .track {
   height: 8px;
   border-radius: 4px;
   background: var(--rest);
   overflow: hidden;
 }
 
-.nouls .track span {
+.bar .track span {
   display: block;
   height: 100%;
   background: var(--accent);
   transition: width 180ms ease-out;
 }
 
-.nouls b {
+.bar b {
   color: var(--ink);
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
@@ -274,6 +279,8 @@ textarea:focus {
   font-size: 13px;
   line-height: 1.4;
   pointer-events: none;
+  max-height: calc(100vh - 16px);
+  overflow: auto;
 }
 
 .tooltip h2 {
@@ -292,35 +299,11 @@ textarea:focus {
 
 .tooltip .bars {
   display: grid;
-  grid-template-columns: 8.5ch 1fr 4ch;
-  gap: 3px 8px;
-  align-items: center;
+  gap: 3px;
 }
 
-.tooltip .bars .track {
-  height: 7px;
-  border-radius: 4px;
-  background: var(--rest);
-  overflow: hidden;
-}
-
-.tooltip .bars .track span {
-  display: block;
-  height: 100%;
-}
-
-.tooltip .bars b {
-  font-variant-numeric: tabular-nums;
-  text-align: right;
-  font-weight: 600;
-}
-
-.tooltip .bars.nouls-mini {
+.tooltip .bars + .bars {
   margin-top: 10px;
-}
-
-.tooltip .bars.nouls-mini .track span {
-  background: var(--accent);
 }
 
 @media (max-width: 520px) {
