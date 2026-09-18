@@ -7,7 +7,7 @@
 import type { ChoiceResponse, NoulResponse } from "@typesafe-ai/sdk";
 import { NOULS, type BatchAnswers } from "../../src/shared/questions.ts";
 import type { JevClient } from "../../src/shared/wall.ts";
-import { loadFixture, type Fixture } from "../fixtures/schema.ts";
+import { loadFixture, type Fixture } from "../../recordings/schema.ts";
 
 export interface RecordedCall {
   message: string;

@@ -10,11 +10,10 @@
 import { writeFileSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { TypeSafeClient } from "@typesafe-ai/sdk";
-import { PERSONAS } from "../src/shared/personas.ts";
 import { PRESETS } from "../src/shared/presets.ts";
 import { NOULS, type FaceAnswer } from "../src/shared/questions.ts";
 import { topReaction } from "../src/shared/reactions.ts";
-import { judgeWall } from "../src/shared/wall.ts";
+import { batchCount, judgeWall } from "../src/shared/wall.ts";
 import { mean, percentile, tv } from "./stats.ts";
 
 const { values } = parseArgs({
@@ -75,7 +74,7 @@ for (const size of SIZES) {
         process.stdout.write(`size ${String(size).padStart(3)} ${preset.id.padEnd(13)} run ${run}: ${String(wall.latencyMs).padStart(5)} ms, ${wall.inputTokens} tokens, ${wall.calls} calls\n`);
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
-        updates.push({ size, preset: preset.id, run, latencyMs: Math.round(performance.now() - started), inputTokens: 0, calls: Math.ceil(PERSONAS.length / size), error: message });
+        updates.push({ size, preset: preset.id, run, latencyMs: Math.round(performance.now() - started), inputTokens: 0, calls: batchCount(size), error: message });
         process.stdout.write(`size ${String(size).padStart(3)} ${preset.id.padEnd(13)} run ${run}: FAILED ${message.slice(0, 160)}\n`);
       }
     }
@@ -103,7 +102,7 @@ for (const size of SIZES) {
   }
   const f = (x: number, d = 3) => (Number.isNaN(x) ? "  -  " : x.toFixed(d));
   console.log(
-    `${String(size).padStart(4)}  ${String(Math.ceil(PERSONAS.length / size)).padStart(5)}  ${String(ok.length).padStart(2)}/${String(mine.length).padEnd(3)} ` +
+    `${String(size).padStart(4)}  ${String(batchCount(size)).padStart(5)}  ${String(ok.length).padStart(2)}/${String(mine.length).padEnd(3)} ` +
       `${String(Math.round(percentile(latencies, 50))).padStart(7)}  ${String(Math.round(percentile(latencies, 95))).padStart(7)}  ${String(Math.round(tokens)).padStart(13)}  ` +
       `${" ".repeat(12)}${f(mean(vsBase.map((c) => c.meanTv)))}  ${f(mean(vsBase.map((c) => c.maxTv)))}  ${f(mean(vsBase.map((c) => c.topAgree)))}      ${f(mean(vsBase.map((c) => c.noulMad)))} | ` +
       `${" ".repeat(11)}${f(mean(selfPairs.map((c) => c.meanTv)))}  ${f(mean(selfPairs.map((c) => c.topAgree)))}      ${f(mean(selfPairs.map((c) => c.noulMad)))}`,

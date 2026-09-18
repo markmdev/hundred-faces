@@ -3,8 +3,8 @@ import { describe, it } from "node:test";
 import { aggregateWall } from "../src/shared/aggregate.ts";
 import { PERSONAS } from "../src/shared/personas.ts";
 import { PRESETS } from "../src/shared/presets.ts";
-import { BATCH_SIZE, batchesOf, judgeWall } from "../src/shared/wall.ts";
-import { loadFixture } from "./fixtures/schema.ts";
+import { BATCH_SIZE, batchCount, batchesOf, judgeWall } from "../src/shared/wall.ts";
+import { loadFixture } from "../recordings/schema.ts";
 import { fixtureClient } from "./helpers/fixture-client.ts";
 
 const preset = (id: string) => PRESETS.find((p) => p.id === id)!;
@@ -24,7 +24,7 @@ describe("judgeWall against the recorded fixture", () => {
     const client = fixtureClient(fixture);
     const wall = await judgeWall(preset("launch-hype").message, client);
     assert.equal(wall.faces.length, PERSONAS.length);
-    assert.equal(wall.calls, Math.ceil(PERSONAS.length / BATCH_SIZE));
+    assert.equal(wall.calls, batchCount());
     assert.equal(client.calls.length, wall.calls);
     assert.equal(wall.model, fixture.model);
     assert.deepEqual(client.calls.flatMap((c) => c.personaNames), PERSONAS.map((p) => p.name));
@@ -57,7 +57,7 @@ describe("judgeWall against the recorded fixture", () => {
       },
     };
     await assert.rejects(judgeWall("anything", client), /batch one failed/);
-    assert.equal(signals.length, Math.ceil(PERSONAS.length / BATCH_SIZE));
+    assert.equal(signals.length, batchCount());
     assert.ok(signals.every((s) => s.aborted), "every sibling call was aborted");
   });
 

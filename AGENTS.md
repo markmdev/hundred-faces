@@ -13,16 +13,18 @@ applies; this file holds what is specific to this repo.
 - `src/shared/wall.ts`: `BATCH_SIZE`, the one measured tunable. The reasoning
   and the numbers behind it live only in the log; change it with a new
   measurement (`npm run measure`) and a new log entry.
-- `test/fixtures/jev-presets.json`: Jev's real answers for the presets, the
-  source for both the suite and the page. The suite runs against it offline;
+- `recordings/jev-presets.json`: Jev's real answers for the presets, the
+  source for both the suite and the page, and a build input: `npm run build`
+  reads it through `recordings/schema.ts`. The suite runs against it offline;
   `scripts/build-presets.ts` writes it into `public/presets/<id>.json` (generated,
-  ignored by git) before every build and dev session, and the page serves a
-  preset from there instead of calling Jev. The fixture carries a hash of the
-  personas, the questions, and the batch size it was recorded against, and the
-  loader refuses to serve it when the code no longer matches, so a change to
-  any of them, or to the presets, means `npm run record` before the suite or
-  the build passes again. The preset assertions in `test/wall.test.ts` are
-  the demo's claims about its own presets.
+  ignored by git, swept of any preset file it did not just write) before every
+  build and dev session, and the page serves a preset from there instead of
+  calling Jev. The recording carries a hash of the personas, the questions, the
+  batch size, and the preset messages it was answered against; the loader
+  refuses it when the code no longer matches, and the builder refuses a preset
+  whose recorded message is not the code's, so a change to any of them means
+  `npm run record` before the suite or the build passes again. The preset
+  assertions in `test/wall.test.ts` are the demo's claims about its own presets.
 - `server/react.ts`: the one judging handler, Web-standard, used by the Vercel
   function (`api/react.ts`) and the local server (`server/main.ts`). The wire
   contract and the message limit are in `src/shared/types.ts`.

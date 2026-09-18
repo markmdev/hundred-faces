@@ -1,5 +1,5 @@
 // Preset messages for the demo moment. They come in contrasting pairs so the
-// wall visibly changes between them; the fixture in test/fixtures records
+// wall visibly changes between them; the recording in recordings/ holds
 // Jev's answers for exactly these strings, and the page serves those
 // recordings from public/presets instead of calling Jev.
 

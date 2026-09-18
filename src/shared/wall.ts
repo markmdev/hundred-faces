@@ -31,6 +31,11 @@ export function batchesOf<T>(items: readonly T[], size: number): T[][] {
   return out;
 }
 
+// How many Jev calls one wall update makes at a batch size.
+export function batchCount(batchSize = BATCH_SIZE): number {
+  return batchesOf(PERSONAS, batchSize).length;
+}
+
 export async function judgeWall(message: string, client: JevClient, options: JudgeOptions = {}): Promise<WallResponse> {
   const batches = batchesOf(PERSONAS, options.batchSize ?? BATCH_SIZE);
   // One failed batch fails the update, so the others are cancelled rather than finished for nobody.

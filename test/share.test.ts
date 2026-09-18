@@ -1,14 +1,15 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { aggregateWall } from "../src/shared/aggregate.ts";
+import { PRESETS } from "../src/shared/presets.ts";
 import { percentages, topReaction } from "../src/shared/reactions.ts";
 import { postOnXUrl, resultLine, shareResult, shareText } from "../src/shared/share.ts";
-import { loadFixture, recordedWall } from "./fixtures/schema.ts";
+import { loadFixture, recordedWall } from "../recordings/schema.ts";
 
 describe("share text", () => {
   it("names the top reaction of the mean distribution with the legend's percentage and the counts", () => {
     const fixture = loadFixture();
-    const wall = recordedWall(fixture, "hot-take");
+    const wall = recordedWall(fixture, PRESETS.find((p) => p.id === "hot-take")!);
     const agg = aggregateWall(wall.faces);
     const result = shareResult(wall.faces);
     assert.equal(result.reaction, topReaction(agg.reaction));

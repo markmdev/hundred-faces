@@ -13,7 +13,7 @@ import { aggregateWall } from "../src/shared/aggregate.ts";
 import { PRESETS } from "../src/shared/presets.ts";
 import { MAX_MESSAGE_CHARS } from "../src/shared/types.ts";
 import { judgeWall } from "../src/shared/wall.ts";
-import { loadFixture } from "./fixtures/schema.ts";
+import { loadFixture } from "../recordings/schema.ts";
 import { fixtureClient } from "./helpers/fixture-client.ts";
 
 const silent: ReactOptions["log"] = { info() {}, error() {} };

@@ -5,7 +5,7 @@ import { PRESETS } from "../src/shared/presets.ts";
 import type { FaceAnswer } from "../src/shared/questions.ts";
 import { emptyDistribution, percentages, REACTIONS, type ReactionDistribution } from "../src/shared/reactions.ts";
 import { judgeWall } from "../src/shared/wall.ts";
-import { loadFixture } from "./fixtures/schema.ts";
+import { loadFixture } from "../recordings/schema.ts";
 import { fixtureClient } from "./helpers/fixture-client.ts";
 
 const face = (weights: Partial<ReactionDistribution>, nouls: [number, number, number]): FaceAnswer => ({
