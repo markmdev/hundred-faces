@@ -110,12 +110,19 @@ const CONTENT_TYPES: Record<string, string> = {
   ".woff2": "font/woff2",
 };
 
+// Files are served as themselves; a path with no extension is a page route
+// and gets index.html. A missing file (a stale asset hash, say) is a 404, not
+// the page.
 function serveStatic(distDir: string, pathname: string, res: ServerResponse): void {
   const relative = normalize(decodeURIComponent(pathname)).replace(/^(\.\.[/\\])+/, "");
-  let file = join(distDir, relative === "/" ? "index.html" : relative);
+  let file = join(distDir, relative);
   if (!file.startsWith(distDir)) return sendJson(res, 403, { error: "forbidden" });
-  if (!existsSync(file) || statSync(file).isDirectory()) file = join(distDir, "index.html");
-  if (!existsSync(file)) return sendJson(res, 404, { error: `${distDir} has no index.html; run npm run build first` });
+  const isFile = existsSync(file) && !statSync(file).isDirectory();
+  if (!isFile) {
+    if (extname(relative) !== "") return sendJson(res, 404, { error: `no file at ${pathname}` });
+    file = join(distDir, "index.html");
+    if (!existsSync(file)) return sendJson(res, 404, { error: `${distDir} has no index.html; run npm run build first` });
+  }
   const type = CONTENT_TYPES[extname(file)] ?? "application/octet-stream";
   res.writeHead(200, { "content-type": type });
   res.end(readFileSync(file));

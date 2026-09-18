@@ -144,7 +144,8 @@ function scheduleUpdate(): void {
 async function requestUpdate(text: string): Promise<void> {
   const message = text.trim();
   if (message.length === 0) {
-    latestSeq++;
+    // Anything still in flight is older than the empty box and must not repopulate it.
+    shownSeq = ++latestSeq;
     pendingText = null;
     answers = [];
     wall.rest();
@@ -168,7 +169,8 @@ async function requestUpdate(text: string): Promise<void> {
     wall.show(answers.map((face) => face.reaction));
     wallEl.classList.remove("resting");
     renderSummary(response);
-    setStatus("");
+    // A newer request may still be out; keep saying so until it lands.
+    setStatus(seq < latestSeq ? "judging…" : "");
   } catch (err) {
     if (seq < shownSeq) return;
     setStatus(err instanceof Error ? err.message : String(err), true);

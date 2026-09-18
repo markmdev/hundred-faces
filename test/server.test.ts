@@ -3,6 +3,9 @@
 // fixture between them, including the error shapes.
 
 import assert from "node:assert/strict";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { after, before, describe, it } from "node:test";
 import { RateLimitError } from "@typesafe-ai/sdk";
 import { createApp, MAX_MESSAGE_CHARS } from "../server/app.ts";
@@ -89,5 +92,39 @@ describe("POST /api/react when Jev rate-limits", () => {
     assert.equal(res.status, 429);
     assert.match(((await res.json()) as { error: string }).error, /Jev returned 429/);
     await assert.rejects(fetchWall("hi", PERSONAS.length, base), /rate-limiting us/);
+  });
+});
+
+describe("static files in production", () => {
+  const dist = mkdtempSync(join(tmpdir(), "hundred-faces-dist-"));
+  mkdirSync(join(dist, "assets"));
+  writeFileSync(join(dist, "index.html"), "<!doctype html><title>t</title>");
+  writeFileSync(join(dist, "assets", "app.js"), "console.log(1)");
+  const app = createApp({ client: fixtureClient(), distDir: dist });
+  let base = "";
+  before(async () => {
+    base = await listen(app);
+  });
+  after(() => {
+    app.close();
+    rmSync(dist, { recursive: true, force: true });
+  });
+
+  it("serves the page, its assets, and page routes, and 404s a missing file", async () => {
+    const page = await fetch(`${base}/`);
+    assert.equal(page.status, 200);
+    assert.match(page.headers.get("content-type")!, /text\/html/);
+    const asset = await fetch(`${base}/assets/app.js`);
+    assert.equal(asset.status, 200);
+    assert.match(asset.headers.get("content-type")!, /javascript/);
+    assert.equal(await asset.text(), "console.log(1)");
+    const route = await fetch(`${base}/some/route`);
+    assert.equal(route.status, 200);
+    assert.match(route.headers.get("content-type")!, /text\/html/);
+    const missing = await fetch(`${base}/assets/old-hash.js`);
+    assert.equal(missing.status, 404);
+    // A traversal attempt resolves inside dist and gets the page, never a file outside it.
+    const escape = await fetch(`${base}/..%2F..%2Fetc%2Fpasswd`);
+    assert.equal(await escape.text(), "<!doctype html><title>t</title>");
   });
 });
