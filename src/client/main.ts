@@ -4,22 +4,22 @@
 import { aggregateWall } from "../shared/aggregate.ts";
 import { rgbCss } from "../shared/face.ts";
 import { PERSONAS } from "../shared/personas.ts";
-import { PRESETS } from "../shared/presets.ts";
+import { PRESETS, type Preset } from "../shared/presets.ts";
 import { NOULS, type FaceAnswer } from "../shared/questions.ts";
 import { percentages, REACTION_FACES, REACTIONS } from "../shared/reactions.ts";
-import { MAX_MESSAGE_CHARS, type WallResponse } from "../shared/types.ts";
-import { fetchWall, WallRequestError } from "./api.ts";
+import { MAX_MESSAGE_CHARS, MESSAGE_PARAM, type WallResponse } from "../shared/types.ts";
+import { fetchPreset, fetchWall, WallRequestError } from "./api.ts";
 import { barRow } from "./bars.ts";
 import { FaceWall } from "./faces.ts";
 import { Tooltip } from "./tooltip.ts";
 
 // Keystrokes settle for this long before a request goes out.
-const DEBOUNCE_MS = 250;
-// Requests allowed in flight at once; further text waits for one to settle.
-// A superseded request is left to finish so the wall keeps moving mid-typing.
-const MAX_IN_FLIGHT = 2;
+const DEBOUNCE_MS = 600;
+// A 429 (Jev busy, or the platform's rate limit) is retried once after this
+// pause; a second 429 shows the busy copy.
+const RETRY_AFTER_MS = 2_000;
 
-const RATE_LIMITED_COPY = "Jev is rate-limiting this demo. Wait a moment and type again.";
+const BUSY_COPY = "The wall is busy right now. Try again in a few seconds.";
 const FAILED_COPY = "Couldn't judge this message. Try again.";
 
 const must = <T extends HTMLElement>(id: string): T => {
@@ -50,10 +50,12 @@ let latestSeq = 0;
 // The sequence whose outcome the page shows, and its failure copy if it failed.
 let shownSeq = 0;
 let shownError: string | null = null;
-const inFlight = new Map<number, AbortController>();
+// One request at a time. Text typed while it is out waits here and goes out
+// when it settles, so a burst of typing costs one more update, not one per pause.
+let inFlight: AbortController | null = null;
 let pendingText: string | null = null;
 let debounceHandle = 0;
-// The face whose card is open, under the pointer or keyboard focus.
+// The face whose card is open.
 let cardFace: HTMLElement | null = null;
 
 // ---------------------------------------------------------------------------
@@ -123,6 +125,18 @@ function renderStatus(): void {
 }
 
 // ---------------------------------------------------------------------------
+// The message in the URL
+// ---------------------------------------------------------------------------
+
+// The page URL carries the message, so the link opens on the same wall.
+function setUrlMessage(text: string | null): void {
+  const url = new URL(location.href);
+  if (text === null) url.searchParams.delete(MESSAGE_PARAM);
+  else url.searchParams.set(MESSAGE_PARAM, text);
+  history.replaceState(null, "", url);
+}
+
+// ---------------------------------------------------------------------------
 // Live updates
 // ---------------------------------------------------------------------------
 
@@ -132,21 +146,50 @@ function scheduleUpdate(): void {
 }
 
 function requestUpdate(text: string): void {
-  if (inFlight.size >= MAX_IN_FLIGHT) {
+  if (inFlight) {
     pendingText = text;
     return;
   }
   const seq = ++latestSeq;
   const controller = new AbortController();
-  inFlight.set(seq, controller);
+  inFlight = controller;
+  setUrlMessage(text);
   renderStatus();
-  void settle(seq, fetchWall(text, controller.signal)).finally(() => {
-    inFlight.delete(seq);
+  void settle(seq, judge(text, controller.signal)).finally(() => {
+    if (inFlight === controller) inFlight = null;
     if (pendingText !== null) {
       const next = pendingText;
       pendingText = null;
       requestUpdate(next);
     }
+  });
+}
+
+// A preset is served from its recording; anything else is judged, with one
+// retry after a pause when the wall is busy.
+async function judge(text: string, signal: AbortSignal): Promise<WallResponse> {
+  const preset = PRESETS.find((p) => p.message === text);
+  if (preset) return fetchPreset(preset.id, signal);
+  try {
+    return await fetchWall(text, signal);
+  } catch (err) {
+    if (!(err instanceof WallRequestError && err.status === 429)) throw err;
+    await pause(RETRY_AFTER_MS, signal);
+    return fetchWall(text, signal);
+  }
+}
+
+function pause(ms: number, signal: AbortSignal): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const onAbort = () => {
+      clearTimeout(handle);
+      reject(signal.reason);
+    };
+    const handle = setTimeout(() => {
+      signal.removeEventListener("abort", onAbort);
+      resolve();
+    }, ms);
+    signal.addEventListener("abort", onAbort, { once: true });
   });
 }
 
@@ -165,7 +208,7 @@ async function settle(seq: number, request: Promise<WallResponse>): Promise<void
   } catch (err) {
     if (seq < shownSeq) return;
     shownSeq = seq;
-    shownError = err instanceof WallRequestError && err.status === 429 ? RATE_LIMITED_COPY : FAILED_COPY;
+    shownError = err instanceof WallRequestError && err.status === 429 ? BUSY_COPY : FAILED_COPY;
     console.error("wall update failed:", err);
     restWall();
   } finally {
@@ -187,9 +230,11 @@ function clearWall(): void {
   clearTimeout(debounceHandle);
   shownSeq = ++latestSeq;
   shownError = null;
-  for (const controller of inFlight.values()) controller.abort();
+  inFlight?.abort();
+  inFlight = null;
   pendingText = null;
   restWall();
+  setUrlMessage(null);
   renderStatus();
   refreshCard();
 }
@@ -201,10 +246,14 @@ function clearWall(): void {
 messageBox.maxLength = MAX_MESSAGE_CHARS;
 
 messageBox.addEventListener("input", () => {
-  for (const button of presetsEl.querySelectorAll("button")) button.setAttribute("aria-pressed", "false");
+  pressPreset(null);
   if (messageBox.value.trim() === "") clearWall();
   else scheduleUpdate();
 });
+
+function pressPreset(pressed: Preset | null): void {
+  for (const button of presetsEl.querySelectorAll("button")) button.setAttribute("aria-pressed", String(button.dataset.preset === pressed?.id));
+}
 
 for (const preset of PRESETS) {
   const button = document.createElement("button");
@@ -214,7 +263,7 @@ for (const preset of PRESETS) {
   button.setAttribute("aria-pressed", "false");
   button.addEventListener("click", () => {
     messageBox.value = preset.message;
-    for (const other of presetsEl.querySelectorAll("button")) other.setAttribute("aria-pressed", String(other === button));
+    pressPreset(preset);
     clearTimeout(debounceHandle);
     requestUpdate(preset.message);
   });
@@ -258,4 +307,15 @@ wallEl.addEventListener("focusin", (event) => {
 });
 wallEl.addEventListener("focusout", closeCard);
 
+// ---------------------------------------------------------------------------
+// Start
+// ---------------------------------------------------------------------------
+
 wallEl.classList.add("resting");
+
+const initial = new URL(location.href).searchParams.get(MESSAGE_PARAM);
+if (initial !== null && initial.trim() !== "") {
+  messageBox.value = initial;
+  pressPreset(PRESETS.find((p) => p.message === initial) ?? null);
+  requestUpdate(initial);
+}
