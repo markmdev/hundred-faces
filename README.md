@@ -73,7 +73,7 @@ The link is the page URL with `m=`, made when a message is judged and handed on 
 The handler logs each request's status and duration and nothing else. The
 message rides in the URL, so Vercel's request logs see it (kept one hour on
 Hobby) and the CDN keys its cache on it (a day, plus a week stale); TypeSafe
-receives it as the request state. Vercel Web Analytics, once enabled, gets the page URL with `m` removed by the `beforeSend` hook in `src/client/main.ts` (Vercel's documented way to redact a query parameter); the script only loads once Analytics is enabled, so the beacon leaving without `m` has not been observed yet.
+receives it as the request state. Vercel Web Analytics gets the page URL with `m` removed by the `beforeSend` hook in `src/client/main.ts` (Vercel's documented way to redact a query parameter); observed on a preview deployment: the page-view request's body carried the bare page URL while the address bar carried `?m=`, and typing a further message sent no view.
 
 ## The share loop
 
