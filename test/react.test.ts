@@ -4,6 +4,7 @@
 // headers, the Node adapter the local server uses, and the Vercel function.
 
 import assert from "node:assert/strict";
+import { connect } from "node:net";
 import { after, before, describe, it } from "node:test";
 import { RateLimitError } from "@typesafe-ai/sdk";
 import { loadFixture } from "../recordings/schema.ts";
@@ -191,6 +192,23 @@ describe("the browser's fetchWall through the Node server", () => {
     } finally {
       platform.close();
     }
+  });
+
+  it("answers 400 to a Host header that makes no URL", async () => {
+    const reply = await new Promise<string>((resolve, reject) => {
+      let data = "";
+      const socket = connect({ port: Number(new URL(base).port), host: "127.0.0.1" }, () => {
+        socket.write("GET /api/react?m=hi HTTP/1.1\r\nHost: bad host\r\nConnection: close\r\n\r\n");
+      });
+      socket.setEncoding("utf8");
+      socket.on("data", (chunk: string) => {
+        data += chunk;
+      });
+      socket.on("end", () => resolve(data));
+      socket.on("error", reject);
+    });
+    assert.match(reply, /^HTTP\/1\.1 400 /);
+    assert.match(reply, /"error":"bad request: Invalid URL"/);
   });
 
   it("aborts the handler's request when the browser drops the connection", async () => {

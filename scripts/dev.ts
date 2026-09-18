@@ -4,7 +4,13 @@
 
 import { execFileSync, spawn } from "node:child_process";
 
-execFileSync("node", ["scripts/build-presets.ts"], { stdio: "inherit" });
+try {
+  execFileSync("node", ["scripts/build-presets.ts"], { stdio: "inherit" });
+} catch (err) {
+  // The builder printed why; leave with its status (null when a signal killed it).
+  const status = err instanceof Error && "status" in err && typeof err.status === "number" ? err.status : 1;
+  process.exit(status);
+}
 
 const children = [
   spawn("node", ["--watch", "server/main.ts"], { stdio: "inherit" }),
@@ -17,7 +23,8 @@ const stopAll = (code: number) => {
 };
 
 for (const child of children) {
-  child.on("exit", (code) => stopAll(code ?? 0));
+  // A child killed by a signal exits with no code; that is not a clean stop.
+  child.on("exit", (code) => stopAll(code ?? 1));
   child.on("error", (err) => {
     console.error(`${child.spawnargs.join(" ")} could not start:`, err);
     stopAll(1);
