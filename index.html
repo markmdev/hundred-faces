@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A hundred faces</title>
+    <link rel="stylesheet" href="/src/client/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="intro">
+        <h1>A hundred faces</h1>
+        <p>
+          Type anything. One hundred people react while you type, each judged on their own by
+          TypeSafe AI's Jev: four hundred questions, one round trip.
+        </p>
+      </header>
+
+      <section class="composer">
+        <label class="visually-hidden" for="message">Message</label>
+        <textarea
+          id="message"
+          rows="3"
+          placeholder="A tweet, a price-increase announcement, a product name, a headline, a text to a friend…"
+          autofocus
+        ></textarea>
+        <div class="presets" id="presets" role="group" aria-label="Preset messages"></div>
+      </section>
+
+      <section class="summary" aria-live="polite">
+        <div class="stats">
+          <span class="stat"><strong id="stat-latency">–</strong> ms</span>
+          <span class="stat"><strong id="stat-tokens">–</strong> input tokens</span>
+          <span class="stat" id="stat-calls"></span>
+          <span class="status" id="status"></span>
+        </div>
+        <div class="reaction-bar" id="reaction-bar" aria-label="Reaction mix across all faces"></div>
+        <ul class="legend" id="legend"></ul>
+        <ul class="nouls" id="nouls"></ul>
+      </section>
+
+      <section class="wall" id="wall" aria-label="One hundred faces"></section>
+
+      <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+    </main>
+    <script type="module" src="/src/client/main.ts"></script>
+  </body>
+</html>

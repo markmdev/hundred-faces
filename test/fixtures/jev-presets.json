@@ -1,0 +1,7547 @@
+{
+ "model": "jev-1.13.0",
+ "recordedAt": "2026-09-18T05:15:36.504Z",
+ "batchSize": 5,
+ "presets": {
+  "price-blunt": {
+   "message": "Effective next month, your subscription price is going up from $9.99 to $14.99. This change is automatic. No action is needed.",
+   "latencyMs": 1218,
+   "inputTokens": 77032,
+   "calls": 20,
+   "faces": {
+    "Rosa Delgado": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0.03,
+      "bored": 0,
+      "annoyed": 0.95,
+      "offended": 0.01
+     },
+     "confidence": 0.95,
+     "understands": 0.42,
+     "trusts": 0.23,
+     "shares": 0.79
+    },
+    "Kwame Mensah": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.11,
+      "neutral": 0.26,
+      "confused": 0,
+      "bored": 0.3,
+      "annoyed": 0.33,
+      "offended": 0
+     },
+     "confidence": 0.22,
+     "understands": 0.93,
+     "trusts": 0.29,
+     "shares": 0.3
+    },
+    "Linnea Berg": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.09,
+      "annoyed": 0.85,
+      "offended": 0
+     },
+     "confidence": 0.82,
+     "understands": 0.8,
+     "trusts": 0.28,
+     "shares": 0.31
+    },
+    "Daryl Whitfield": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.96,
+      "offended": 0.01
+     },
+     "confidence": 0.95,
+     "understands": 0.79,
+     "trusts": 0.17,
+     "shares": 0.31
+    },
+    "Priya Raman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.93,
+      "offended": 0
+     },
+     "confidence": 0.91,
+     "understands": 0.91,
+     "trusts": 0.28,
+     "shares": 0.3
+    },
+    "Tomasz Nowak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.9,
+      "offended": 0
+     },
+     "confidence": 0.88,
+     "understands": 0.68,
+     "trusts": 0.42,
+     "shares": 0.28
+    },
+    "Ada Osei": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.91,
+      "offended": 0
+     },
+     "confidence": 0.89,
+     "understands": 0.86,
+     "trusts": 0.52,
+     "shares": 0.56
+    },
+    "George Papadakis": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.99,
+      "offended": 0.01
+     },
+     "confidence": 0.98,
+     "understands": 0.84,
+     "trusts": 0.23,
+     "shares": 0.3
+    },
+    "Maribel Cruz": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.97,
+      "offended": 0
+     },
+     "confidence": 0.95,
+     "understands": 0.91,
+     "trusts": 0.33,
+     "shares": 0.35
+    },
+    "Henrik Dahl": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.63,
+      "neutral": 0.13,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.19,
+      "offended": 0
+     },
+     "confidence": 0.56,
+     "understands": 0.96,
+     "trusts": 0.58,
+     "shares": 0.44
+    },
+    "Yuki Tanaka": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.83,
+      "offended": 0.11
+     },
+     "confidence": 0.79,
+     "understands": 0.78,
+     "trusts": 0.46,
+     "shares": 0.2
+    },
+    "Clarence Bell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.16,
+      "neutral": 0.09,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.67,
+      "offended": 0.07
+     },
+     "confidence": 0.61,
+     "understands": 0.93,
+     "trusts": 0.34,
+     "shares": 0.41
+    },
+    "Sofia Marchetti": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0.04
+     },
+     "confidence": 0.91,
+     "understands": 0.94,
+     "trusts": 0.26,
+     "shares": 0.53
+    },
+    "Jamal Robinson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.86,
+      "offended": 0.1
+     },
+     "confidence": 0.83,
+     "understands": 0.9,
+     "trusts": 0.26,
+     "shares": 0.33
+    },
+    "Margaret O'Connell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.23,
+      "neutral": 0.1,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.63,
+      "offended": 0.02
+     },
+     "confidence": 0.56,
+     "understands": 0.91,
+     "trusts": 0.3,
+     "shares": 0.56
+    },
+    "Diego Fernández": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.4,
+     "trusts": 0.27,
+     "shares": 0.46
+    },
+    "Anneliese Weber": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.09,
+      "neutral": 0.01,
+      "confused": 0.01,
+      "bored": 0,
+      "annoyed": 0.89,
+      "offended": 0
+     },
+     "confidence": 0.87,
+     "understands": 0.86,
+     "trusts": 0.21,
+     "shares": 0.33
+    },
+    "Tyler Brooks": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.96,
+      "offended": 0.01
+     },
+     "confidence": 0.95,
+     "understands": 0.9,
+     "trusts": 0.18,
+     "shares": 0.66
+    },
+    "Fatima Al-Sayed": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.11,
+      "neutral": 0.07,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.89,
+     "trusts": 0.39,
+     "shares": 0.31
+    },
+    "Bruce Kowalski": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.95,
+      "offended": 0.02
+     },
+     "confidence": 0.93,
+     "understands": 0.88,
+     "trusts": 0.21,
+     "shares": 0.36
+    },
+    "Chen Wei": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.07,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0
+     },
+     "confidence": 0.91,
+     "understands": 0.88,
+     "trusts": 0.35,
+     "shares": 0.3
+    },
+    "Beatriz Souza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0.08,
+      "bored": 0.01,
+      "annoyed": 0.9,
+      "offended": 0
+     },
+     "confidence": 0.87,
+     "understands": 0.43,
+     "trusts": 0.21,
+     "shares": 0.46
+    },
+    "Nigel Hartley": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.97,
+      "offended": 0.01
+     },
+     "confidence": 0.95,
+     "understands": 0.89,
+     "trusts": 0.19,
+     "shares": 0.39
+    },
+    "Aisha Bello": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.95,
+      "offended": 0.01
+     },
+     "confidence": 0.94,
+     "understands": 0.87,
+     "trusts": 0.28,
+     "shares": 0.45
+    },
+    "Ryan Mitchell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.09,
+      "confused": 0,
+      "bored": 0.3,
+      "annoyed": 0.6,
+      "offended": 0
+     },
+     "confidence": 0.54,
+     "understands": 0.86,
+     "trusts": 0.48,
+     "shares": 0.15
+    },
+    "Elena Petrova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.89,
+      "offended": 0.03
+     },
+     "confidence": 0.88,
+     "understands": 0.91,
+     "trusts": 0.45,
+     "shares": 0.19
+    },
+    "Marcus Lindqvist": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.03,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.13,
+      "annoyed": 0.78,
+      "offended": 0
+     },
+     "confidence": 0.75,
+     "understands": 0.93,
+     "trusts": 0.26,
+     "shares": 0.16
+    },
+    "Gloria Nakamura": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.3,
+      "confused": 0,
+      "bored": 0.2,
+      "annoyed": 0.48,
+      "offended": 0
+     },
+     "confidence": 0.39,
+     "understands": 0.9,
+     "trusts": 0.82,
+     "shares": 0.26
+    },
+    "Samuel Adeyemi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.06,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.83,
+      "offended": 0.05
+     },
+     "confidence": 0.8,
+     "understands": 0.89,
+     "trusts": 0.54,
+     "shares": 0.25
+    },
+    "Hannah Cohen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.92,
+      "offended": 0.06
+     },
+     "confidence": 0.9,
+     "understands": 0.89,
+     "trusts": 0.15,
+     "shares": 0.28
+    },
+    "Lars Eriksen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.03,
+      "confused": 0.03,
+      "bored": 0.37,
+      "annoyed": 0.5700000000000001,
+      "offended": 0
+     },
+     "confidence": 0.49,
+     "understands": 0.47,
+     "trusts": 0.21,
+     "shares": 0.14
+    },
+    "Mei-Ling Chang": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.91,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.89,
+     "trusts": 0.22,
+     "shares": 0.15
+    },
+    "Ahmed Hassan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.19,
+      "bored": 0,
+      "annoyed": 0.8,
+      "offended": 0.01
+     },
+     "confidence": 0.75,
+     "understands": 0.38,
+     "trusts": 0.29,
+     "shares": 0.42
+    },
+    "Olivia Grant": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.13,
+      "annoyed": 0.75,
+      "offended": 0.01
+     },
+     "confidence": 0.7,
+     "understands": 0.86,
+     "trusts": 0.35,
+     "shares": 0.26
+    },
+    "Walter Schmidt": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0.05
+     },
+     "confidence": 0.92,
+     "understands": 0.51,
+     "trusts": 0.12,
+     "shares": 0.72
+    },
+    "Ingrid Haugen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.11,
+      "confused": 0.01,
+      "bored": 0.02,
+      "annoyed": 0.77,
+      "offended": 0.04
+     },
+     "confidence": 0.73,
+     "understands": 0.88,
+     "trusts": 0.72,
+     "shares": 0.3
+    },
+    "Rafael Ortiz": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.19,
+      "annoyed": 0.76,
+      "offended": 0
+     },
+     "confidence": 0.72,
+     "understands": 0.88,
+     "trusts": 0.46,
+     "shares": 0.33
+    },
+    "Deborah Klein": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.91,
+      "offended": 0
+     },
+     "confidence": 0.89,
+     "understands": 0.92,
+     "trusts": 0.23,
+     "shares": 0.64
+    },
+    "Kenji Watanabe": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.09,
+      "neutral": 0.13,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.76,
+      "offended": 0
+     },
+     "confidence": 0.72,
+     "understands": 0.88,
+     "trusts": 0.42,
+     "shares": 0.26
+    },
+    "Amara Okafor": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.97,
+      "offended": 0.01
+     },
+     "confidence": 0.96,
+     "understands": 0.89,
+     "trusts": 0.23,
+     "shares": 0.46
+    },
+    "Frank Delaney": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.25,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.7,
+      "offended": 0
+     },
+     "confidence": 0.65,
+     "understands": 0.86,
+     "trusts": 0.31,
+     "shares": 0.21
+    },
+    "Zara Khan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.06,
+      "confused": 0,
+      "bored": 0.28,
+      "annoyed": 0.66,
+      "offended": 0
+     },
+     "confidence": 0.6,
+     "understands": 0.87,
+     "trusts": 0.29,
+     "shares": 0.25
+    },
+    "Pedro Alves": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.87,
+      "bored": 0.03,
+      "annoyed": 0.09,
+      "offended": 0
+     },
+     "confidence": 0.85,
+     "understands": 0.12,
+     "trusts": 0.19,
+     "shares": 0.49
+    },
+    "Naomi Feldman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.97,
+      "offended": 0
+     },
+     "confidence": 0.96,
+     "understands": 0.83,
+     "trusts": 0.35,
+     "shares": 0.52
+    },
+    "Oskar Novak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.97,
+      "offended": 0.01
+     },
+     "confidence": 0.96,
+     "understands": 0.91,
+     "trusts": 0.2,
+     "shares": 0.63
+    },
+    "Lucía Herrera": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.89,
+      "bored": 0,
+      "annoyed": 0.11,
+      "offended": 0
+     },
+     "confidence": 0.87,
+     "understands": 0.05,
+     "trusts": 0.38,
+     "shares": 0.66
+    },
+    "Isaac Thompson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.26,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.72,
+      "offended": 0.02
+     },
+     "confidence": 0.66,
+     "understands": 0.9,
+     "trusts": 0.21,
+     "shares": 0.47
+    },
+    "Mira Zupan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.24,
+      "annoyed": 0.74,
+      "offended": 0
+     },
+     "confidence": 0.68,
+     "understands": 0.82,
+     "trusts": 0.52,
+     "shares": 0.28
+    },
+    "Robert Chen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.11,
+      "confused": 0,
+      "bored": 0.27,
+      "annoyed": 0.61,
+      "offended": 0
+     },
+     "confidence": 0.54,
+     "understands": 0.86,
+     "trusts": 0.5,
+     "shares": 0.18
+    },
+    "Bintou Diallo": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0.17,
+      "bored": 0.01,
+      "annoyed": 0.81,
+      "offended": 0
+     },
+     "confidence": 0.78,
+     "understands": 0.37,
+     "trusts": 0.21,
+     "shares": 0.31
+    },
+    "Ethan Park": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.11,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.81,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.95,
+     "trusts": 0.4,
+     "shares": 0.37
+    },
+    "Judith Marsh": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0.07
+     },
+     "confidence": 0.91,
+     "understands": 0.91,
+     "trusts": 0.24,
+     "shares": 0.65
+    },
+    "Carlos Mendoza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.11,
+      "annoyed": 0.87,
+      "offended": 0
+     },
+     "confidence": 0.84,
+     "understands": 0.84,
+     "trusts": 0.34,
+     "shares": 0.31
+    },
+    "Sven Larsson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.87,
+      "offended": 0
+     },
+     "confidence": 0.84,
+     "understands": 0.9,
+     "trusts": 0.27,
+     "shares": 0.24
+    },
+    "Grace Mwangi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.08,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.8099999999999999,
+      "offended": 0.04
+     },
+     "confidence": 0.79,
+     "understands": 0.91,
+     "trusts": 0.37,
+     "shares": 0.47
+    },
+    "Leo Rossi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.25,
+      "annoyed": 0.68,
+      "offended": 0
+     },
+     "confidence": 0.63,
+     "understands": 0.76,
+     "trusts": 0.56,
+     "shares": 0.63
+    },
+    "Halima Yusuf": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.06,
+      "neutral": 0.25,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.65,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.94,
+     "trusts": 0.62,
+     "shares": 0.16
+    },
+    "Patrick O'Brien": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.99,
+      "offended": 0.01
+     },
+     "confidence": 0.98,
+     "understands": 0.74,
+     "trusts": 0.18,
+     "shares": 0.39
+    },
+    "Aiko Suzuki": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.13,
+      "neutral": 0.11,
+      "confused": 0.01,
+      "bored": 0.04,
+      "annoyed": 0.71,
+      "offended": 0
+     },
+     "confidence": 0.66,
+     "understands": 0.86,
+     "trusts": 0.53,
+     "shares": 0.15
+    },
+    "Malik Johnson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.96,
+      "offended": 0.01
+     },
+     "confidence": 0.95,
+     "understands": 0.9,
+     "trusts": 0.29,
+     "shares": 0.53
+    },
+    "Ingeborg Fischer": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.88,
+      "offended": 0.06
+     },
+     "confidence": 0.86,
+     "understands": 0.91,
+     "trusts": 0.32,
+     "shares": 0.13
+    },
+    "Jake Turner": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.82,
+      "offended": 0.18
+     },
+     "confidence": 0.79,
+     "understands": 0.85,
+     "trusts": 0.15,
+     "shares": 0.55
+    },
+    "Nadia Ivanova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.32,
+      "neutral": 0.03,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.62,
+      "offended": 0.01
+     },
+     "confidence": 0.56,
+     "understands": 0.94,
+     "trusts": 0.23,
+     "shares": 0.46
+    },
+    "Bill Hargrove": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.91,
+      "offended": 0.02
+     },
+     "confidence": 0.88,
+     "understands": 0.85,
+     "trusts": 0.41,
+     "shares": 0.51
+    },
+    "Camille Dubois": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.9,
+      "offended": 0.01
+     },
+     "confidence": 0.88,
+     "understands": 0.94,
+     "trusts": 0.18,
+     "shares": 0.14
+    },
+    "Emeka Nwosu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.96,
+      "offended": 0
+     },
+     "confidence": 0.95,
+     "understands": 0.87,
+     "trusts": 0.24,
+     "shares": 0.56
+    },
+    "Susan Whitaker": {
+     "reaction": {
+      "delighted": 0.17,
+      "interested": 0.13,
+      "neutral": 0.11,
+      "confused": 0,
+      "bored": 0.34,
+      "annoyed": 0.25,
+      "offended": 0
+     },
+     "confidence": 0.22,
+     "understands": 0.9,
+     "trusts": 0.61,
+     "shares": 0.33
+    },
+    "Viktor Petrov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.89,
+      "offended": 0.01
+     },
+     "confidence": 0.86,
+     "understands": 0.9,
+     "trusts": 0.19,
+     "shares": 0.19
+    },
+    "Leilani Kealoha": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.78,
+      "offended": 0.12
+     },
+     "confidence": 0.74,
+     "understands": 0.91,
+     "trusts": 0.49,
+     "shares": 0.36
+    },
+    "Arjun Mehta": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.17,
+      "neutral": 0.07,
+      "confused": 0,
+      "bored": 0.15,
+      "annoyed": 0.61,
+      "offended": 0
+     },
+     "confidence": 0.55,
+     "understands": 0.92,
+     "trusts": 0.36,
+     "shares": 0.25
+    },
+    "Doris Fleming": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.9,
+      "offended": 0.04
+     },
+     "confidence": 0.87,
+     "understands": 0.89,
+     "trusts": 0.27,
+     "shares": 0.44
+    },
+    "Mateo Rojas": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.18,
+      "bored": 0.08,
+      "annoyed": 0.71,
+      "offended": 0
+     },
+     "confidence": 0.66,
+     "understands": 0.35,
+     "trusts": 0.3,
+     "shares": 0.29
+    },
+    "Rebecca Stone": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.06,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.76,
+      "offended": 0.16
+     },
+     "confidence": 0.71,
+     "understands": 0.91,
+     "trusts": 0.28,
+     "shares": 0.46
+    },
+    "Hiroshi Nakamura": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.17,
+      "neutral": 0.03,
+      "confused": 0.01,
+      "bored": 0,
+      "annoyed": 0.78,
+      "offended": 0.01
+     },
+     "confidence": 0.73,
+     "understands": 0.88,
+     "trusts": 0.19,
+     "shares": 0.3
+    },
+    "Chloe Bennett": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.07,
+      "annoyed": 0.9,
+      "offended": 0
+     },
+     "confidence": 0.88,
+     "understands": 0.87,
+     "trusts": 0.44,
+     "shares": 0.32
+    },
+    "Amir Haddad": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.97,
+      "offended": 0
+     },
+     "confidence": 0.96,
+     "understands": 0.94,
+     "trusts": 0.17,
+     "shares": 0.46
+    },
+    "Colleen Murphy": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.1,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.8,
+      "offended": 0.05
+     },
+     "confidence": 0.77,
+     "understands": 0.94,
+     "trusts": 0.45,
+     "shares": 0.42
+    },
+    "Dmitri Volkov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.96,
+      "offended": 0
+     },
+     "confidence": 0.95,
+     "understands": 0.94,
+     "trusts": 0.18,
+     "shares": 0.47
+    },
+    "Esperanza Villanueva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0.52,
+      "bored": 0.01,
+      "annoyed": 0.45,
+      "offended": 0
+     },
+     "confidence": 0.43,
+     "understands": 0.31,
+     "trusts": 0.23,
+     "shares": 0.56
+    },
+    "Thomas Nkemelu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.1,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.85,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.93,
+     "trusts": 0.17,
+     "shares": 0.41
+    },
+    "Emily Zhao": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0.06,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0
+     },
+     "confidence": 0.91,
+     "understands": 0.68,
+     "trusts": 0.29,
+     "shares": 0.83
+    },
+    "Hans Müller": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0.06
+     },
+     "confidence": 0.9,
+     "understands": 0.64,
+     "trusts": 0.16,
+     "shares": 0.37
+    },
+    "Selin Yıldız": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.96,
+      "offended": 0.01
+     },
+     "confidence": 0.96,
+     "understands": 0.92,
+     "trusts": 0.24,
+     "shares": 0.51
+    },
+    "Reginald Howard": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.94,
+      "offended": 0.04
+     },
+     "confidence": 0.93,
+     "understands": 0.85,
+     "trusts": 0.26,
+     "shares": 0.59
+    },
+    "Anika Sharma": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.15,
+      "confused": 0,
+      "bored": 0.08,
+      "annoyed": 0.69,
+      "offended": 0
+     },
+     "confidence": 0.63,
+     "understands": 0.93,
+     "trusts": 0.31,
+     "shares": 0.31
+    },
+    "Jorge Martínez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.92,
+      "offended": 0.01
+     },
+     "confidence": 0.9,
+     "understands": 0.88,
+     "trusts": 0.28,
+     "shares": 0.22
+    },
+    "Freya Jensen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.06,
+      "confused": 0,
+      "bored": 0.13,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.92,
+     "trusts": 0.36,
+     "shares": 0.13
+    },
+    "Kofi Boateng": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.09,
+      "neutral": 0.09,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.78,
+      "offended": 0.01
+     },
+     "confidence": 0.73,
+     "understands": 0.9,
+     "trusts": 0.42,
+     "shares": 0.31
+    },
+    "Lauren Fitzgerald": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.1,
+      "neutral": 0.01,
+      "confused": 0.01,
+      "bored": 0,
+      "annoyed": 0.87,
+      "offended": 0.01
+     },
+     "confidence": 0.85,
+     "understands": 0.89,
+     "trusts": 0.24,
+     "shares": 0.73
+    },
+    "Ricardo Silva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.03,
+      "confused": 0.24,
+      "bored": 0.04,
+      "annoyed": 0.66,
+      "offended": 0.01
+     },
+     "confidence": 0.61,
+     "understands": 0.31,
+     "trusts": 0.19,
+     "shares": 0.64
+    },
+    "Ayesha Malik": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0.09,
+      "bored": 0,
+      "annoyed": 0.89,
+      "offended": 0.01
+     },
+     "confidence": 0.88,
+     "understands": 0.51,
+     "trusts": 0.22,
+     "shares": 0.57
+    },
+    "Brian Sullivan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.96,
+      "offended": 0.03
+     },
+     "confidence": 0.94,
+     "understands": 0.86,
+     "trusts": 0.19,
+     "shares": 0.32
+    },
+    "Nkechi Eze": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.19,
+      "annoyed": 0.78,
+      "offended": 0.02
+     },
+     "confidence": 0.75,
+     "understands": 0.87,
+     "trusts": 0.21,
+     "shares": 0.28
+    },
+    "Stefan Weiss": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.16,
+      "neutral": 0.11,
+      "confused": 0,
+      "bored": 0.11,
+      "annoyed": 0.59,
+      "offended": 0.03
+     },
+     "confidence": 0.51,
+     "understands": 0.91,
+     "trusts": 0.37,
+     "shares": 0.31
+    },
+    "Maya Goldberg": {
+     "reaction": {
+      "delighted": 0.05,
+      "interested": 0.18,
+      "neutral": 0.13,
+      "confused": 0,
+      "bored": 0.29,
+      "annoyed": 0.35,
+      "offended": 0
+     },
+     "confidence": 0.24,
+     "understands": 0.94,
+     "trusts": 0.47,
+     "shares": 0.27
+    },
+    "Abdul Rahman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.07,
+      "neutral": 0.01,
+      "confused": 0.58,
+      "bored": 0.02,
+      "annoyed": 0.32,
+      "offended": 0
+     },
+     "confidence": 0.51,
+     "understands": 0.18,
+     "trusts": 0.19,
+     "shares": 0.79
+    },
+    "Patricia Alvarez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.35,
+      "neutral": 0.05,
+      "confused": 0.02,
+      "bored": 0.01,
+      "annoyed": 0.57,
+      "offended": 0
+     },
+     "confidence": 0.5,
+     "understands": 0.92,
+     "trusts": 0.2,
+     "shares": 0.46
+    },
+    "Owen Hughes": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.82,
+      "annoyed": 0.16,
+      "offended": 0
+     },
+     "confidence": 0.79,
+     "understands": 0.62,
+     "trusts": 0.25,
+     "shares": 0.17
+    },
+    "Sunita Patel": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.12,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.89,
+     "trusts": 0.4,
+     "shares": 0.68
+    },
+    "Julien Moreau": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.19,
+      "annoyed": 0.73,
+      "offended": 0.02
+     },
+     "confidence": 0.68,
+     "understands": 0.9,
+     "trusts": 0.27,
+     "shares": 0.34
+    }
+   }
+  },
+  "price-gentle": {
+   "message": "We're changing our pricing on October 15: your plan will move from $9.99 to $14.99 a month. We know a price change is never welcome, so here is what you get for it: offline mode, family sharing for up to five people, and priority support. If the new price doesn't work for you, cancel any time before October 15 and we'll refund this month in full.",
+   "latencyMs": 811,
+   "inputTokens": 78172,
+   "calls": 20,
+   "faces": {
+    "Rosa Delgado": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0.05,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0
+     },
+     "confidence": 0.92,
+     "understands": 0.35,
+     "trusts": 0.32,
+     "shares": 0.68
+    },
+    "Kwame Mensah": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.13,
+      "neutral": 0.16,
+      "confused": 0,
+      "bored": 0.26,
+      "annoyed": 0.45,
+      "offended": 0
+     },
+     "confidence": 0.35,
+     "understands": 0.91,
+     "trusts": 0.27,
+     "shares": 0.29
+    },
+    "Linnea Berg": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.7,
+     "trusts": 0.33,
+     "shares": 0.27
+    },
+    "Daryl Whitfield": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.92,
+      "offended": 0.01
+     },
+     "confidence": 0.9,
+     "understands": 0.7,
+     "trusts": 0.19,
+     "shares": 0.2
+    },
+    "Priya Raman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.94,
+      "offended": 0
+     },
+     "confidence": 0.93,
+     "understands": 0.88,
+     "trusts": 0.31,
+     "shares": 0.23
+    },
+    "Tomasz Nowak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.1,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.84,
+      "offended": 0
+     },
+     "confidence": 0.81,
+     "understands": 0.51,
+     "trusts": 0.48,
+     "shares": 0.26
+    },
+    "Ada Osei": {
+     "reaction": {
+      "delighted": 0.06,
+      "interested": 0.12,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.76,
+      "offended": 0
+     },
+     "confidence": 0.71,
+     "understands": 0.8,
+     "trusts": 0.56,
+     "shares": 0.56
+    },
+    "George Papadakis": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.96,
+      "offended": 0.01
+     },
+     "confidence": 0.96,
+     "understands": 0.79,
+     "trusts": 0.28,
+     "shares": 0.25
+    },
+    "Maribel Cruz": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.93,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.87,
+     "trusts": 0.42,
+     "shares": 0.29
+    },
+    "Henrik Dahl": {
+     "reaction": {
+      "delighted": 0.02,
+      "interested": 0.89,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.05,
+      "offended": 0
+     },
+     "confidence": 0.87,
+     "understands": 0.93,
+     "trusts": 0.64,
+     "shares": 0.54
+    },
+    "Yuki Tanaka": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.18,
+      "neutral": 0.11,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.66,
+      "offended": 0.02
+     },
+     "confidence": 0.61,
+     "understands": 0.7,
+     "trusts": 0.53,
+     "shares": 0.2
+    },
+    "Clarence Bell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.42,
+      "neutral": 0.16,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.39,
+      "offended": 0.01
+     },
+     "confidence": 0.31,
+     "understands": 0.91,
+     "trusts": 0.4,
+     "shares": 0.41
+    },
+    "Sofia Marchetti": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.16,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.79,
+      "offended": 0.02
+     },
+     "confidence": 0.75,
+     "understands": 0.91,
+     "trusts": 0.29,
+     "shares": 0.53
+    },
+    "Jamal Robinson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.12,
+      "annoyed": 0.76,
+      "offended": 0.04
+     },
+     "confidence": 0.72,
+     "understands": 0.85,
+     "trusts": 0.31,
+     "shares": 0.28
+    },
+    "Margaret O'Connell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.36,
+      "neutral": 0.19,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.4,
+      "offended": 0.01
+     },
+     "confidence": 0.3,
+     "understands": 0.89,
+     "trusts": 0.38,
+     "shares": 0.48
+    },
+    "Diego Fernández": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.98,
+      "offended": 0
+     },
+     "confidence": 0.97,
+     "understands": 0.36,
+     "trusts": 0.32,
+     "shares": 0.42
+    },
+    "Anneliese Weber": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.27,
+      "neutral": 0.04,
+      "confused": 0.01,
+      "bored": 0,
+      "annoyed": 0.67,
+      "offended": 0
+     },
+     "confidence": 0.62,
+     "understands": 0.85,
+     "trusts": 0.27,
+     "shares": 0.33
+    },
+    "Tyler Brooks": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.98,
+      "offended": 0.01
+     },
+     "confidence": 0.97,
+     "understands": 0.88,
+     "trusts": 0.19,
+     "shares": 0.66
+    },
+    "Fatima Al-Sayed": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.36,
+      "neutral": 0.12,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.5,
+      "offended": 0
+     },
+     "confidence": 0.41,
+     "understands": 0.87,
+     "trusts": 0.45,
+     "shares": 0.28
+    },
+    "Bruce Kowalski": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.94,
+      "offended": 0.01
+     },
+     "confidence": 0.93,
+     "understands": 0.79,
+     "trusts": 0.25,
+     "shares": 0.28
+    },
+    "Chen Wei": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.01,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.78,
+      "offended": 0
+     },
+     "confidence": 0.75,
+     "understands": 0.83,
+     "trusts": 0.38,
+     "shares": 0.26
+    },
+    "Beatriz Souza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.01,
+      "confused": 0.1,
+      "bored": 0.03,
+      "annoyed": 0.81,
+      "offended": 0
+     },
+     "confidence": 0.78,
+     "understands": 0.33,
+     "trusts": 0.25,
+     "shares": 0.38
+    },
+    "Nigel Hartley": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.95,
+      "offended": 0
+     },
+     "confidence": 0.94,
+     "understands": 0.86,
+     "trusts": 0.22,
+     "shares": 0.32
+    },
+    "Aisha Bello": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.11,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.85,
+      "offended": 0
+     },
+     "confidence": 0.82,
+     "understands": 0.83,
+     "trusts": 0.35,
+     "shares": 0.39
+    },
+    "Ryan Mitchell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.06,
+      "confused": 0,
+      "bored": 0.48,
+      "annoyed": 0.45,
+      "offended": 0
+     },
+     "confidence": 0.38,
+     "understands": 0.77,
+     "trusts": 0.47,
+     "shares": 0.15
+    },
+    "Elena Petrova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.1,
+      "neutral": 0.07,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.88,
+     "trusts": 0.47,
+     "shares": 0.18
+    },
+    "Marcus Lindqvist": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.1,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.12,
+      "annoyed": 0.74,
+      "offended": 0
+     },
+     "confidence": 0.7,
+     "understands": 0.9,
+     "trusts": 0.24,
+     "shares": 0.19
+    },
+    "Gloria Nakamura": {
+     "reaction": {
+      "delighted": 0.29,
+      "interested": 0.28,
+      "neutral": 0.15,
+      "confused": 0,
+      "bored": 0.1,
+      "annoyed": 0.18,
+      "offended": 0
+     },
+     "confidence": 0.17,
+     "understands": 0.88,
+     "trusts": 0.81,
+     "shares": 0.38
+    },
+    "Samuel Adeyemi": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.39,
+      "neutral": 0.16,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.4,
+      "offended": 0.01
+     },
+     "confidence": 0.3,
+     "understands": 0.86,
+     "trusts": 0.61,
+     "shares": 0.23
+    },
+    "Hannah Cohen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.9,
+      "offended": 0.01
+     },
+     "confidence": 0.88,
+     "understands": 0.87,
+     "trusts": 0.19,
+     "shares": 0.25
+    },
+    "Lars Eriksen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0.07,
+      "bored": 0.31,
+      "annoyed": 0.6,
+      "offended": 0
+     },
+     "confidence": 0.52,
+     "understands": 0.24,
+     "trusts": 0.23,
+     "shares": 0.12
+    },
+    "Mei-Ling Chang": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.06,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.89,
+      "offended": 0
+     },
+     "confidence": 0.87,
+     "understands": 0.86,
+     "trusts": 0.26,
+     "shares": 0.16
+    },
+    "Ahmed Hassan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0.22,
+      "bored": 0.01,
+      "annoyed": 0.75,
+      "offended": 0.01
+     },
+     "confidence": 0.7,
+     "understands": 0.36,
+     "trusts": 0.37,
+     "shares": 0.41
+    },
+    "Olivia Grant": {
+     "reaction": {
+      "delighted": 0.03,
+      "interested": 0.42,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.06,
+      "annoyed": 0.47000000000000003,
+      "offended": 0
+     },
+     "confidence": 0.37,
+     "understands": 0.84,
+     "trusts": 0.43,
+     "shares": 0.37
+    },
+    "Walter Schmidt": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0.06
+     },
+     "confidence": 0.92,
+     "understands": 0.46,
+     "trusts": 0.15,
+     "shares": 0.46
+    },
+    "Ingrid Haugen": {
+     "reaction": {
+      "delighted": 0.04,
+      "interested": 0.31,
+      "neutral": 0.07,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.54,
+      "offended": 0.02
+     },
+     "confidence": 0.46,
+     "understands": 0.86,
+     "trusts": 0.75,
+     "shares": 0.39
+    },
+    "Rafael Ortiz": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.07,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.17,
+      "annoyed": 0.71,
+      "offended": 0
+     },
+     "confidence": 0.67,
+     "understands": 0.79,
+     "trusts": 0.44,
+     "shares": 0.35
+    },
+    "Deborah Klein": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.07,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.91,
+      "offended": 0
+     },
+     "confidence": 0.89,
+     "understands": 0.89,
+     "trusts": 0.22,
+     "shares": 0.54
+    },
+    "Kenji Watanabe": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.26,
+      "neutral": 0.19,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.53,
+      "offended": 0
+     },
+     "confidence": 0.45,
+     "understands": 0.86,
+     "trusts": 0.47,
+     "shares": 0.23
+    },
+    "Amara Okafor": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.13,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.85,
+      "offended": 0.01
+     },
+     "confidence": 0.83,
+     "understands": 0.86,
+     "trusts": 0.26,
+     "shares": 0.37
+    },
+    "Frank Delaney": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.26,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.67,
+      "offended": 0
+     },
+     "confidence": 0.62,
+     "understands": 0.82,
+     "trusts": 0.35,
+     "shares": 0.16
+    },
+    "Zara Khan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.06,
+      "confused": 0,
+      "bored": 0.29,
+      "annoyed": 0.64,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.8,
+     "trusts": 0.33,
+     "shares": 0.24
+    },
+    "Pedro Alves": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.92,
+      "bored": 0.03,
+      "annoyed": 0.05,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.09,
+     "trusts": 0.2,
+     "shares": 0.34
+    },
+    "Naomi Feldman": {
+     "reaction": {
+      "delighted": 0.04,
+      "interested": 0.22,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.72,
+      "offended": 0
+     },
+     "confidence": 0.67,
+     "understands": 0.8,
+     "trusts": 0.47,
+     "shares": 0.53
+    },
+    "Oskar Novak": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.16,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.76,
+     "understands": 0.89,
+     "trusts": 0.31,
+     "shares": 0.56
+    },
+    "Lucía Herrera": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.94,
+      "bored": 0,
+      "annoyed": 0.06,
+      "offended": 0
+     },
+     "confidence": 0.93,
+     "understands": 0.05,
+     "trusts": 0.38,
+     "shares": 0.48
+    },
+    "Isaac Thompson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.45,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.53,
+      "offended": 0
+     },
+     "confidence": 0.44,
+     "understands": 0.87,
+     "trusts": 0.29,
+     "shares": 0.45
+    },
+    "Mira Zupan": {
+     "reaction": {
+      "delighted": 0.08,
+      "interested": 0.14,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.26,
+      "annoyed": 0.51,
+      "offended": 0
+     },
+     "confidence": 0.42,
+     "understands": 0.75,
+     "trusts": 0.52,
+     "shares": 0.3
+    },
+    "Robert Chen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.11,
+      "confused": 0.01,
+      "bored": 0.28,
+      "annoyed": 0.55,
+      "offended": 0
+     },
+     "confidence": 0.48,
+     "understands": 0.73,
+     "trusts": 0.45,
+     "shares": 0.16
+    },
+    "Bintou Diallo": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0,
+      "confused": 0.35,
+      "bored": 0.02,
+      "annoyed": 0.6,
+      "offended": 0
+     },
+     "confidence": 0.52,
+     "understands": 0.23,
+     "trusts": 0.25,
+     "shares": 0.27
+    },
+    "Ethan Park": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.1,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.68,
+      "offended": 0
+     },
+     "confidence": 0.63,
+     "understands": 0.93,
+     "trusts": 0.43,
+     "shares": 0.44
+    },
+    "Judith Marsh": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.91,
+      "offended": 0.04
+     },
+     "confidence": 0.88,
+     "understands": 0.88,
+     "trusts": 0.34,
+     "shares": 0.6
+    },
+    "Carlos Mendoza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.08,
+      "annoyed": 0.87,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.85,
+     "trusts": 0.4,
+     "shares": 0.31
+    },
+    "Sven Larsson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.2,
+      "neutral": 0.06,
+      "confused": 0.01,
+      "bored": 0.02,
+      "annoyed": 0.71,
+      "offended": 0
+     },
+     "confidence": 0.66,
+     "understands": 0.86,
+     "trusts": 0.29,
+     "shares": 0.27
+    },
+    "Grace Mwangi": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.16,
+      "neutral": 0.13,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.66,
+      "offended": 0.02
+     },
+     "confidence": 0.6,
+     "understands": 0.86,
+     "trusts": 0.44,
+     "shares": 0.48
+    },
+    "Leo Rossi": {
+     "reaction": {
+      "delighted": 0.02,
+      "interested": 0.09,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.22,
+      "annoyed": 0.64,
+      "offended": 0
+     },
+     "confidence": 0.57,
+     "understands": 0.74,
+     "trusts": 0.6,
+     "shares": 0.68
+    },
+    "Halima Yusuf": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.17,
+      "neutral": 0.3,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.49,
+      "offended": 0
+     },
+     "confidence": 0.4,
+     "understands": 0.9,
+     "trusts": 0.57,
+     "shares": 0.17
+    },
+    "Patrick O'Brien": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.99,
+      "offended": 0.01
+     },
+     "confidence": 0.98,
+     "understands": 0.65,
+     "trusts": 0.21,
+     "shares": 0.29
+    },
+    "Aiko Suzuki": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.25,
+      "neutral": 0.13,
+      "confused": 0.03,
+      "bored": 0.05,
+      "annoyed": 0.54,
+      "offended": 0
+     },
+     "confidence": 0.47,
+     "understands": 0.8,
+     "trusts": 0.53,
+     "shares": 0.15
+    },
+    "Malik Johnson": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.07,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.89,
+      "offended": 0.01
+     },
+     "confidence": 0.88,
+     "understands": 0.87,
+     "trusts": 0.33,
+     "shares": 0.54
+    },
+    "Ingeborg Fischer": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.9,
+      "offended": 0.04
+     },
+     "confidence": 0.89,
+     "understands": 0.84,
+     "trusts": 0.3,
+     "shares": 0.11
+    },
+    "Jake Turner": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.92,
+      "offended": 0.08
+     },
+     "confidence": 0.9,
+     "understands": 0.79,
+     "trusts": 0.16,
+     "shares": 0.42
+    },
+    "Nadia Ivanova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.42,
+      "neutral": 0.02,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.54,
+      "offended": 0
+     },
+     "confidence": 0.47,
+     "understands": 0.92,
+     "trusts": 0.25,
+     "shares": 0.43
+    },
+    "Bill Hargrove": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.03,
+      "neutral": 0.03,
+      "confused": 0.01,
+      "bored": 0.09,
+      "annoyed": 0.82,
+      "offended": 0.01
+     },
+     "confidence": 0.79,
+     "understands": 0.79,
+     "trusts": 0.47,
+     "shares": 0.5
+    },
+    "Camille Dubois": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.89,
+     "understands": 0.91,
+     "trusts": 0.17,
+     "shares": 0.13
+    },
+    "Emeka Nwosu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.29,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.67,
+      "offended": 0
+     },
+     "confidence": 0.6,
+     "understands": 0.81,
+     "trusts": 0.3,
+     "shares": 0.56
+    },
+    "Susan Whitaker": {
+     "reaction": {
+      "delighted": 0.64,
+      "interested": 0.23,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.07,
+      "offended": 0
+     },
+     "confidence": 0.57,
+     "understands": 0.91,
+     "trusts": 0.73,
+     "shares": 0.52
+    },
+    "Viktor Petrov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.95,
+      "offended": 0.01
+     },
+     "confidence": 0.95,
+     "understands": 0.82,
+     "trusts": 0.15,
+     "shares": 0.14
+    },
+    "Leilani Kealoha": {
+     "reaction": {
+      "delighted": 0.03,
+      "interested": 0.34,
+      "neutral": 0.06,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.5,
+      "offended": 0.05
+     },
+     "confidence": 0.41,
+     "understands": 0.88,
+     "trusts": 0.61,
+     "shares": 0.39
+    },
+    "Arjun Mehta": {
+     "reaction": {
+      "delighted": 0.02,
+      "interested": 0.86,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.08,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.91,
+     "trusts": 0.48,
+     "shares": 0.45
+    },
+    "Doris Fleming": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.02,
+      "confused": 0.01,
+      "bored": 0.02,
+      "annoyed": 0.88,
+      "offended": 0.02
+     },
+     "confidence": 0.87,
+     "understands": 0.81,
+     "trusts": 0.27,
+     "shares": 0.32
+    },
+    "Mateo Rojas": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0.5,
+      "bored": 0.08,
+      "annoyed": 0.4,
+      "offended": 0
+     },
+     "confidence": 0.42,
+     "understands": 0.16,
+     "trusts": 0.29,
+     "shares": 0.21
+    },
+    "Rebecca Stone": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.29,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.54,
+      "offended": 0.1
+     },
+     "confidence": 0.47,
+     "understands": 0.88,
+     "trusts": 0.33,
+     "shares": 0.44
+    },
+    "Hiroshi Nakamura": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.3,
+      "neutral": 0.04,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.63,
+      "offended": 0.01
+     },
+     "confidence": 0.58,
+     "understands": 0.82,
+     "trusts": 0.25,
+     "shares": 0.26
+    },
+    "Chloe Bennett": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.08,
+      "neutral": 0.02,
+      "confused": 0.01,
+      "bored": 0.15,
+      "annoyed": 0.73,
+      "offended": 0
+     },
+     "confidence": 0.69,
+     "understands": 0.77,
+     "trusts": 0.51,
+     "shares": 0.31
+    },
+    "Amir Haddad": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.97,
+      "offended": 0
+     },
+     "confidence": 0.96,
+     "understands": 0.91,
+     "trusts": 0.17,
+     "shares": 0.43
+    },
+    "Colleen Murphy": {
+     "reaction": {
+      "delighted": 0.02,
+      "interested": 0.3,
+      "neutral": 0.24,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.41000000000000003,
+      "offended": 0.01
+     },
+     "confidence": 0.3,
+     "understands": 0.91,
+     "trusts": 0.58,
+     "shares": 0.41
+    },
+    "Dmitri Volkov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.9299999999999999,
+      "offended": 0
+     },
+     "confidence": 0.93,
+     "understands": 0.91,
+     "trusts": 0.18,
+     "shares": 0.5
+    },
+    "Esperanza Villanueva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.02,
+      "confused": 0.66,
+      "bored": 0.02,
+      "annoyed": 0.27,
+      "offended": 0
+     },
+     "confidence": 0.61,
+     "understands": 0.26,
+     "trusts": 0.26,
+     "shares": 0.4
+    },
+    "Thomas Nkemelu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.75,
+      "offended": 0
+     },
+     "confidence": 0.7,
+     "understands": 0.91,
+     "trusts": 0.19,
+     "shares": 0.47
+    },
+    "Emily Zhao": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0,
+      "confused": 0.07,
+      "bored": 0,
+      "annoyed": 0.9,
+      "offended": 0
+     },
+     "confidence": 0.88,
+     "understands": 0.56,
+     "trusts": 0.35,
+     "shares": 0.81
+    },
+    "Hans Müller": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.02,
+      "bored": 0.01,
+      "annoyed": 0.93,
+      "offended": 0.04
+     },
+     "confidence": 0.92,
+     "understands": 0.49,
+     "trusts": 0.17,
+     "shares": 0.26
+    },
+    "Selin Yıldız": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.06,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.91,
+     "understands": 0.91,
+     "trusts": 0.26,
+     "shares": 0.53
+    },
+    "Reginald Howard": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.92,
+      "offended": 0.01
+     },
+     "confidence": 0.91,
+     "understands": 0.81,
+     "trusts": 0.31,
+     "shares": 0.41
+    },
+    "Anika Sharma": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.2,
+      "neutral": 0.11,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.65,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.92,
+     "trusts": 0.32,
+     "shares": 0.31
+    },
+    "Jorge Martínez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.86,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.82,
+     "trusts": 0.31,
+     "shares": 0.16
+    },
+    "Freya Jensen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.12,
+      "neutral": 0.07,
+      "confused": 0,
+      "bored": 0.18,
+      "annoyed": 0.63,
+      "offended": 0
+     },
+     "confidence": 0.57,
+     "understands": 0.86,
+     "trusts": 0.4,
+     "shares": 0.11
+    },
+    "Kofi Boateng": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.21,
+      "neutral": 0.15,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.59,
+      "offended": 0
+     },
+     "confidence": 0.51,
+     "understands": 0.85,
+     "trusts": 0.44,
+     "shares": 0.27
+    },
+    "Lauren Fitzgerald": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.22,
+      "neutral": 0.03,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.73,
+      "offended": 0
+     },
+     "confidence": 0.68,
+     "understands": 0.82,
+     "trusts": 0.27,
+     "shares": 0.63
+    },
+    "Ricardo Silva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.05,
+      "confused": 0.44,
+      "bored": 0.08,
+      "annoyed": 0.42,
+      "offended": 0
+     },
+     "confidence": 0.34,
+     "understands": 0.2,
+     "trusts": 0.19,
+     "shares": 0.47
+    },
+    "Ayesha Malik": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0.14,
+      "bored": 0,
+      "annoyed": 0.85,
+      "offended": 0
+     },
+     "confidence": 0.81,
+     "understands": 0.29,
+     "trusts": 0.25,
+     "shares": 0.36
+    },
+    "Brian Sullivan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.95,
+      "offended": 0.01
+     },
+     "confidence": 0.96,
+     "understands": 0.82,
+     "trusts": 0.22,
+     "shares": 0.2
+    },
+    "Nkechi Eze": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.14,
+      "annoyed": 0.84,
+      "offended": 0.01
+     },
+     "confidence": 0.8,
+     "understands": 0.82,
+     "trusts": 0.24,
+     "shares": 0.28
+    },
+    "Stefan Weiss": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.42,
+      "neutral": 0.16,
+      "confused": 0,
+      "bored": 0.08,
+      "annoyed": 0.33,
+      "offended": 0.01
+     },
+     "confidence": 0.32,
+     "understands": 0.89,
+     "trusts": 0.46,
+     "shares": 0.3
+    },
+    "Maya Goldberg": {
+     "reaction": {
+      "delighted": 0.07,
+      "interested": 0.55,
+      "neutral": 0.09,
+      "confused": 0,
+      "bored": 0.09,
+      "annoyed": 0.2,
+      "offended": 0
+     },
+     "confidence": 0.47,
+     "understands": 0.92,
+     "trusts": 0.54,
+     "shares": 0.37
+    },
+    "Abdul Rahman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.06,
+      "neutral": 0.01,
+      "confused": 0.7,
+      "bored": 0.03,
+      "annoyed": 0.2,
+      "offended": 0
+     },
+     "confidence": 0.64,
+     "understands": 0.13,
+     "trusts": 0.21,
+     "shares": 0.75
+    },
+    "Patricia Alvarez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.41,
+      "neutral": 0.13,
+      "confused": 0.02,
+      "bored": 0.02,
+      "annoyed": 0.42,
+      "offended": 0
+     },
+     "confidence": 0.32,
+     "understands": 0.87,
+     "trusts": 0.27,
+     "shares": 0.4
+    },
+    "Owen Hughes": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.88,
+      "annoyed": 0.11,
+      "offended": 0
+     },
+     "confidence": 0.86,
+     "understands": 0.52,
+     "trusts": 0.25,
+     "shares": 0.16
+    },
+    "Sunita Patel": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.26,
+      "neutral": 0.07,
+      "confused": 0,
+      "bored": 0.09,
+      "annoyed": 0.5700000000000001,
+      "offended": 0
+     },
+     "confidence": 0.49,
+     "understands": 0.86,
+     "trusts": 0.46,
+     "shares": 0.65
+    },
+    "Julien Moreau": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.12,
+      "annoyed": 0.79,
+      "offended": 0.02
+     },
+     "confidence": 0.75,
+     "understands": 0.85,
+     "trusts": 0.29,
+     "shares": 0.34
+    }
+   }
+  },
+  "blurb-jargon": {
+   "message": "Introducing SynergyMesh: a cloud-native, AI-augmented orchestration fabric that leverages composable microservices to hyperscale your omnichannel value streams with zero-trust observability.",
+   "latencyMs": 598,
+   "inputTokens": 77332,
+   "calls": 20,
+   "faces": {
+    "Rosa Delgado": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.98,
+      "bored": 0,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.97,
+     "understands": 0.05,
+     "trusts": 0.19,
+     "shares": 0.12
+    },
+    "Kwame Mensah": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.03,
+      "confused": 0.01,
+      "bored": 0.22,
+      "annoyed": 0.72,
+      "offended": 0
+     },
+     "confidence": 0.67,
+     "understands": 0.45,
+     "trusts": 0.14,
+     "shares": 0.16
+    },
+    "Linnea Berg": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.11,
+      "bored": 0.07,
+      "annoyed": 0.81,
+      "offended": 0
+     },
+     "confidence": 0.78,
+     "understands": 0.08,
+     "trusts": 0.12,
+     "shares": 0.07
+    },
+    "Daryl Whitfield": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0.23,
+      "bored": 0.26,
+      "annoyed": 0.49,
+      "offended": 0
+     },
+     "confidence": 0.4,
+     "understands": 0.08,
+     "trusts": 0.12,
+     "shares": 0.06
+    },
+    "Priya Raman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.03,
+      "bored": 0.05,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.14,
+     "trusts": 0.13,
+     "shares": 0.08
+    },
+    "Tomasz Nowak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.05,
+      "confused": 0.64,
+      "bored": 0.25,
+      "annoyed": 0.06,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.06,
+     "trusts": 0.18,
+     "shares": 0.08
+    },
+    "Ada Osei": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.01,
+      "neutral": 0.05,
+      "confused": 0.63,
+      "bored": 0.27,
+      "annoyed": 0.03,
+      "offended": 0
+     },
+     "confidence": 0.56,
+     "understands": 0.09,
+     "trusts": 0.37,
+     "shares": 0.18
+    },
+    "George Papadakis": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.18,
+      "bored": 0.11,
+      "annoyed": 0.7,
+      "offended": 0
+     },
+     "confidence": 0.65,
+     "understands": 0.11,
+     "trusts": 0.13,
+     "shares": 0.1
+    },
+    "Maribel Cruz": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.1,
+      "bored": 0.04,
+      "annoyed": 0.86,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.09,
+     "trusts": 0.16,
+     "shares": 0.1
+    },
+    "Henrik Dahl": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.91,
+      "neutral": 0.01,
+      "confused": 0.03,
+      "bored": 0.02,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.58,
+     "trusts": 0.55,
+     "shares": 0.6
+    },
+    "Yuki Tanaka": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.04,
+      "confused": 0.45,
+      "bored": 0.23,
+      "annoyed": 0.28,
+      "offended": 0
+     },
+     "confidence": 0.36,
+     "understands": 0.16,
+     "trusts": 0.24,
+     "shares": 0.09
+    },
+    "Clarence Bell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.03,
+      "confused": 0.15,
+      "bored": 0.14,
+      "annoyed": 0.67,
+      "offended": 0
+     },
+     "confidence": 0.6,
+     "understands": 0.23,
+     "trusts": 0.15,
+     "shares": 0.13
+    },
+    "Sofia Marchetti": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.05,
+      "bored": 0.03,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.3,
+     "trusts": 0.13,
+     "shares": 0.2
+    },
+    "Jamal Robinson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.12,
+      "bored": 0.31,
+      "annoyed": 0.55,
+      "offended": 0.01
+     },
+     "confidence": 0.48,
+     "understands": 0.15,
+     "trusts": 0.14,
+     "shares": 0.13
+    },
+    "Margaret O'Connell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0.45,
+      "bored": 0.14,
+      "annoyed": 0.39,
+      "offended": 0
+     },
+     "confidence": 0.36,
+     "understands": 0.17,
+     "trusts": 0.13,
+     "shares": 0.15
+    },
+    "Diego Fernández": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.7,
+      "bored": 0.12,
+      "annoyed": 0.15,
+      "offended": 0
+     },
+     "confidence": 0.65,
+     "understands": 0.07,
+     "trusts": 0.17,
+     "shares": 0.09
+    },
+    "Anneliese Weber": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.01,
+      "confused": 0.16,
+      "bored": 0.03,
+      "annoyed": 0.78,
+      "offended": 0
+     },
+     "confidence": 0.74,
+     "understands": 0.23,
+     "trusts": 0.14,
+     "shares": 0.12
+    },
+    "Tyler Brooks": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.97,
+     "understands": 0.15,
+     "trusts": 0.1,
+     "shares": 0.46
+    },
+    "Fatima Al-Sayed": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.03,
+      "confused": 0.26,
+      "bored": 0.21,
+      "annoyed": 0.49,
+      "offended": 0
+     },
+     "confidence": 0.41,
+     "understands": 0.24,
+     "trusts": 0.21,
+     "shares": 0.1
+    },
+    "Bruce Kowalski": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0.05,
+      "annoyed": 0.93,
+      "offended": 0
+     },
+     "confidence": 0.91,
+     "understands": 0.07,
+     "trusts": 0.08,
+     "shares": 0.05
+    },
+    "Chen Wei": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.36,
+      "neutral": 0.02,
+      "confused": 0.48,
+      "bored": 0.09,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.41,
+     "understands": 0.3,
+     "trusts": 0.29,
+     "shares": 0.32
+    },
+    "Beatriz Souza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.81,
+      "bored": 0.13,
+      "annoyed": 0.05,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.05,
+     "trusts": 0.13,
+     "shares": 0.07
+    },
+    "Nigel Hartley": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.05,
+      "bored": 0.03,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.19,
+     "trusts": 0.12,
+     "shares": 0.11
+    },
+    "Aisha Bello": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.19,
+      "bored": 0.24,
+      "annoyed": 0.54,
+      "offended": 0
+     },
+     "confidence": 0.47,
+     "understands": 0.09,
+     "trusts": 0.13,
+     "shares": 0.09
+    },
+    "Ryan Mitchell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0.05,
+      "bored": 0.83,
+      "annoyed": 0.1,
+      "offended": 0
+     },
+     "confidence": 0.8,
+     "understands": 0.08,
+     "trusts": 0.13,
+     "shares": 0.05
+    },
+    "Elena Petrova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.09,
+      "bored": 0.09,
+      "annoyed": 0.8200000000000001,
+      "offended": 0
+     },
+     "confidence": 0.78,
+     "understands": 0.15,
+     "trusts": 0.13,
+     "shares": 0.05
+    },
+    "Marcus Lindqvist": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.01,
+      "confused": 0.02,
+      "bored": 0.12,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.78,
+     "understands": 0.32,
+     "trusts": 0.16,
+     "shares": 0.23
+    },
+    "Gloria Nakamura": {
+     "reaction": {
+      "delighted": 0.03,
+      "interested": 0.02,
+      "neutral": 0.05,
+      "confused": 0.62,
+      "bored": 0.23,
+      "annoyed": 0.05,
+      "offended": 0
+     },
+     "confidence": 0.57,
+     "understands": 0.15,
+     "trusts": 0.76,
+     "shares": 0.16
+    },
+    "Samuel Adeyemi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0.25,
+      "bored": 0.08,
+      "annoyed": 0.63,
+      "offended": 0.02
+     },
+     "confidence": 0.57,
+     "understands": 0.15,
+     "trusts": 0.2,
+     "shares": 0.11
+    },
+    "Hannah Cohen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.03,
+      "bored": 0.02,
+      "annoyed": 0.95,
+      "offended": 0
+     },
+     "confidence": 0.93,
+     "understands": 0.21,
+     "trusts": 0.11,
+     "shares": 0.12
+    },
+    "Lars Eriksen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.25,
+      "bored": 0.17,
+      "annoyed": 0.56,
+      "offended": 0
+     },
+     "confidence": 0.49,
+     "understands": 0.04,
+     "trusts": 0.09,
+     "shares": 0.03
+    },
+    "Mei-Ling Chang": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.04,
+      "bored": 0.16,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.76,
+     "understands": 0.09,
+     "trusts": 0.11,
+     "shares": 0.06
+    },
+    "Ahmed Hassan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.85,
+      "bored": 0.01,
+      "annoyed": 0.14,
+      "offended": 0
+     },
+     "confidence": 0.82,
+     "understands": 0.06,
+     "trusts": 0.18,
+     "shares": 0.14
+    },
+    "Olivia Grant": {
+     "reaction": {
+      "delighted": 0.02,
+      "interested": 0.18,
+      "neutral": 0.03,
+      "confused": 0.32,
+      "bored": 0.17,
+      "annoyed": 0.28,
+      "offended": 0
+     },
+     "confidence": 0.22,
+     "understands": 0.14,
+     "trusts": 0.28,
+     "shares": 0.21
+    },
+    "Walter Schmidt": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.39,
+      "bored": 0.06,
+      "annoyed": 0.54,
+      "offended": 0
+     },
+     "confidence": 0.47,
+     "understands": 0.04,
+     "trusts": 0.08,
+     "shares": 0.06
+    },
+    "Ingrid Haugen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.88,
+      "bored": 0.09,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.85,
+     "understands": 0.11,
+     "trusts": 0.41,
+     "shares": 0.09
+    },
+    "Rafael Ortiz": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0.25,
+      "bored": 0.58,
+      "annoyed": 0.15,
+      "offended": 0
+     },
+     "confidence": 0.5,
+     "understands": 0.09,
+     "trusts": 0.19,
+     "shares": 0.11
+    },
+    "Deborah Klein": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.03,
+      "confused": 0.11,
+      "bored": 0.07,
+      "annoyed": 0.76,
+      "offended": 0
+     },
+     "confidence": 0.72,
+     "understands": 0.23,
+     "trusts": 0.14,
+     "shares": 0.22
+    },
+    "Kenji Watanabe": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.11,
+      "confused": 0.31,
+      "bored": 0.17,
+      "annoyed": 0.36,
+      "offended": 0
+     },
+     "confidence": 0.25,
+     "understands": 0.24,
+     "trusts": 0.22,
+     "shares": 0.17
+    },
+    "Amara Okafor": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.3,
+      "neutral": 0.06,
+      "confused": 0.19,
+      "bored": 0.1,
+      "annoyed": 0.35,
+      "offended": 0
+     },
+     "confidence": 0.24,
+     "understands": 0.31,
+     "trusts": 0.19,
+     "shares": 0.25
+    },
+    "Frank Delaney": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.03,
+      "confused": 0.6,
+      "bored": 0.19,
+      "annoyed": 0.16,
+      "offended": 0
+     },
+     "confidence": 0.54,
+     "understands": 0.12,
+     "trusts": 0.19,
+     "shares": 0.09
+    },
+    "Zara Khan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.04,
+      "confused": 0.2,
+      "bored": 0.39,
+      "annoyed": 0.37,
+      "offended": 0
+     },
+     "confidence": 0.28,
+     "understands": 0.07,
+     "trusts": 0.16,
+     "shares": 0.1
+    },
+    "Pedro Alves": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.97,
+      "bored": 0.01,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.97,
+     "understands": 0.03,
+     "trusts": 0.12,
+     "shares": 0.07
+    },
+    "Naomi Feldman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.03,
+      "confused": 0.57,
+      "bored": 0.26,
+      "annoyed": 0.14,
+      "offended": 0
+     },
+     "confidence": 0.51,
+     "understands": 0.06,
+     "trusts": 0.18,
+     "shares": 0.08
+    },
+    "Oskar Novak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.22,
+     "trusts": 0.13,
+     "shares": 0.39
+    },
+    "Lucía Herrera": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 1,
+      "bored": 0,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 1,
+     "understands": 0.02,
+     "trusts": 0.2,
+     "shares": 0.08
+    },
+    "Isaac Thompson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0,
+      "confused": 0.2,
+      "bored": 0.02,
+      "annoyed": 0.74,
+      "offended": 0
+     },
+     "confidence": 0.69,
+     "understands": 0.15,
+     "trusts": 0.14,
+     "shares": 0.17
+    },
+    "Mira Zupan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.28,
+      "bored": 0.67,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.62,
+     "understands": 0.06,
+     "trusts": 0.31,
+     "shares": 0.1
+    },
+    "Robert Chen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.03,
+      "confused": 0.21,
+      "bored": 0.31,
+      "annoyed": 0.45,
+      "offended": 0
+     },
+     "confidence": 0.34,
+     "understands": 0.09,
+     "trusts": 0.17,
+     "shares": 0.1
+    },
+    "Bintou Diallo": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.92,
+      "bored": 0.04,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.89,
+     "understands": 0.04,
+     "trusts": 0.13,
+     "shares": 0.07
+    },
+    "Ethan Park": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.98,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.35,
+     "trusts": 0.17,
+     "shares": 0.29
+    },
+    "Judith Marsh": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.11,
+      "bored": 0.01,
+      "annoyed": 0.87,
+      "offended": 0.01
+     },
+     "confidence": 0.84,
+     "understands": 0.12,
+     "trusts": 0.12,
+     "shares": 0.13
+    },
+    "Carlos Mendoza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.33,
+      "bored": 0.19,
+      "annoyed": 0.47,
+      "offended": 0
+     },
+     "confidence": 0.39,
+     "understands": 0.09,
+     "trusts": 0.14,
+     "shares": 0.07
+    },
+    "Sven Larsson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0.19,
+      "bored": 0.03,
+      "annoyed": 0.76,
+      "offended": 0
+     },
+     "confidence": 0.72,
+     "understands": 0.17,
+     "trusts": 0.12,
+     "shares": 0.12
+    },
+    "Grace Mwangi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.24,
+      "bored": 0.07,
+      "annoyed": 0.67,
+      "offended": 0.01
+     },
+     "confidence": 0.62,
+     "understands": 0.15,
+     "trusts": 0.16,
+     "shares": 0.12
+    },
+    "Leo Rossi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.02,
+      "confused": 0.45,
+      "bored": 0.44,
+      "annoyed": 0.07,
+      "offended": 0
+     },
+     "confidence": 0.35,
+     "understands": 0.09,
+     "trusts": 0.41,
+     "shares": 0.25
+    },
+    "Halima Yusuf": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.09,
+      "confused": 0.28,
+      "bored": 0.49,
+      "annoyed": 0.13,
+      "offended": 0
+     },
+     "confidence": 0.4,
+     "understands": 0.21,
+     "trusts": 0.29,
+     "shares": 0.11
+    },
+    "Patrick O'Brien": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.54,
+      "bored": 0.05,
+      "annoyed": 0.4,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.08,
+     "trusts": 0.15,
+     "shares": 0.09
+    },
+    "Aiko Suzuki": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.02,
+      "confused": 0.77,
+      "bored": 0.17,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.73,
+     "understands": 0.2,
+     "trusts": 0.29,
+     "shares": 0.1
+    },
+    "Malik Johnson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.07,
+      "bored": 0.05,
+      "annoyed": 0.88,
+      "offended": 0
+     },
+     "confidence": 0.85,
+     "understands": 0.15,
+     "trusts": 0.16,
+     "shares": 0.16
+    },
+    "Ingeborg Fischer": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.17,
+      "bored": 0.16,
+      "annoyed": 0.65,
+      "offended": 0.01
+     },
+     "confidence": 0.59,
+     "understands": 0.2,
+     "trusts": 0.14,
+     "shares": 0.05
+    },
+    "Jake Turner": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.12,
+      "bored": 0.1,
+      "annoyed": 0.76,
+      "offended": 0.02
+     },
+     "confidence": 0.72,
+     "understands": 0.11,
+     "trusts": 0.1,
+     "shares": 0.12
+    },
+    "Nadia Ivanova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.14,
+      "neutral": 0,
+      "confused": 0.06,
+      "bored": 0.02,
+      "annoyed": 0.78,
+      "offended": 0
+     },
+     "confidence": 0.74,
+     "understands": 0.46,
+     "trusts": 0.15,
+     "shares": 0.37
+    },
+    "Bill Hargrove": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.01,
+      "neutral": 0.04,
+      "confused": 0.37,
+      "bored": 0.26,
+      "annoyed": 0.31,
+      "offended": 0
+     },
+     "confidence": 0.26,
+     "understands": 0.13,
+     "trusts": 0.35,
+     "shares": 0.32
+    },
+    "Camille Dubois": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0.01,
+      "annoyed": 0.98,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.3,
+     "trusts": 0.08,
+     "shares": 0.06
+    },
+    "Emeka Nwosu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.06,
+      "confused": 0.44,
+      "bored": 0.39,
+      "annoyed": 0.09,
+      "offended": 0
+     },
+     "confidence": 0.33,
+     "understands": 0.1,
+     "trusts": 0.19,
+     "shares": 0.18
+    },
+    "Susan Whitaker": {
+     "reaction": {
+      "delighted": 0.57,
+      "interested": 0.12,
+      "neutral": 0.03,
+      "confused": 0.13,
+      "bored": 0.12,
+      "annoyed": 0.03,
+      "offended": 0
+     },
+     "confidence": 0.5,
+     "understands": 0.21,
+     "trusts": 0.64,
+     "shares": 0.4
+    },
+    "Viktor Petrov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.02,
+      "bored": 0.06,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.91,
+     "understands": 0.26,
+     "trusts": 0.11,
+     "shares": 0.1
+    },
+    "Leilani Kealoha": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.38,
+      "bored": 0.23,
+      "annoyed": 0.35,
+      "offended": 0.01
+     },
+     "confidence": 0.28,
+     "understands": 0.13,
+     "trusts": 0.3,
+     "shares": 0.12
+    },
+    "Arjun Mehta": {
+     "reaction": {
+      "delighted": 0.13,
+      "interested": 0.86,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.6,
+     "trusts": 0.51,
+     "shares": 0.68
+    },
+    "Doris Fleming": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.48,
+      "bored": 0.04,
+      "annoyed": 0.47,
+      "offended": 0.01
+     },
+     "confidence": 0.39,
+     "understands": 0.09,
+     "trusts": 0.12,
+     "shares": 0.07
+    },
+    "Mateo Rojas": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.94,
+      "bored": 0.04,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.93,
+     "understands": 0.03,
+     "trusts": 0.15,
+     "shares": 0.07
+    },
+    "Rebecca Stone": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0.22,
+      "bored": 0.1,
+      "annoyed": 0.65,
+      "offended": 0.01
+     },
+     "confidence": 0.59,
+     "understands": 0.15,
+     "trusts": 0.15,
+     "shares": 0.12
+    },
+    "Hiroshi Nakamura": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.03,
+      "confused": 0.45,
+      "bored": 0.15,
+      "annoyed": 0.36,
+      "offended": 0
+     },
+     "confidence": 0.36,
+     "understands": 0.18,
+     "trusts": 0.12,
+     "shares": 0.09
+    },
+    "Chloe Bennett": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.44,
+      "bored": 0.42,
+      "annoyed": 0.13,
+      "offended": 0
+     },
+     "confidence": 0.34,
+     "understands": 0.07,
+     "trusts": 0.19,
+     "shares": 0.07
+    },
+    "Amir Haddad": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0.1,
+      "annoyed": 0.89,
+      "offended": 0
+     },
+     "confidence": 0.86,
+     "understands": 0.25,
+     "trusts": 0.09,
+     "shares": 0.15
+    },
+    "Colleen Murphy": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.05,
+      "confused": 0.34,
+      "bored": 0.27,
+      "annoyed": 0.33,
+      "offended": 0
+     },
+     "confidence": 0.22,
+     "understands": 0.18,
+     "trusts": 0.24,
+     "shares": 0.11
+    },
+    "Dmitri Volkov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0.04,
+      "annoyed": 0.95,
+      "offended": 0
+     },
+     "confidence": 0.93,
+     "understands": 0.28,
+     "trusts": 0.1,
+     "shares": 0.22
+    },
+    "Esperanza Villanueva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.95,
+      "bored": 0.03,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.94,
+     "understands": 0.07,
+     "trusts": 0.24,
+     "shares": 0.16
+    },
+    "Thomas Nkemelu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0.03,
+      "bored": 0.1,
+      "annoyed": 0.85,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.31,
+     "trusts": 0.1,
+     "shares": 0.21
+    },
+    "Emily Zhao": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.9400000000000001,
+      "bored": 0,
+      "annoyed": 0.06,
+      "offended": 0
+     },
+     "confidence": 0.92,
+     "understands": 0.09,
+     "trusts": 0.23,
+     "shares": 0.48
+    },
+    "Hans Müller": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.2,
+      "bored": 0.01,
+      "annoyed": 0.78,
+      "offended": 0.01
+     },
+     "confidence": 0.74,
+     "understands": 0.06,
+     "trusts": 0.08,
+     "shares": 0.07
+    },
+    "Selin Yıldız": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.31,
+     "trusts": 0.14,
+     "shares": 0.37
+    },
+    "Reginald Howard": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.38,
+      "bored": 0.08,
+      "annoyed": 0.53,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.1,
+     "trusts": 0.13,
+     "shares": 0.12
+    },
+    "Anika Sharma": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.05,
+      "bored": 0.06,
+      "annoyed": 0.88,
+      "offended": 0
+     },
+     "confidence": 0.86,
+     "understands": 0.2,
+     "trusts": 0.1,
+     "shares": 0.09
+    },
+    "Jorge Martínez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.24,
+      "bored": 0.1,
+      "annoyed": 0.65,
+      "offended": 0
+     },
+     "confidence": 0.59,
+     "understands": 0.07,
+     "trusts": 0.11,
+     "shares": 0.05
+    },
+    "Freya Jensen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0.16,
+      "bored": 0.38,
+      "annoyed": 0.44,
+      "offended": 0
+     },
+     "confidence": 0.34,
+     "understands": 0.12,
+     "trusts": 0.16,
+     "shares": 0.06
+    },
+    "Kofi Boateng": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.36,
+      "bored": 0.24,
+      "annoyed": 0.37,
+      "offended": 0
+     },
+     "confidence": 0.27,
+     "understands": 0.12,
+     "trusts": 0.18,
+     "shares": 0.09
+    },
+    "Lauren Fitzgerald": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.46,
+      "bored": 0.1,
+      "annoyed": 0.41,
+      "offended": 0
+     },
+     "confidence": 0.37,
+     "understands": 0.13,
+     "trusts": 0.15,
+     "shares": 0.18
+    },
+    "Ricardo Silva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0.84,
+      "bored": 0.11,
+      "annoyed": 0.03,
+      "offended": 0
+     },
+     "confidence": 0.82,
+     "understands": 0.04,
+     "trusts": 0.11,
+     "shares": 0.04
+    },
+    "Ayesha Malik": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.97,
+      "bored": 0.01,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.97,
+     "understands": 0.05,
+     "trusts": 0.17,
+     "shares": 0.15
+    },
+    "Brian Sullivan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.09,
+      "bored": 0.07,
+      "annoyed": 0.83,
+      "offended": 0
+     },
+     "confidence": 0.8,
+     "understands": 0.12,
+     "trusts": 0.12,
+     "shares": 0.1
+    },
+    "Nkechi Eze": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.01,
+      "bored": 0.34,
+      "annoyed": 0.64,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.14,
+     "trusts": 0.15,
+     "shares": 0.12
+    },
+    "Stefan Weiss": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.07,
+      "neutral": 0.04,
+      "confused": 0.13,
+      "bored": 0.39,
+      "annoyed": 0.37,
+      "offended": 0
+     },
+     "confidence": 0.29,
+     "understands": 0.24,
+     "trusts": 0.22,
+     "shares": 0.14
+    },
+    "Maya Goldberg": {
+     "reaction": {
+      "delighted": 0.4,
+      "interested": 0.53,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.69,
+     "trusts": 0.59,
+     "shares": 0.64
+    },
+    "Abdul Rahman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.98,
+      "bored": 0.02,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 0.97,
+     "understands": 0.04,
+     "trusts": 0.15,
+     "shares": 0.26
+    },
+    "Patricia Alvarez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.04,
+      "confused": 0.44,
+      "bored": 0.21,
+      "annoyed": 0.29,
+      "offended": 0
+     },
+     "confidence": 0.36,
+     "understands": 0.26,
+     "trusts": 0.14,
+     "shares": 0.14
+    },
+    "Owen Hughes": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.03,
+      "bored": 0.86,
+      "annoyed": 0.1,
+      "offended": 0
+     },
+     "confidence": 0.84,
+     "understands": 0.06,
+     "trusts": 0.1,
+     "shares": 0.05
+    },
+    "Sunita Patel": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.19,
+      "bored": 0.54,
+      "annoyed": 0.24,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.08,
+     "trusts": 0.16,
+     "shares": 0.12
+    },
+    "Julien Moreau": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.03,
+      "bored": 0.2,
+      "annoyed": 0.75,
+      "offended": 0.01
+     },
+     "confidence": 0.71,
+     "understands": 0.18,
+     "trusts": 0.13,
+     "shares": 0.15
+    }
+   }
+  },
+  "blurb-plain": {
+   "message": "SynergyMesh is a tool that helps the apps your company uses talk to each other. It runs online, watches for problems, and tells you when something breaks. You pay per app you connect.",
+   "latencyMs": 834,
+   "inputTokens": 77152,
+   "calls": 20,
+   "faces": {
+    "Rosa Delgado": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.09,
+      "neutral": 0.04,
+      "confused": 0.4,
+      "bored": 0.2,
+      "annoyed": 0.27,
+      "offended": 0
+     },
+     "confidence": 0.3,
+     "understands": 0.26,
+     "trusts": 0.28,
+     "shares": 0.25
+    },
+    "Kwame Mensah": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.43,
+      "neutral": 0.12,
+      "confused": 0,
+      "bored": 0.19,
+      "annoyed": 0.26,
+      "offended": 0
+     },
+     "confidence": 0.32,
+     "understands": 0.85,
+     "trusts": 0.24,
+     "shares": 0.34
+    },
+    "Linnea Berg": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.07,
+      "confused": 0.01,
+      "bored": 0.46,
+      "annoyed": 0.4,
+      "offended": 0
+     },
+     "confidence": 0.37,
+     "understands": 0.69,
+     "trusts": 0.29,
+     "shares": 0.23
+    },
+    "Daryl Whitfield": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.04,
+      "confused": 0.01,
+      "bored": 0.66,
+      "annoyed": 0.29,
+      "offended": 0
+     },
+     "confidence": 0.59,
+     "understands": 0.65,
+     "trusts": 0.17,
+     "shares": 0.14
+    },
+    "Priya Raman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.06,
+      "neutral": 0.08,
+      "confused": 0.02,
+      "bored": 0.4,
+      "annoyed": 0.44,
+      "offended": 0
+     },
+     "confidence": 0.35,
+     "understands": 0.77,
+     "trusts": 0.26,
+     "shares": 0.19
+    },
+    "Tomasz Nowak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.15,
+      "confused": 0.06,
+      "bored": 0.56,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.49,
+     "understands": 0.42,
+     "trusts": 0.45,
+     "shares": 0.23
+    },
+    "Ada Osei": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.09,
+      "confused": 0.02,
+      "bored": 0.83,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.8,
+     "understands": 0.6,
+     "trusts": 0.59,
+     "shares": 0.17
+    },
+    "George Papadakis": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.07,
+      "confused": 0.01,
+      "bored": 0.5,
+      "annoyed": 0.39,
+      "offended": 0
+     },
+     "confidence": 0.42,
+     "understands": 0.66,
+     "trusts": 0.25,
+     "shares": 0.15
+    },
+    "Maribel Cruz": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.13,
+      "neutral": 0.1,
+      "confused": 0.01,
+      "bored": 0.37,
+      "annoyed": 0.39,
+      "offended": 0
+     },
+     "confidence": 0.28,
+     "understands": 0.81,
+     "trusts": 0.41,
+     "shares": 0.28
+    },
+    "Henrik Dahl": {
+     "reaction": {
+      "delighted": 0.02,
+      "interested": 0.96,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 0.96,
+     "understands": 0.9,
+     "trusts": 0.69,
+     "shares": 0.64
+    },
+    "Yuki Tanaka": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.1,
+      "neutral": 0.25,
+      "confused": 0.01,
+      "bored": 0.62,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.55,
+     "understands": 0.64,
+     "trusts": 0.54,
+     "shares": 0.16
+    },
+    "Clarence Bell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.51,
+      "neutral": 0.24,
+      "confused": 0,
+      "bored": 0.22,
+      "annoyed": 0.03,
+      "offended": 0
+     },
+     "confidence": 0.42,
+     "understands": 0.84,
+     "trusts": 0.43,
+     "shares": 0.28
+    },
+    "Sofia Marchetti": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.3,
+      "neutral": 0.2,
+      "confused": 0.01,
+      "bored": 0.28,
+      "annoyed": 0.21,
+      "offended": 0
+     },
+     "confidence": 0.19,
+     "understands": 0.87,
+     "trusts": 0.35,
+     "shares": 0.27
+    },
+    "Jamal Robinson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.12,
+      "confused": 0,
+      "bored": 0.79,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.75,
+     "understands": 0.78,
+     "trusts": 0.36,
+     "shares": 0.21
+    },
+    "Margaret O'Connell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.24,
+      "neutral": 0.25,
+      "confused": 0.01,
+      "bored": 0.46,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.37,
+     "understands": 0.79,
+     "trusts": 0.32,
+     "shares": 0.21
+    },
+    "Diego Fernández": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.31,
+      "neutral": 0.08,
+      "confused": 0.06,
+      "bored": 0.29,
+      "annoyed": 0.26,
+      "offended": 0
+     },
+     "confidence": 0.19,
+     "understands": 0.31,
+     "trusts": 0.32,
+     "shares": 0.2
+    },
+    "Anneliese Weber": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.32,
+      "neutral": 0.03,
+      "confused": 0.04,
+      "bored": 0.01,
+      "annoyed": 0.6,
+      "offended": 0
+     },
+     "confidence": 0.52,
+     "understands": 0.78,
+     "trusts": 0.23,
+     "shares": 0.32
+    },
+    "Tyler Brooks": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.19,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.76,
+     "understands": 0.74,
+     "trusts": 0.2,
+     "shares": 0.31
+    },
+    "Fatima Al-Sayed": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.34,
+      "neutral": 0.17,
+      "confused": 0.04,
+      "bored": 0.16,
+      "annoyed": 0.29,
+      "offended": 0
+     },
+     "confidence": 0.22,
+     "understands": 0.79,
+     "trusts": 0.4,
+     "shares": 0.21
+    },
+    "Bruce Kowalski": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0.08,
+      "annoyed": 0.9,
+      "offended": 0.01
+     },
+     "confidence": 0.88,
+     "understands": 0.3,
+     "trusts": 0.18,
+     "shares": 0.12
+    },
+    "Chen Wei": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.89,
+      "neutral": 0.03,
+      "confused": 0.01,
+      "bored": 0.06999999999999999,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 0.86,
+     "understands": 0.76,
+     "trusts": 0.43,
+     "shares": 0.4
+    },
+    "Beatriz Souza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.09,
+      "confused": 0.16,
+      "bored": 0.61,
+      "annoyed": 0.06,
+      "offended": 0
+     },
+     "confidence": 0.56,
+     "understands": 0.29,
+     "trusts": 0.25,
+     "shares": 0.21
+    },
+    "Nigel Hartley": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.07,
+      "neutral": 0.04,
+      "confused": 0.01,
+      "bored": 0.18,
+      "annoyed": 0.7,
+      "offended": 0
+     },
+     "confidence": 0.64,
+     "understands": 0.73,
+     "trusts": 0.21,
+     "shares": 0.19
+    },
+    "Aisha Bello": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.5,
+      "neutral": 0.04,
+      "confused": 0.01,
+      "bored": 0.13,
+      "annoyed": 0.32,
+      "offended": 0
+     },
+     "confidence": 0.4,
+     "understands": 0.64,
+     "trusts": 0.27,
+     "shares": 0.3
+    },
+    "Ryan Mitchell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.93,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.92,
+     "understands": 0.72,
+     "trusts": 0.32,
+     "shares": 0.11
+    },
+    "Elena Petrova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.07,
+      "confused": 0.01,
+      "bored": 0.72,
+      "annoyed": 0.16,
+      "offended": 0
+     },
+     "confidence": 0.67,
+     "understands": 0.75,
+     "trusts": 0.46,
+     "shares": 0.16
+    },
+    "Marcus Lindqvist": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.4,
+      "neutral": 0.07,
+      "confused": 0,
+      "bored": 0.28,
+      "annoyed": 0.25,
+      "offended": 0
+     },
+     "confidence": 0.29,
+     "understands": 0.84,
+     "trusts": 0.25,
+     "shares": 0.34
+    },
+    "Gloria Nakamura": {
+     "reaction": {
+      "delighted": 0.06,
+      "interested": 0.09,
+      "neutral": 0.14,
+      "confused": 0.01,
+      "bored": 0.68,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.63,
+     "understands": 0.78,
+     "trusts": 0.82,
+     "shares": 0.28
+    },
+    "Samuel Adeyemi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.27,
+      "neutral": 0.24,
+      "confused": 0.02,
+      "bored": 0.4,
+      "annoyed": 0.07,
+      "offended": 0
+     },
+     "confidence": 0.29,
+     "understands": 0.77,
+     "trusts": 0.62,
+     "shares": 0.22
+    },
+    "Hannah Cohen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.29,
+      "neutral": 0.08,
+      "confused": 0.01,
+      "bored": 0.11,
+      "annoyed": 0.51,
+      "offended": 0
+     },
+     "confidence": 0.43,
+     "understands": 0.8,
+     "trusts": 0.19,
+     "shares": 0.21
+    },
+    "Lars Eriksen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0.06,
+      "bored": 0.6,
+      "annoyed": 0.32,
+      "offended": 0
+     },
+     "confidence": 0.53,
+     "understands": 0.18,
+     "trusts": 0.19,
+     "shares": 0.08
+    },
+    "Mei-Ling Chang": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.24,
+      "neutral": 0.06,
+      "confused": 0.01,
+      "bored": 0.28,
+      "annoyed": 0.41000000000000003,
+      "offended": 0
+     },
+     "confidence": 0.3,
+     "understands": 0.7,
+     "trusts": 0.22,
+     "shares": 0.23
+    },
+    "Ahmed Hassan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.03,
+      "confused": 0.53,
+      "bored": 0.24,
+      "annoyed": 0.19,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.26,
+     "trusts": 0.3,
+     "shares": 0.24
+    },
+    "Olivia Grant": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.31,
+      "neutral": 0.09,
+      "confused": 0.02,
+      "bored": 0.48,
+      "annoyed": 0.09,
+      "offended": 0
+     },
+     "confidence": 0.41,
+     "understands": 0.72,
+     "trusts": 0.4,
+     "shares": 0.25
+    },
+    "Walter Schmidt": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.07,
+      "bored": 0.22,
+      "annoyed": 0.7,
+      "offended": 0
+     },
+     "confidence": 0.64,
+     "understands": 0.31,
+     "trusts": 0.13,
+     "shares": 0.14
+    },
+    "Ingrid Haugen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.17,
+      "confused": 0.06,
+      "bored": 0.72,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.67,
+     "understands": 0.71,
+     "trusts": 0.7,
+     "shares": 0.17
+    },
+    "Rafael Ortiz": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.06,
+      "confused": 0.01,
+      "bored": 0.87,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.85,
+     "understands": 0.75,
+     "trusts": 0.41,
+     "shares": 0.2
+    },
+    "Deborah Klein": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.41,
+      "neutral": 0.11,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.44,
+      "offended": 0
+     },
+     "confidence": 0.35,
+     "understands": 0.82,
+     "trusts": 0.22,
+     "shares": 0.43
+    },
+    "Kenji Watanabe": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.49,
+      "neutral": 0.32,
+      "confused": 0.01,
+      "bored": 0.13,
+      "annoyed": 0.05,
+      "offended": 0
+     },
+     "confidence": 0.42,
+     "understands": 0.81,
+     "trusts": 0.46,
+     "shares": 0.34
+    },
+    "Amara Okafor": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.6,
+      "neutral": 0.12,
+      "confused": 0.01,
+      "bored": 0.12,
+      "annoyed": 0.15,
+      "offended": 0
+     },
+     "confidence": 0.53,
+     "understands": 0.83,
+     "trusts": 0.26,
+     "shares": 0.37
+    },
+    "Frank Delaney": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.56,
+      "neutral": 0.12,
+      "confused": 0.01,
+      "bored": 0.25,
+      "annoyed": 0.05,
+      "offended": 0
+     },
+     "confidence": 0.49,
+     "understands": 0.72,
+     "trusts": 0.27,
+     "shares": 0.21
+    },
+    "Zara Khan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.08,
+      "confused": 0.06,
+      "bored": 0.72,
+      "annoyed": 0.14,
+      "offended": 0
+     },
+     "confidence": 0.67,
+     "understands": 0.54,
+     "trusts": 0.27,
+     "shares": 0.21
+    },
+    "Pedro Alves": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.88,
+      "bored": 0.09,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.86,
+     "understands": 0.08,
+     "trusts": 0.19,
+     "shares": 0.17
+    },
+    "Naomi Feldman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.09,
+      "neutral": 0.11,
+      "confused": 0.1,
+      "bored": 0.64,
+      "annoyed": 0.06,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.59,
+     "trusts": 0.38,
+     "shares": 0.24
+    },
+    "Oskar Novak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.17,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.11,
+      "annoyed": 0.69,
+      "offended": 0
+     },
+     "confidence": 0.63,
+     "understands": 0.77,
+     "trusts": 0.23,
+     "shares": 0.34
+    },
+    "Lucía Herrera": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.99,
+      "bored": 0.01,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.05,
+     "trusts": 0.36,
+     "shares": 0.16
+    },
+    "Isaac Thompson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.61,
+      "neutral": 0.05,
+      "confused": 0.03,
+      "bored": 0.07,
+      "annoyed": 0.24,
+      "offended": 0
+     },
+     "confidence": 0.55,
+     "understands": 0.77,
+     "trusts": 0.22,
+     "shares": 0.31
+    },
+    "Mira Zupan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.03,
+      "confused": 0.03,
+      "bored": 0.9,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.89,
+     "understands": 0.56,
+     "trusts": 0.55,
+     "shares": 0.19
+    },
+    "Robert Chen": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.29,
+      "neutral": 0.11,
+      "confused": 0.02,
+      "bored": 0.44,
+      "annoyed": 0.13,
+      "offended": 0
+     },
+     "confidence": 0.36,
+     "understands": 0.74,
+     "trusts": 0.38,
+     "shares": 0.27
+    },
+    "Bintou Diallo": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.07,
+      "neutral": 0.04,
+      "confused": 0.58,
+      "bored": 0.26,
+      "annoyed": 0.05,
+      "offended": 0
+     },
+     "confidence": 0.5,
+     "understands": 0.21,
+     "trusts": 0.22,
+     "shares": 0.17
+    },
+    "Ethan Park": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.13,
+      "confused": 0,
+      "bored": 0.29,
+      "annoyed": 0.39,
+      "offended": 0
+     },
+     "confidence": 0.28,
+     "understands": 0.89,
+     "trusts": 0.46,
+     "shares": 0.34
+    },
+    "Judith Marsh": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.06,
+      "neutral": 0.07,
+      "confused": 0.02,
+      "bored": 0.26,
+      "annoyed": 0.58,
+      "offended": 0.01
+     },
+     "confidence": 0.51,
+     "understands": 0.77,
+     "trusts": 0.27,
+     "shares": 0.27
+    },
+    "Carlos Mendoza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.09,
+      "confused": 0.02,
+      "bored": 0.64,
+      "annoyed": 0.17,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.75,
+     "trusts": 0.4,
+     "shares": 0.24
+    },
+    "Sven Larsson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.22,
+      "neutral": 0.14,
+      "confused": 0.03,
+      "bored": 0.27,
+      "annoyed": 0.33999999999999997,
+      "offended": 0
+     },
+     "confidence": 0.24,
+     "understands": 0.75,
+     "trusts": 0.29,
+     "shares": 0.2
+    },
+    "Grace Mwangi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.35,
+      "neutral": 0.21,
+      "confused": 0.02,
+      "bored": 0.25,
+      "annoyed": 0.17,
+      "offended": 0
+     },
+     "confidence": 0.24,
+     "understands": 0.76,
+     "trusts": 0.41,
+     "shares": 0.32
+    },
+    "Leo Rossi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.08,
+      "confused": 0.01,
+      "bored": 0.84,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.82,
+     "understands": 0.58,
+     "trusts": 0.59,
+     "shares": 0.31
+    },
+    "Halima Yusuf": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.29,
+      "neutral": 0.28,
+      "confused": 0,
+      "bored": 0.41,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.31,
+     "understands": 0.83,
+     "trusts": 0.59,
+     "shares": 0.22
+    },
+    "Patrick O'Brien": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.06,
+      "confused": 0.09,
+      "bored": 0.3,
+      "annoyed": 0.5,
+      "offended": 0
+     },
+     "confidence": 0.41,
+     "understands": 0.52,
+     "trusts": 0.22,
+     "shares": 0.19
+    },
+    "Aiko Suzuki": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.2,
+      "neutral": 0.22,
+      "confused": 0.09,
+      "bored": 0.48,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.39,
+     "understands": 0.71,
+     "trusts": 0.54,
+     "shares": 0.15
+    },
+    "Malik Johnson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.32,
+      "neutral": 0.09,
+      "confused": 0.01,
+      "bored": 0.24,
+      "annoyed": 0.34,
+      "offended": 0
+     },
+     "confidence": 0.23,
+     "understands": 0.8,
+     "trusts": 0.35,
+     "shares": 0.38
+    },
+    "Ingeborg Fischer": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.06,
+      "confused": 0.02,
+      "bored": 0.54,
+      "annoyed": 0.35,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.69,
+     "trusts": 0.24,
+     "shares": 0.09
+    },
+    "Jake Turner": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.01,
+      "bored": 0.45999999999999996,
+      "annoyed": 0.47,
+      "offended": 0.03
+     },
+     "confidence": 0.38,
+     "understands": 0.67,
+     "trusts": 0.15,
+     "shares": 0.19
+    },
+    "Nadia Ivanova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.58,
+      "neutral": 0.04,
+      "confused": 0.02,
+      "bored": 0.05,
+      "annoyed": 0.31,
+      "offended": 0
+     },
+     "confidence": 0.51,
+     "understands": 0.87,
+     "trusts": 0.25,
+     "shares": 0.35
+    },
+    "Bill Hargrove": {
+     "reaction": {
+      "delighted": 0.02,
+      "interested": 0.11,
+      "neutral": 0.12,
+      "confused": 0.03,
+      "bored": 0.65,
+      "annoyed": 0.07,
+      "offended": 0
+     },
+     "confidence": 0.6,
+     "understands": 0.69,
+     "trusts": 0.52,
+     "shares": 0.45
+    },
+    "Camille Dubois": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.12,
+      "neutral": 0.09,
+      "confused": 0,
+      "bored": 0.16,
+      "annoyed": 0.63,
+      "offended": 0
+     },
+     "confidence": 0.55,
+     "understands": 0.85,
+     "trusts": 0.17,
+     "shares": 0.14
+    },
+    "Emeka Nwosu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.18,
+      "neutral": 0.1,
+      "confused": 0.02,
+      "bored": 0.65,
+      "annoyed": 0.05,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.57,
+     "trusts": 0.3,
+     "shares": 0.28
+    },
+    "Susan Whitaker": {
+     "reaction": {
+      "delighted": 0.4,
+      "interested": 0.38,
+      "neutral": 0.06,
+      "confused": 0,
+      "bored": 0.15,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.3,
+     "understands": 0.83,
+     "trusts": 0.72,
+     "shares": 0.5
+    },
+    "Viktor Petrov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.14,
+      "neutral": 0.08,
+      "confused": 0.01,
+      "bored": 0.23,
+      "annoyed": 0.53,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.78,
+     "trusts": 0.17,
+     "shares": 0.18
+    },
+    "Leilani Kealoha": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.3,
+      "neutral": 0.19,
+      "confused": 0.02,
+      "bored": 0.45,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.34,
+     "understands": 0.76,
+     "trusts": 0.58,
+     "shares": 0.29
+    },
+    "Arjun Mehta": {
+     "reaction": {
+      "delighted": 0.16,
+      "interested": 0.84,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 0.81,
+     "understands": 0.9,
+     "trusts": 0.6,
+     "shares": 0.72
+    },
+    "Doris Fleming": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.04,
+      "confused": 0.06,
+      "bored": 0.49,
+      "annoyed": 0.38,
+      "offended": 0.01
+     },
+     "confidence": 0.4,
+     "understands": 0.6,
+     "trusts": 0.19,
+     "shares": 0.15
+    },
+    "Mateo Rojas": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.04,
+      "confused": 0.47,
+      "bored": 0.45,
+      "annoyed": 0.03,
+      "offended": 0
+     },
+     "confidence": 0.38,
+     "understands": 0.2,
+     "trusts": 0.35,
+     "shares": 0.16
+    },
+    "Rebecca Stone": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.37,
+      "neutral": 0.2,
+      "confused": 0.01,
+      "bored": 0.31,
+      "annoyed": 0.11,
+      "offended": 0
+     },
+     "confidence": 0.26,
+     "understands": 0.79,
+     "trusts": 0.37,
+     "shares": 0.27
+    },
+    "Hiroshi Nakamura": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.44,
+      "neutral": 0.16,
+      "confused": 0.02,
+      "bored": 0.25,
+      "annoyed": 0.13,
+      "offended": 0
+     },
+     "confidence": 0.34,
+     "understands": 0.75,
+     "trusts": 0.23,
+     "shares": 0.22
+    },
+    "Chloe Bennett": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.08,
+      "confused": 0.02,
+      "bored": 0.84,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.81,
+     "understands": 0.74,
+     "trusts": 0.56,
+     "shares": 0.2
+    },
+    "Amir Haddad": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.23,
+      "annoyed": 0.53,
+      "offended": 0
+     },
+     "confidence": 0.44,
+     "understands": 0.85,
+     "trusts": 0.17,
+     "shares": 0.31
+    },
+    "Colleen Murphy": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.29,
+      "neutral": 0.25,
+      "confused": 0.01,
+      "bored": 0.39999999999999997,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.31,
+     "understands": 0.83,
+     "trusts": 0.54,
+     "shares": 0.24
+    },
+    "Dmitri Volkov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.11,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.34,
+      "annoyed": 0.51,
+      "offended": 0
+     },
+     "confidence": 0.42,
+     "understands": 0.85,
+     "trusts": 0.18,
+     "shares": 0.27
+    },
+    "Esperanza Villanueva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.09,
+      "confused": 0.72,
+      "bored": 0.16,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.66,
+     "understands": 0.22,
+     "trusts": 0.37,
+     "shares": 0.25
+    },
+    "Thomas Nkemelu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.29,
+      "neutral": 0.11,
+      "confused": 0,
+      "bored": 0.23,
+      "annoyed": 0.37,
+      "offended": 0
+     },
+     "confidence": 0.25,
+     "understands": 0.84,
+     "trusts": 0.17,
+     "shares": 0.28
+    },
+    "Emily Zhao": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.06,
+      "neutral": 0.09,
+      "confused": 0.33,
+      "bored": 0.41,
+      "annoyed": 0.11,
+      "offended": 0
+     },
+     "confidence": 0.32,
+     "understands": 0.56,
+     "trusts": 0.34,
+     "shares": 0.32
+    },
+    "Hans Müller": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0.04,
+      "bored": 0.16,
+      "annoyed": 0.76,
+      "offended": 0.01
+     },
+     "confidence": 0.72,
+     "understands": 0.33,
+     "trusts": 0.17,
+     "shares": 0.18
+    },
+    "Selin Yıldız": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.13,
+      "neutral": 0.06,
+      "confused": 0,
+      "bored": 0.27,
+      "annoyed": 0.54,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.86,
+     "trusts": 0.28,
+     "shares": 0.35
+    },
+    "Reginald Howard": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.09,
+      "confused": 0.04,
+      "bored": 0.57,
+      "annoyed": 0.26,
+      "offended": 0
+     },
+     "confidence": 0.5,
+     "understands": 0.68,
+     "trusts": 0.3,
+     "shares": 0.22
+    },
+    "Anika Sharma": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.24,
+      "neutral": 0.23,
+      "confused": 0.02,
+      "bored": 0.29,
+      "annoyed": 0.22,
+      "offended": 0
+     },
+     "confidence": 0.17,
+     "understands": 0.83,
+     "trusts": 0.29,
+     "shares": 0.24
+    },
+    "Jorge Martínez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.12,
+      "confused": 0.03,
+      "bored": 0.41,
+      "annoyed": 0.25,
+      "offended": 0
+     },
+     "confidence": 0.32,
+     "understands": 0.7,
+     "trusts": 0.27,
+     "shares": 0.18
+    },
+    "Freya Jensen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.15,
+      "confused": 0.01,
+      "bored": 0.59,
+      "annoyed": 0.06,
+      "offended": 0
+     },
+     "confidence": 0.53,
+     "understands": 0.78,
+     "trusts": 0.37,
+     "shares": 0.17
+    },
+    "Kofi Boateng": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.26,
+      "neutral": 0.18,
+      "confused": 0.04,
+      "bored": 0.44,
+      "annoyed": 0.08,
+      "offended": 0
+     },
+     "confidence": 0.34,
+     "understands": 0.7,
+     "trusts": 0.37,
+     "shares": 0.24
+    },
+    "Lauren Fitzgerald": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.64,
+      "neutral": 0.12,
+      "confused": 0.02,
+      "bored": 0.1,
+      "annoyed": 0.12,
+      "offended": 0
+     },
+     "confidence": 0.59,
+     "understands": 0.74,
+     "trusts": 0.25,
+     "shares": 0.41
+    },
+    "Ricardo Silva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.08,
+      "confused": 0.64,
+      "bored": 0.25,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.58,
+     "understands": 0.13,
+     "trusts": 0.22,
+     "shares": 0.13
+    },
+    "Ayesha Malik": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.11,
+      "neutral": 0.06,
+      "confused": 0.45,
+      "bored": 0.25,
+      "annoyed": 0.13,
+      "offended": 0
+     },
+     "confidence": 0.35,
+     "understands": 0.28,
+     "trusts": 0.24,
+     "shares": 0.29
+    },
+    "Brian Sullivan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.08,
+      "confused": 0.01,
+      "bored": 0.28,
+      "annoyed": 0.55,
+      "offended": 0
+     },
+     "confidence": 0.48,
+     "understands": 0.74,
+     "trusts": 0.19,
+     "shares": 0.18
+    },
+    "Nkechi Eze": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.73,
+      "annoyed": 0.25,
+      "offended": 0
+     },
+     "confidence": 0.68,
+     "understands": 0.69,
+     "trusts": 0.24,
+     "shares": 0.18
+    },
+    "Stefan Weiss": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.45,
+      "neutral": 0.2,
+      "confused": 0,
+      "bored": 0.33,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.35,
+     "understands": 0.83,
+     "trusts": 0.46,
+     "shares": 0.28
+    },
+    "Maya Goldberg": {
+     "reaction": {
+      "delighted": 0.13,
+      "interested": 0.81,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.91,
+     "trusts": 0.64,
+     "shares": 0.63
+    },
+    "Abdul Rahman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.08,
+      "neutral": 0.06,
+      "confused": 0.79,
+      "bored": 0.06,
+      "annoyed": 0.01,
+      "offended": 0
+     },
+     "confidence": 0.76,
+     "understands": 0.14,
+     "trusts": 0.22,
+     "shares": 0.45
+    },
+    "Patricia Alvarez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.46,
+      "neutral": 0.15,
+      "confused": 0.08,
+      "bored": 0.2,
+      "annoyed": 0.11,
+      "offended": 0
+     },
+     "confidence": 0.37,
+     "understands": 0.77,
+     "trusts": 0.22,
+     "shares": 0.3
+    },
+    "Owen Hughes": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.96,
+      "annoyed": 0.03,
+      "offended": 0
+     },
+     "confidence": 0.95,
+     "understands": 0.41,
+     "trusts": 0.18,
+     "shares": 0.11
+    },
+    "Sunita Patel": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.45,
+      "neutral": 0.12,
+      "confused": 0.02,
+      "bored": 0.34,
+      "annoyed": 0.07,
+      "offended": 0
+     },
+     "confidence": 0.36,
+     "understands": 0.62,
+     "trusts": 0.39,
+     "shares": 0.42
+    },
+    "Julien Moreau": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.08,
+      "confused": 0.01,
+      "bored": 0.57,
+      "annoyed": 0.3,
+      "offended": 0
+     },
+     "confidence": 0.5,
+     "understands": 0.75,
+     "trusts": 0.25,
+     "shares": 0.23
+    }
+   }
+  },
+  "clickbait": {
+   "message": "Doctors HATE this one weird trick: you won't BELIEVE what happens when you stop drinking coffee for 7 days! (Number 4 will shock you)",
+   "latencyMs": 845,
+   "inputTokens": 77032,
+   "calls": 20,
+   "faces": {
+    "Rosa Delgado": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.38,
+      "neutral": 0.02,
+      "confused": 0.1,
+      "bored": 0.03,
+      "annoyed": 0.47000000000000003,
+      "offended": 0
+     },
+     "confidence": 0.38,
+     "understands": 0.5,
+     "trusts": 0.23,
+     "shares": 0.33
+    },
+    "Kwame Mensah": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.26,
+      "annoyed": 0.73,
+      "offended": 0
+     },
+     "confidence": 0.68,
+     "understands": 0.84,
+     "trusts": 0.07,
+     "shares": 0.09
+    },
+    "Linnea Berg": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.97,
+      "offended": 0
+     },
+     "confidence": 0.96,
+     "understands": 0.67,
+     "trusts": 0.1,
+     "shares": 0.1
+    },
+    "Daryl Whitfield": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.17,
+      "annoyed": 0.81,
+      "offended": 0
+     },
+     "confidence": 0.78,
+     "understands": 0.74,
+     "trusts": 0.13,
+     "shares": 0.15
+    },
+    "Priya Raman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.84,
+     "trusts": 0.08,
+     "shares": 0.09
+    },
+    "Tomasz Nowak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.06,
+      "confused": 0.02,
+      "bored": 0.35,
+      "annoyed": 0.56,
+      "offended": 0
+     },
+     "confidence": 0.48,
+     "understands": 0.44,
+     "trusts": 0.17,
+     "shares": 0.16
+    },
+    "Ada Osei": {
+     "reaction": {
+      "delighted": 0.34,
+      "interested": 0.63,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.02,
+      "offended": 0
+     },
+     "confidence": 0.57,
+     "understands": 0.88,
+     "trusts": 0.47,
+     "shares": 0.75
+    },
+    "George Papadakis": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.73,
+     "trusts": 0.09,
+     "shares": 0.13
+    },
+    "Maribel Cruz": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.75,
+     "trusts": 0.15,
+     "shares": 0.19
+    },
+    "Henrik Dahl": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.36,
+      "neutral": 0.04,
+      "confused": 0,
+      "bored": 0.14,
+      "annoyed": 0.46,
+      "offended": 0
+     },
+     "confidence": 0.37,
+     "understands": 0.89,
+     "trusts": 0.22,
+     "shares": 0.3
+    },
+    "Yuki Tanaka": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.89,
+      "offended": 0.11
+     },
+     "confidence": 0.86,
+     "understands": 0.65,
+     "trusts": 0.14,
+     "shares": 0.08
+    },
+    "Clarence Bell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.91,
+      "offended": 0.08
+     },
+     "confidence": 0.89,
+     "understands": 0.89,
+     "trusts": 0.1,
+     "shares": 0.13
+    },
+    "Sofia Marchetti": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.98,
+      "offended": 0.02
+     },
+     "confidence": 0.97,
+     "understands": 0.91,
+     "trusts": 0.06,
+     "shares": 0.2
+    },
+    "Jamal Robinson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.86,
+      "offended": 0.08
+     },
+     "confidence": 0.82,
+     "understands": 0.86,
+     "trusts": 0.14,
+     "shares": 0.22
+    },
+    "Margaret O'Connell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.95,
+      "offended": 0.02
+     },
+     "confidence": 0.94,
+     "understands": 0.87,
+     "trusts": 0.08,
+     "shares": 0.16
+    },
+    "Diego Fernández": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.22,
+      "neutral": 0.07,
+      "confused": 0.07,
+      "bored": 0.18,
+      "annoyed": 0.46,
+      "offended": 0
+     },
+     "confidence": 0.36,
+     "understands": 0.35,
+     "trusts": 0.19,
+     "shares": 0.25
+    },
+    "Anneliese Weber": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.79,
+     "trusts": 0.06,
+     "shares": 0.08
+    },
+    "Tyler Brooks": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.87,
+     "trusts": 0.07,
+     "shares": 0.54
+    },
+    "Fatima Al-Sayed": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.99,
+      "offended": 0.01
+     },
+     "confidence": 0.98,
+     "understands": 0.8,
+     "trusts": 0.1,
+     "shares": 0.14
+    },
+    "Bruce Kowalski": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.06,
+      "annoyed": 0.9400000000000001,
+      "offended": 0
+     },
+     "confidence": 0.92,
+     "understands": 0.76,
+     "trusts": 0.09,
+     "shares": 0.12
+    },
+    "Chen Wei": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.01,
+      "confused": 0.67,
+      "bored": 0.07,
+      "annoyed": 0.22,
+      "offended": 0
+     },
+     "confidence": 0.62,
+     "understands": 0.41,
+     "trusts": 0.16,
+     "shares": 0.14
+    },
+    "Beatriz Souza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.02,
+      "confused": 0.09,
+      "bored": 0.18,
+      "annoyed": 0.69,
+      "offended": 0
+     },
+     "confidence": 0.63,
+     "understands": 0.41,
+     "trusts": 0.15,
+     "shares": 0.17
+    },
+    "Nigel Hartley": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 1,
+     "understands": 0.77,
+     "trusts": 0.07,
+     "shares": 0.1
+    },
+    "Aisha Bello": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.13,
+      "annoyed": 0.85,
+      "offended": 0
+     },
+     "confidence": 0.82,
+     "understands": 0.69,
+     "trusts": 0.12,
+     "shares": 0.16
+    },
+    "Ryan Mitchell": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.59,
+      "annoyed": 0.39,
+      "offended": 0
+     },
+     "confidence": 0.52,
+     "understands": 0.76,
+     "trusts": 0.11,
+     "shares": 0.08
+    },
+    "Elena Petrova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.94,
+      "offended": 0.06
+     },
+     "confidence": 0.93,
+     "understands": 0.78,
+     "trusts": 0.07,
+     "shares": 0.05
+    },
+    "Marcus Lindqvist": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.08,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.9,
+     "understands": 0.83,
+     "trusts": 0.08,
+     "shares": 0.08
+    },
+    "Gloria Nakamura": {
+     "reaction": {
+      "delighted": 0.23,
+      "interested": 0.52,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.08,
+      "annoyed": 0.14,
+      "offended": 0
+     },
+     "confidence": 0.43,
+     "understands": 0.82,
+     "trusts": 0.74,
+     "shares": 0.53
+    },
+    "Samuel Adeyemi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.91,
+      "offended": 0.07
+     },
+     "confidence": 0.89,
+     "understands": 0.82,
+     "trusts": 0.17,
+     "shares": 0.11
+    },
+    "Hannah Cohen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.99,
+      "offended": 0.01
+     },
+     "confidence": 0.98,
+     "understands": 0.86,
+     "trusts": 0.07,
+     "shares": 0.11
+    },
+    "Lars Eriksen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.02,
+      "bored": 0.08,
+      "annoyed": 0.9,
+      "offended": 0
+     },
+     "confidence": 0.87,
+     "understands": 0.31,
+     "trusts": 0.07,
+     "shares": 0.05
+    },
+    "Mei-Ling Chang": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.19,
+      "annoyed": 0.81,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.79,
+     "trusts": 0.08,
+     "shares": 0.05
+    },
+    "Ahmed Hassan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.01,
+      "confused": 0.32,
+      "bored": 0.06,
+      "annoyed": 0.57,
+      "offended": 0
+     },
+     "confidence": 0.49,
+     "understands": 0.42,
+     "trusts": 0.22,
+     "shares": 0.37
+    },
+    "Olivia Grant": {
+     "reaction": {
+      "delighted": 0.06,
+      "interested": 0.58,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.31,
+      "offended": 0
+     },
+     "confidence": 0.5,
+     "understands": 0.87,
+     "trusts": 0.23,
+     "shares": 0.39
+    },
+    "Walter Schmidt": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.01,
+      "bored": 0.06,
+      "annoyed": 0.91,
+      "offended": 0.01
+     },
+     "confidence": 0.9,
+     "understands": 0.63,
+     "trusts": 0.09,
+     "shares": 0.09
+    },
+    "Ingrid Haugen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.13,
+      "neutral": 0.06,
+      "confused": 0.03,
+      "bored": 0.12,
+      "annoyed": 0.59,
+      "offended": 0.07
+     },
+     "confidence": 0.52,
+     "understands": 0.85,
+     "trusts": 0.31,
+     "shares": 0.19
+    },
+    "Rafael Ortiz": {
+     "reaction": {
+      "delighted": 0.09,
+      "interested": 0.21,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.36,
+      "annoyed": 0.31,
+      "offended": 0
+     },
+     "confidence": 0.24,
+     "understands": 0.88,
+     "trusts": 0.24,
+     "shares": 0.45
+    },
+    "Deborah Klein": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.05,
+      "annoyed": 0.93,
+      "offended": 0
+     },
+     "confidence": 0.92,
+     "understands": 0.88,
+     "trusts": 0.09,
+     "shares": 0.09
+    },
+    "Kenji Watanabe": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.98,
+      "offended": 0
+     },
+     "confidence": 0.97,
+     "understands": 0.85,
+     "trusts": 0.12,
+     "shares": 0.09
+    },
+    "Amara Okafor": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.89,
+      "offended": 0
+     },
+     "confidence": 0.87,
+     "understands": 0.88,
+     "trusts": 0.14,
+     "shares": 0.15
+    },
+    "Frank Delaney": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.13,
+      "annoyed": 0.83,
+      "offended": 0
+     },
+     "confidence": 0.8,
+     "understands": 0.81,
+     "trusts": 0.12,
+     "shares": 0.07
+    },
+    "Zara Khan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.09,
+      "annoyed": 0.87,
+      "offended": 0.03
+     },
+     "confidence": 0.85,
+     "understands": 0.87,
+     "trusts": 0.09,
+     "shares": 0.3
+    },
+    "Pedro Alves": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.84,
+      "bored": 0.08,
+      "annoyed": 0.07,
+      "offended": 0
+     },
+     "confidence": 0.81,
+     "understands": 0.12,
+     "trusts": 0.1,
+     "shares": 0.07
+    },
+    "Naomi Feldman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.22,
+      "annoyed": 0.72,
+      "offended": 0
+     },
+     "confidence": 0.67,
+     "understands": 0.7,
+     "trusts": 0.19,
+     "shares": 0.21
+    },
+    "Oskar Novak": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.89,
+     "trusts": 0.08,
+     "shares": 0.54
+    },
+    "Lucía Herrera": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0,
+      "confused": 0.94,
+      "bored": 0,
+      "annoyed": 0.04,
+      "offended": 0
+     },
+     "confidence": 0.93,
+     "understands": 0.04,
+     "trusts": 0.33,
+     "shares": 0.26
+    },
+    "Isaac Thompson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.99,
+      "offended": 0.01
+     },
+     "confidence": 0.99,
+     "understands": 0.84,
+     "trusts": 0.07,
+     "shares": 0.16
+    },
+    "Mira Zupan": {
+     "reaction": {
+      "delighted": 0.01,
+      "interested": 0.5,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.22,
+      "annoyed": 0.25,
+      "offended": 0
+     },
+     "confidence": 0.42,
+     "understands": 0.81,
+     "trusts": 0.51,
+     "shares": 0.51
+    },
+    "Robert Chen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.17,
+      "annoyed": 0.8,
+      "offended": 0
+     },
+     "confidence": 0.77,
+     "understands": 0.74,
+     "trusts": 0.11,
+     "shares": 0.12
+    },
+    "Bintou Diallo": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.05,
+      "neutral": 0.04,
+      "confused": 0.31,
+      "bored": 0.2,
+      "annoyed": 0.4,
+      "offended": 0
+     },
+     "confidence": 0.29,
+     "understands": 0.36,
+     "trusts": 0.18,
+     "shares": 0.21
+    },
+    "Ethan Park": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 1,
+     "understands": 0.92,
+     "trusts": 0.07,
+     "shares": 0.23
+    },
+    "Judith Marsh": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0.07
+     },
+     "confidence": 0.91,
+     "understands": 0.89,
+     "trusts": 0.07,
+     "shares": 0.28
+    },
+    "Carlos Mendoza": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.14,
+      "annoyed": 0.85,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.82,
+     "trusts": 0.14,
+     "shares": 0.13
+    },
+    "Sven Larsson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.87,
+     "trusts": 0.06,
+     "shares": 0.1
+    },
+    "Grace Mwangi": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.93,
+      "offended": 0.07
+     },
+     "confidence": 0.92,
+     "understands": 0.85,
+     "trusts": 0.1,
+     "shares": 0.13
+    },
+    "Leo Rossi": {
+     "reaction": {
+      "delighted": 0.06,
+      "interested": 0.71,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.12,
+      "annoyed": 0.1,
+      "offended": 0
+     },
+     "confidence": 0.65,
+     "understands": 0.81,
+     "trusts": 0.42,
+     "shares": 0.73
+    },
+    "Halima Yusuf": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.06,
+      "annoyed": 0.93,
+      "offended": 0.01
+     },
+     "confidence": 0.92,
+     "understands": 0.66,
+     "trusts": 0.11,
+     "shares": 0.06
+    },
+    "Patrick O'Brien": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0.01,
+      "bored": 0.08,
+      "annoyed": 0.9,
+      "offended": 0
+     },
+     "confidence": 0.88,
+     "understands": 0.6,
+     "trusts": 0.12,
+     "shares": 0.11
+    },
+    "Aiko Suzuki": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.04,
+      "confused": 0.24,
+      "bored": 0.19,
+      "annoyed": 0.51,
+      "offended": 0
+     },
+     "confidence": 0.44,
+     "understands": 0.47,
+     "trusts": 0.17,
+     "shares": 0.09
+    },
+    "Malik Johnson": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.82,
+     "trusts": 0.12,
+     "shares": 0.22
+    },
+    "Ingeborg Fischer": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.92,
+      "offended": 0.08
+     },
+     "confidence": 0.9,
+     "understands": 0.85,
+     "trusts": 0.05,
+     "shares": 0.03
+    },
+    "Jake Turner": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.08,
+      "annoyed": 0.9,
+      "offended": 0.02
+     },
+     "confidence": 0.87,
+     "understands": 0.84,
+     "trusts": 0.14,
+     "shares": 0.21
+    },
+    "Nadia Ivanova": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.97,
+      "offended": 0
+     },
+     "confidence": 0.95,
+     "understands": 0.9,
+     "trusts": 0.07,
+     "shares": 0.32
+    },
+    "Bill Hargrove": {
+     "reaction": {
+      "delighted": 0.05,
+      "interested": 0.26,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.11,
+      "annoyed": 0.55,
+      "offended": 0
+     },
+     "confidence": 0.47,
+     "understands": 0.87,
+     "trusts": 0.4,
+     "shares": 0.53
+    },
+    "Camille Dubois": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.99,
+      "offended": 0.01
+     },
+     "confidence": 0.99,
+     "understands": 0.93,
+     "trusts": 0.04,
+     "shares": 0.04
+    },
+    "Emeka Nwosu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.18,
+      "neutral": 0.09,
+      "confused": 0,
+      "bored": 0.33,
+      "annoyed": 0.4,
+      "offended": 0
+     },
+     "confidence": 0.3,
+     "understands": 0.82,
+     "trusts": 0.18,
+     "shares": 0.23
+    },
+    "Susan Whitaker": {
+     "reaction": {
+      "delighted": 0.9,
+      "interested": 0.09,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0,
+      "offended": 0
+     },
+     "confidence": 0.88,
+     "understands": 0.93,
+     "trusts": 0.68,
+     "shares": 0.76
+    },
+    "Viktor Petrov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.84,
+     "trusts": 0.06,
+     "shares": 0.07
+    },
+    "Leilani Kealoha": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.09,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.71,
+      "offended": 0.16
+     },
+     "confidence": 0.66,
+     "understands": 0.88,
+     "trusts": 0.27,
+     "shares": 0.26
+    },
+    "Arjun Mehta": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.42,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.23,
+      "annoyed": 0.32,
+      "offended": 0
+     },
+     "confidence": 0.32,
+     "understands": 0.88,
+     "trusts": 0.23,
+     "shares": 0.34
+    },
+    "Doris Fleming": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.94,
+      "offended": 0.05
+     },
+     "confidence": 0.93,
+     "understands": 0.79,
+     "trusts": 0.07,
+     "shares": 0.1
+    },
+    "Mateo Rojas": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.04,
+      "neutral": 0.03,
+      "confused": 0.59,
+      "bored": 0.23,
+      "annoyed": 0.11,
+      "offended": 0
+     },
+     "confidence": 0.52,
+     "understands": 0.23,
+     "trusts": 0.25,
+     "shares": 0.29
+    },
+    "Rebecca Stone": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.93,
+      "offended": 0.05
+     },
+     "confidence": 0.92,
+     "understands": 0.87,
+     "trusts": 0.1,
+     "shares": 0.13
+    },
+    "Hiroshi Nakamura": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.98,
+      "offended": 0.01
+     },
+     "confidence": 0.98,
+     "understands": 0.76,
+     "trusts": 0.07,
+     "shares": 0.08
+    },
+    "Chloe Bennett": {
+     "reaction": {
+      "delighted": 0.02,
+      "interested": 0.1,
+      "neutral": 0.03,
+      "confused": 0,
+      "bored": 0.31,
+      "annoyed": 0.54,
+      "offended": 0
+     },
+     "confidence": 0.46,
+     "understands": 0.82,
+     "trusts": 0.22,
+     "shares": 0.33
+    },
+    "Amir Haddad": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.98,
+      "offended": 0
+     },
+     "confidence": 0.97,
+     "understands": 0.92,
+     "trusts": 0.07,
+     "shares": 0.24
+    },
+    "Colleen Murphy": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.02,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.9,
+      "offended": 0.04
+     },
+     "confidence": 0.88,
+     "understands": 0.9,
+     "trusts": 0.15,
+     "shares": 0.13
+    },
+    "Dmitri Volkov": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.99,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.91,
+     "trusts": 0.07,
+     "shares": 0.25
+    },
+    "Esperanza Villanueva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.07,
+      "confused": 0.65,
+      "bored": 0.11,
+      "annoyed": 0.16,
+      "offended": 0
+     },
+     "confidence": 0.59,
+     "understands": 0.35,
+     "trusts": 0.17,
+     "shares": 0.14
+    },
+    "Thomas Nkemelu": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.02,
+      "annoyed": 0.98,
+      "offended": 0
+     },
+     "confidence": 0.98,
+     "understands": 0.91,
+     "trusts": 0.05,
+     "shares": 0.2
+    },
+    "Emily Zhao": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.67,
+      "neutral": 0,
+      "confused": 0.06,
+      "bored": 0,
+      "annoyed": 0.27,
+      "offended": 0
+     },
+     "confidence": 0.61,
+     "understands": 0.72,
+     "trusts": 0.31,
+     "shares": 0.63
+    },
+    "Hans Müller": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0.01,
+      "bored": 0,
+      "annoyed": 0.98,
+      "offended": 0.01
+     },
+     "confidence": 0.97,
+     "understands": 0.5,
+     "trusts": 0.07,
+     "shares": 0.1
+    },
+    "Selin Yıldız": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 1,
+     "understands": 0.91,
+     "trusts": 0.08,
+     "shares": 0.38
+    },
+    "Reginald Howard": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.99,
+      "offended": 0.01
+     },
+     "confidence": 0.99,
+     "understands": 0.76,
+     "trusts": 0.1,
+     "shares": 0.18
+    },
+    "Anika Sharma": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 1,
+      "offended": 0
+     },
+     "confidence": 0.99,
+     "understands": 0.9,
+     "trusts": 0.04,
+     "shares": 0.1
+    },
+    "Jorge Martínez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.97,
+      "offended": 0
+     },
+     "confidence": 0.96,
+     "understands": 0.86,
+     "trusts": 0.07,
+     "shares": 0.04
+    },
+    "Freya Jensen": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.15,
+      "annoyed": 0.85,
+      "offended": 0
+     },
+     "confidence": 0.82,
+     "understands": 0.84,
+     "trusts": 0.09,
+     "shares": 0.04
+    },
+    "Kofi Boateng": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.96,
+      "offended": 0.01
+     },
+     "confidence": 0.95,
+     "understands": 0.79,
+     "trusts": 0.1,
+     "shares": 0.06
+    },
+    "Lauren Fitzgerald": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0.01,
+      "annoyed": 0.97,
+      "offended": 0.01
+     },
+     "confidence": 0.97,
+     "understands": 0.83,
+     "trusts": 0.09,
+     "shares": 0.14
+    },
+    "Ricardo Silva": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.03,
+      "confused": 0.56,
+      "bored": 0.26,
+      "annoyed": 0.14,
+      "offended": 0
+     },
+     "confidence": 0.49,
+     "understands": 0.17,
+     "trusts": 0.1,
+     "shares": 0.06
+    },
+    "Ayesha Malik": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.03,
+      "confused": 0.28,
+      "bored": 0.14,
+      "annoyed": 0.52,
+      "offended": 0
+     },
+     "confidence": 0.45,
+     "understands": 0.42,
+     "trusts": 0.19,
+     "shares": 0.19
+    },
+    "Brian Sullivan": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.04,
+      "annoyed": 0.92,
+      "offended": 0
+     },
+     "confidence": 0.91,
+     "understands": 0.81,
+     "trusts": 0.12,
+     "shares": 0.16
+    },
+    "Nkechi Eze": {
+     "reaction": {
+      "delighted": 0.03,
+      "interested": 0.09,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.13,
+      "annoyed": 0.74,
+      "offended": 0
+     },
+     "confidence": 0.7,
+     "understands": 0.88,
+     "trusts": 0.18,
+     "shares": 0.42
+    },
+    "Stefan Weiss": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.03,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.09999999999999999,
+      "annoyed": 0.86,
+      "offended": 0
+     },
+     "confidence": 0.83,
+     "understands": 0.87,
+     "trusts": 0.15,
+     "shares": 0.19
+    },
+    "Maya Goldberg": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.19,
+      "neutral": 0.05,
+      "confused": 0,
+      "bored": 0.29,
+      "annoyed": 0.47000000000000003,
+      "offended": 0
+     },
+     "confidence": 0.37,
+     "understands": 0.88,
+     "trusts": 0.25,
+     "shares": 0.28
+    },
+    "Abdul Rahman": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.02,
+      "neutral": 0.04,
+      "confused": 0.64,
+      "bored": 0.14,
+      "annoyed": 0.16,
+      "offended": 0
+     },
+     "confidence": 0.57,
+     "understands": 0.18,
+     "trusts": 0.13,
+     "shares": 0.2
+    },
+    "Patricia Alvarez": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0.01,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.03,
+      "annoyed": 0.95,
+      "offended": 0
+     },
+     "confidence": 0.94,
+     "understands": 0.86,
+     "trusts": 0.08,
+     "shares": 0.09
+    },
+    "Owen Hughes": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.86,
+      "annoyed": 0.13,
+      "offended": 0
+     },
+     "confidence": 0.84,
+     "understands": 0.67,
+     "trusts": 0.09,
+     "shares": 0.06
+    },
+    "Sunita Patel": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0.01,
+      "confused": 0,
+      "bored": 0.62,
+      "annoyed": 0.37,
+      "offended": 0
+     },
+     "confidence": 0.55,
+     "understands": 0.73,
+     "trusts": 0.12,
+     "shares": 0.09
+    },
+    "Julien Moreau": {
+     "reaction": {
+      "delighted": 0,
+      "interested": 0,
+      "neutral": 0,
+      "confused": 0,
+      "bored": 0,
+      "annoyed": 0.98,
+      "offended": 0.02
+     },
+     "confidence": 0.97,
+     "understands": 0.85,
+     "trusts": 0.07,
+     "shares": 0.2
+    }
+   }
+  }
+ }
+}
