@@ -40,7 +40,7 @@ applies; this file holds what is specific to this repo.
   print, log, or write it. The browser never sees it; only `api/` and `server/`
   hold the client. In Vercel it is set with `vercel env add`, piped, never on a
   command line.
-- Your text goes to Jev and comes back as numbers; this site keeps none of it:
+- Your text goes to Jev and comes back as numbers; it lives in the link and nowhere else:
   the handler logs statuses and durations only, but the message is in the URL,
   so Vercel's request logs and the CDN cache key see it, and TypeSafe receives
   it. Web Analytics gets the URL with `m` stripped by the `beforeSend` hook in

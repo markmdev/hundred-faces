@@ -13,7 +13,7 @@ import { CACHE_NONE, CACHE_WALL, react, type ReactOptions } from "../server/reac
 import { fetchWall, WallRequestError, wallUrl } from "../src/client/api.ts";
 import { aggregateWall } from "../src/shared/aggregate.ts";
 import { PRESETS } from "../src/shared/presets.ts";
-import { MAX_MESSAGE_CHARS, MAX_MESSAGE_URL_BYTES, messageTooLong, type WallResponse } from "../src/shared/types.ts";
+import { MAX_MESSAGE_CHARS, MAX_MESSAGE_URL_BYTES, messageQuery, messageTooLong, type WallResponse } from "../src/shared/types.ts";
 import { judgeWall } from "../src/shared/wall.ts";
 import { fixtureClient } from "./helpers/fixture-client.ts";
 
@@ -22,14 +22,18 @@ const noAbort = new AbortController().signal;
 const ORIGIN = "http://wall.test";
 
 // The same strings on both sides of the limits. An emoji is one code point
-// and 12 bytes once URL-encoded, so 2,000 of them fit the count and not the
-// encoded size; the smaller over-size string also fits Node's 16 KB header
-// limit, so it reaches the handler over HTTP.
+// and 12 bytes in the query, so 2,000 of them fit the count and not the wire;
+// the smaller over-size string also fits Node's 16 KB header limit, so it
+// reaches the handler over HTTP. The mixed string is 2,000 code points whose
+// `!`s URLSearchParams escapes and encodeURIComponent does not: it fits the
+// count, and only the query as sent shows it is over.
 const OVER_BY_COUNT = "x".repeat(MAX_MESSAGE_CHARS + 1);
 const AT_COUNT_LIMIT = "x".repeat(MAX_MESSAGE_CHARS);
 const TWO_THOUSAND_EMOJI = "🙂".repeat(MAX_MESSAGE_CHARS);
-const AT_BYTES_LIMIT = "🙂".repeat(MAX_MESSAGE_URL_BYTES / 12);
-const OVER_BY_BYTES = "🙂".repeat(MAX_MESSAGE_URL_BYTES / 12 + 1);
+const EMOJI_FITTING = Math.floor((MAX_MESSAGE_URL_BYTES - "m=".length) / 12);
+const AT_BYTES_LIMIT = "🙂".repeat(EMOJI_FITTING);
+const OVER_BY_BYTES = "🙂".repeat(EMOJI_FITTING + 1);
+const MIXED_OVER = "🙂".repeat(909) + "!".repeat(MAX_MESSAGE_CHARS - 909);
 
 const listen = (server: ReturnType<typeof createNodeServer>): Promise<string> =>
   new Promise((resolve) => {
@@ -52,12 +56,17 @@ const rejectsWithStatus = (promise: Promise<unknown>, status: number, message: R
 describe("the message limits", () => {
   it("count code points first, then the encoded length, with one reason for each", () => {
     assert.equal(messageTooLong(AT_COUNT_LIMIT), null);
-    assert.equal(encodeURIComponent(AT_BYTES_LIMIT).length, MAX_MESSAGE_URL_BYTES);
+    assert.ok(messageQuery(AT_BYTES_LIMIT).length <= MAX_MESSAGE_URL_BYTES);
+    assert.ok(messageQuery(AT_BYTES_LIMIT).length > MAX_MESSAGE_URL_BYTES - 12);
     assert.equal(messageTooLong(AT_BYTES_LIMIT), null);
     assert.equal(messageTooLong(OVER_BY_COUNT), `This message is ${MAX_MESSAGE_CHARS + 1} characters; the limit is ${MAX_MESSAGE_CHARS} characters.`);
-    // 4,000 UTF-16 units, but 2,000 code points: within the count, refused for the encoded size alone.
-    assert.match(messageTooLong(TWO_THOUSAND_EMOJI)!, new RegExp(`^This message is ${MAX_MESSAGE_CHARS * 12} bytes .* the limit is ${MAX_MESSAGE_URL_BYTES} bytes`));
+    // 4,000 UTF-16 units, but 2,000 code points: within the count, refused for the wire size alone.
+    assert.match(messageTooLong(TWO_THOUSAND_EMOJI)!, new RegExp(`^This message is ${messageQuery(TWO_THOUSAND_EMOJI).length} bytes .* the limit is ${MAX_MESSAGE_URL_BYTES} bytes`));
     assert.match(messageTooLong(OVER_BY_BYTES)!, /bytes/);
+    assert.ok(encodeURIComponent(MIXED_OVER).length < MAX_MESSAGE_URL_BYTES, "the mixed string would pass a check on encodeURIComponent");
+    assert.match(messageTooLong(MIXED_OVER)!, new RegExp(`^This message is ${messageQuery(MIXED_OVER).length} bytes`));
+    // The query the limit measures is the one the browser sends.
+    assert.equal(wallUrl(MIXED_OVER), `/api/react?${messageQuery(MIXED_OVER)}`);
   });
 });
 
@@ -89,7 +98,7 @@ describe("GET /api/react", () => {
     assert.deepEqual(await empty.json(), { error: "m must be a non-empty message" });
     const missing = await react(new Request(`${ORIGIN}/api/react`), options);
     assert.equal(missing.status, 400);
-    for (const message of [OVER_BY_COUNT, TWO_THOUSAND_EMOJI, OVER_BY_BYTES]) {
+    for (const message of [OVER_BY_COUNT, TWO_THOUSAND_EMOJI, OVER_BY_BYTES, MIXED_OVER]) {
       const long = await get(message);
       assert.equal(long.status, 413);
       assert.equal(long.headers.get("cache-control"), CACHE_NONE);

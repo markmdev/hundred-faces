@@ -29,7 +29,7 @@ far: the browser aborts on clear, and the local Node adapter turns a dropped
 connection into that abort; that Vercel does the same has not been observed.
 
 Judging is `GET /api/react?m=<message>`, the message URL-encoded and capped at
-2,000 code points and 12,000 bytes once encoded (413 beyond either; Vercel's
+2,000 code points and 13,000 bytes as the `m=` query it makes (413 beyond either; Vercel's
 CDN refuses a URL over 14 KB before the function runs, and the browser refuses
 the same messages with the same reason before sending). A wall is answered with
 `Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800`, so
@@ -63,12 +63,13 @@ Abuse controls: a Vercel firewall rule on the project (not in this repo) rate
 limits `/api/react` to 60 requests per minute per IP, fixed window, answered
 429; the handler answers 403 to a browser request whose `Sec-Fetch-Site` is
 neither `same-origin` nor `none`; the message limits are 2,000 code points and
-12,000 encoded bytes; the browser judges on pause with one request in flight and the newest text queued
+13,000 bytes as the `m=` query; the browser judges on pause with one request in flight and the newest text queued
 behind it. On a 429 (from Jev or from the firewall) the browser waits 2 s and
 retries once, then shows "The wall is busy right now. Try again in a few
 seconds."
 
-Your text goes to Jev and comes back as numbers; this site keeps none of it.
+Your text goes to Jev and comes back as numbers; it lives in the link and nowhere else.
+The link is the page URL with `m=`, made when a message is judged and handed on by the share row; the API request carries the same query.
 The handler logs each request's status and duration and nothing else. The
 message rides in the URL, so Vercel's request logs see it (kept one hour on
 Hobby) and the CDN keys its cache on it (a day, plus a week stale); TypeSafe

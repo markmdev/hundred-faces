@@ -286,6 +286,10 @@ textarea {
   opacity: 0.55;
 }
 
+.share[hidden] {
+  display: none;
+}
+
 .share {
   display: flex;
   flex-wrap: wrap;

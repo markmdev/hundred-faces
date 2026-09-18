@@ -2,7 +2,7 @@
 // Kept free of DOM access so the contract test runs it in Node against the
 // handler.
 
-import { MESSAGE_PARAM, type WallErrorResponse, type WallResponse } from "../shared/types.ts";
+import { messageQuery, type WallErrorResponse, type WallResponse } from "../shared/types.ts";
 
 // A response that was not a wall: the HTTP status and the server's reason.
 export class WallRequestError extends Error {
@@ -18,16 +18,20 @@ export class WallRequestError extends Error {
 // A GET with the message in the query, so the CDN answers a repeated message
 // without a Jev call.
 export function wallUrl(message: string, baseUrl = ""): string {
-  return `${baseUrl}/api/react?${new URLSearchParams({ [MESSAGE_PARAM]: message })}`;
+  return `${baseUrl}/api/react?${messageQuery(message)}`;
 }
 
+// The page URL carries the message too; sent as the Referer it would double
+// the request's size, and the local Node server refuses headers over 16 KB.
+const NO_REFERRER: RequestInit = { referrerPolicy: "no-referrer" };
+
 export async function fetchWall(message: string, signal: AbortSignal, baseUrl = ""): Promise<WallResponse> {
-  return readWall(await fetch(wallUrl(message, baseUrl), { signal }));
+  return readWall(await fetch(wallUrl(message, baseUrl), { ...NO_REFERRER, signal }));
 }
 
 // A preset's recorded wall, built into the site from the recording.
 export async function fetchPreset(id: string, signal: AbortSignal): Promise<WallResponse> {
-  return readWall(await fetch(`/presets/${id}.json`, { signal }));
+  return readWall(await fetch(`/presets/${id}.json`, { ...NO_REFERRER, signal }));
 }
 
 // The wall, or the reason the server gave. A 429 from the platform's rate

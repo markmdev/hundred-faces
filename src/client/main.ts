@@ -9,7 +9,7 @@ import { PRESETS, type Preset } from "../shared/presets.ts";
 import { NOULS } from "../shared/questions.ts";
 import { percentages, REACTION_FACES, REACTIONS } from "../shared/reactions.ts";
 import { postOnXUrl, resultLine, shareResult, shareText } from "../shared/share.ts";
-import { MESSAGE_PARAM, messageTooLong, type WallResponse } from "../shared/types.ts";
+import { MESSAGE_PARAM, messageQuery, messageTooLong, type WallResponse } from "../shared/types.ts";
 import { fetchPreset, fetchWall, WallRequestError } from "./api.ts";
 import { barRow } from "./bars.ts";
 import { Card } from "./card.ts";
@@ -54,7 +54,7 @@ const card = new Card(cardEl, !hoverCapable);
 
 // The wall on show: the message, the answers, and whether they came from a
 // preset recording rather than a live judgement. Null while the wall rests.
-// The URL's message, the share row, and the saved image all describe it.
+// The share row and the saved image describe it and nothing else.
 interface ShownWall {
   text: string;
   response: WallResponse;
@@ -145,7 +145,10 @@ function renderStatus(): void {
 // Share loop
 // ---------------------------------------------------------------------------
 
-// The page URL carries the shown wall's message, so the link opens on the same wall.
+// The page URL carries the message being judged, so a refresh retries it and
+// a shared link opens on it; a failed judgement leaves it there for the retry.
+// Other parameters on the URL (a tracking tag from wherever the link was
+// posted) are kept.
 function setUrlMessage(text: string | null): void {
   const url = new URL(location.href);
   if (text === null) url.searchParams.delete(MESSAGE_PARAM);
@@ -153,10 +156,15 @@ function setUrlMessage(text: string | null): void {
   history.replaceState(null, "", url);
 }
 
+// The link the share row hands out: this page with the shown wall's message
+// and nothing else, whatever the address bar has picked up.
+function linkFor(text: string): string {
+  return `${location.origin}${location.pathname}?${messageQuery(text)}`;
+}
+
 function renderShare(): void {
-  setUrlMessage(shown?.text ?? null);
   shareEl.hidden = shown === null;
-  if (shown) shareX.href = postOnXUrl(shareText(shareResult(shown.response.faces), location.href));
+  if (shown) shareX.href = postOnXUrl(shareText(shareResult(shown.response.faces), linkFor(shown.text)));
 }
 
 shareImage.addEventListener("click", () => {
@@ -180,9 +188,10 @@ shareImage.addEventListener("click", () => {
 const COPY_LABEL = shareCopy.textContent;
 let copyHandle = 0;
 shareCopy.addEventListener("click", async () => {
+  if (!shown) return;
   let label = "Copied";
   try {
-    await navigator.clipboard.writeText(location.href);
+    await navigator.clipboard.writeText(linkFor(shown.text));
   } catch (err) {
     console.error("copying the link failed:", err);
     label = "Couldn't copy";
@@ -216,6 +225,7 @@ function requestUpdate(text: string): void {
   const seq = ++latestSeq;
   const controller = new AbortController();
   inFlight = controller;
+  setUrlMessage(text);
   renderStatus();
   void settle(seq, text, wallFor(text, controller.signal)).finally(() => {
     // clearWall nulls inFlight, and a newer request may already own the slot
@@ -296,11 +306,13 @@ function restWall(): void {
 }
 
 // A message over a limit never leaves the browser: the wall rests and the
-// status says why, in place of a request.
+// status says why, in place of a request. It leaves the URL too; a link
+// cannot carry it.
 function refuse(reason: string): void {
   shownSeq = ++latestSeq;
   shownError = reason;
   restWall();
+  setUrlMessage(null);
   renderStatus();
   refreshCard();
 }
@@ -315,6 +327,7 @@ function clearWall(): void {
   inFlight = null;
   pendingText = null;
   restWall();
+  setUrlMessage(null);
   renderStatus();
   refreshCard();
 }

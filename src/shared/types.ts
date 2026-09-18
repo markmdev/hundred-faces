@@ -10,12 +10,20 @@ export const MESSAGE_PARAM = "m";
 // Longest message accepted, counted in code points; 2,000 keeps a typical post
 // well inside Jev's context.
 export const MAX_MESSAGE_CHARS = 2_000;
-// Longest message accepted on the wire, as the length of
-// encodeURIComponent(message). The message travels in the URL so the CDN can
+// Longest message accepted on the wire, as the length of the `m=` query it
+// makes (see messageQuery). The message travels in the URL so the CDN can
 // cache the answer per message, and Vercel's CDN answers 414 to a URL over
 // 14 KB before the function runs (vercel.com/docs/errors/URL_TOO_LONG);
-// 12,000 leaves room for the host, the path, and the parameter name.
-export const MAX_MESSAGE_URL_BYTES = 12_000;
+// 13,000 leaves room for the host, the path, and the tracking parameters a
+// shared link tends to pick up.
+export const MAX_MESSAGE_URL_BYTES = 13_000;
+
+// The query that carries a message, exactly as the API request and the page
+// URL send it (URLSearchParams escapes more than encodeURIComponent, so the
+// limit measures this and nothing else).
+export function messageQuery(message: string): string {
+  return new URLSearchParams({ [MESSAGE_PARAM]: message }).toString();
+}
 
 // Why a message cannot be judged, in the visitor's words, or null when it fits
 // both bounds. The browser runs it before sending and the server before
@@ -23,7 +31,7 @@ export const MAX_MESSAGE_URL_BYTES = 12_000;
 export function messageTooLong(message: string): string | null {
   const length = Array.from(message).length;
   if (length > MAX_MESSAGE_CHARS) return `This message is ${length} characters; the limit is ${MAX_MESSAGE_CHARS} characters.`;
-  const bytes = encodeURIComponent(message).length;
+  const bytes = messageQuery(message).length;
   if (bytes > MAX_MESSAGE_URL_BYTES) {
     return `This message is ${bytes} bytes once encoded for the link; the limit is ${MAX_MESSAGE_URL_BYTES} bytes (emoji and non-Latin text take more).`;
   }
