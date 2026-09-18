@@ -412,6 +412,20 @@ for (const el of [wallEl, cardEl]) {
 
 wallEl.classList.add("resting");
 
+// Vercel Web Analytics reports the page URL with each view; the message must
+// not travel with it. The queue is how the documented hook reaches the script
+// tag before it loads (vercel.com/docs/analytics/redacting-sensitive-data).
+type AnalyticsQueue = { va?: (...args: unknown[]) => void; vaq?: unknown[][] };
+const analytics = window as Window & AnalyticsQueue;
+analytics.va ??= (...args) => {
+  (analytics.vaq ??= []).push(args);
+};
+analytics.va("beforeSend", (event: { url: string }) => {
+  const url = new URL(event.url);
+  url.searchParams.delete(MESSAGE_PARAM);
+  return { ...event, url: url.toString() };
+});
+
 const initial = new URL(location.href).searchParams.get(MESSAGE_PARAM);
 if (initial !== null && initial.trim() !== "") {
   messageBox.value = initial;

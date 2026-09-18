@@ -42,8 +42,9 @@ applies; this file holds what is specific to this repo.
   command line.
 - Your text goes to Jev and comes back as numbers; this site keeps none of it:
   the handler logs statuses and durations only, but the message is in the URL,
-  so Vercel's request logs, the CDN cache key, and Web Analytics (query
-  parameters) see it, and TypeSafe receives it.
+  so Vercel's request logs and the CDN cache key see it, and TypeSafe receives
+  it. Web Analytics gets the URL with `m` stripped by the `beforeSend` hook in
+  `src/client/main.ts`.
 - Jev cannot count or do arithmetic: every aggregate is computed in code.
 - Every question names its persona by path and says the judgment is about that
   person, not a typical reader. Keep instructions and criteria literal and aligned.

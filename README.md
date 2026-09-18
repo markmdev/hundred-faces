@@ -72,10 +72,7 @@ Your text goes to Jev and comes back as numbers; this site keeps none of it.
 The handler logs each request's status and duration and nothing else. The
 message rides in the URL, so Vercel's request logs see it (kept one hour on
 Hobby) and the CDN keys its cache on it (a day, plus a week stale); TypeSafe
-receives it as the request state. Vercel Web Analytics, once enabled, stores
-query parameters with each page view (its data-point table lists "Query Params
-(Filtered)"; what the filter removes is not documented, so treat `m` as
-collected unless a `beforeSend` hook strips it).
+receives it as the request state. Vercel Web Analytics, once enabled, gets the page URL with `m` removed by the `beforeSend` hook in `src/client/main.ts` (Vercel's documented way to redact a query parameter); the script only loads once Analytics is enabled, so the beacon leaving without `m` has not been observed yet.
 
 ## The share loop
 
