@@ -1,6 +1,7 @@
 // Preset messages for the demo moment. They come in contrasting pairs so the
 // wall visibly changes between them; the fixture in test/fixtures records
-// Jev's answers for exactly these strings.
+// Jev's answers for exactly these strings, and the page serves those
+// recordings from public/presets instead of calling Jev.
 
 export interface Preset {
   id: string;
@@ -10,33 +11,36 @@ export interface Preset {
 
 export const PRESETS: readonly Preset[] = [
   {
-    id: "price-blunt",
-    label: "Price increase, blunt",
-    message:
-      "Effective next month, your subscription price is going up from $9.99 to $14.99. This change is automatic. No action is needed.",
+    id: "launch-hype",
+    label: "Launch, hype",
+    message: "🚀 WE'RE LIVE. 18 months of grind and Clearpath is finally here. This changes everything for how teams ship. Link in bio 👇",
   },
   {
-    id: "price-gentle",
-    label: "Price increase, gentle",
+    id: "launch-plain",
+    label: "Launch, plain",
     message:
-      "We're changing our pricing on October 15: your plan will move from $9.99 to $14.99 a month. We know a price change is never welcome, so here is what you get for it: offline mode, family sharing for up to five people, and priority support. If the new price doesn't work for you, cancel any time before October 15 and we'll refund this month in full.",
+      "Clearpath is out today. It's a checklist that lives inside your pull requests, so nothing ships half-done. Free for teams under ten. Here's what it looks like:",
   },
   {
-    id: "blurb-jargon",
-    label: "Product blurb, jargon",
-    message:
-      "Introducing SynergyMesh: a cloud-native, AI-augmented orchestration fabric that leverages composable microservices to hyperscale your omnichannel value streams with zero-trust observability.",
+    id: "dm-salesy",
+    label: "Cold DM, salesy",
+    message: "Hey! Love what you're building. I run a growth agency and we've helped 40+ startups 3x their pipeline. Got 15 min this week?",
   },
   {
-    id: "blurb-plain",
-    label: "Product blurb, plain",
+    id: "dm-human",
+    label: "Cold DM, human",
     message:
-      "SynergyMesh is a tool that helps the apps your company uses talk to each other. It runs online, watches for problems, and tells you when something breaks. You pay per app you connect.",
+      "Hi Priya, your post on incident reviews changed how we run ours. If you're ever up for it, I'd love 15 minutes to hear how you got the team to actually read them. No pitch.",
   },
   {
-    id: "clickbait",
-    label: "Clickbait headline",
+    id: "hot-take",
+    label: "Hot take",
+    message: "Unpopular opinion: standups are a waste of time and everyone knows it. Cancel them for a month and see what happens.",
+  },
+  {
+    id: "apology",
+    label: "Apology",
     message:
-      "Doctors HATE this one weird trick: you won't BELIEVE what happens when you stop drinking coffee for 7 days! (Number 4 will shock you)",
+      "We messed up. Yesterday's outage took your dashboards down for four hours because we shipped a change without testing it properly. Here's exactly what happened and what we're changing so it doesn't happen again.",
   },
 ];

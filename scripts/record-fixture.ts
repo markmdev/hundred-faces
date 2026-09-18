@@ -21,6 +21,7 @@ for (const preset of PRESETS) {
   fixture.model = wall.model;
   fixture.presets[preset.id] = {
     message: preset.message,
+    latencyMs: wall.latencyMs,
     inputTokens: wall.inputTokens,
     faces: Object.fromEntries(wall.faces.map((face, i) => [PERSONAS[i]!.name, face])),
   };

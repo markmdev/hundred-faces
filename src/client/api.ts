@@ -1,7 +1,8 @@
-// The browser's side of the /api/react contract. Kept free of DOM access so
-// the contract test runs it in Node against the server.
+// The browser's side of the /api/react contract and of the recorded presets.
+// Kept free of DOM access so the contract test runs it in Node against the
+// handler.
 
-import type { WallErrorResponse, WallRequest, WallResponse } from "../shared/types.ts";
+import { MESSAGE_PARAM, type WallErrorResponse, type WallResponse } from "../shared/types.ts";
 
 // A response that was not a wall: the HTTP status and the server's reason.
 export class WallRequestError extends Error {
@@ -14,17 +15,32 @@ export class WallRequestError extends Error {
   }
 }
 
+// A GET with the message in the query, so the CDN answers a repeated message
+// without a Jev call.
+export function wallUrl(message: string, baseUrl = ""): string {
+  return `${baseUrl}/api/react?${new URLSearchParams({ [MESSAGE_PARAM]: message })}`;
+}
+
 export async function fetchWall(message: string, signal: AbortSignal, baseUrl = ""): Promise<WallResponse> {
-  const body: WallRequest = { message };
-  const res = await fetch(`${baseUrl}/api/react`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(body),
-    signal,
-  });
-  const payload = (await res.json()) as WallResponse | WallErrorResponse;
-  if (!res.ok || "error" in payload) {
-    throw new WallRequestError(res.status, "error" in payload ? payload.error : `HTTP ${res.status}`);
+  return readWall(await fetch(wallUrl(message, baseUrl), { signal }));
+}
+
+// A preset's recorded wall, built into the site from the fixture.
+export async function fetchPreset(id: string, signal: AbortSignal, baseUrl = ""): Promise<WallResponse> {
+  return readWall(await fetch(`${baseUrl}/presets/${id}.json`, { signal }));
+}
+
+// The wall, or the reason the server gave. A 429 from the platform's rate
+// limit arrives without a JSON body, so the status alone must be enough.
+async function readWall(res: Response): Promise<WallResponse> {
+  const text = await res.text();
+  let payload: unknown = null;
+  try {
+    payload = JSON.parse(text);
+  } catch {
+    payload = null;
   }
-  return payload;
+  const failed = typeof payload === "object" && payload !== null && "error" in payload ? (payload as WallErrorResponse) : null;
+  if (!res.ok || failed || payload === null) throw new WallRequestError(res.status, failed ? failed.error : `HTTP ${res.status}`);
+  return payload as WallResponse;
 }

@@ -1,19 +1,16 @@
-// Entry point: the only process that holds the TypeSafe API key. Reads
-// TYPESAFE_API_KEY from the environment (the SDK refuses to start without it),
-// serves /api on loopback, and in production serves the built front end from
-// dist/.
+// Local development entry point: the only local process that holds the
+// TypeSafe API key, serving /api/react on loopback. Vite proxies /api here.
+// In production the same handler runs as the Vercel function in api/react.ts
+// and Vercel serves the built page.
 
-import { resolve } from "node:path";
-import { TypeSafeClient } from "@typesafe-ai/sdk";
 import { BATCH_SIZE } from "../src/shared/wall.ts";
-import { createApp } from "./app.ts";
+import { jevClient } from "./jev.ts";
+import { createNodeServer } from "./node.ts";
+import { react } from "./react.ts";
 
 const PORT = Number.parseInt(process.env.PORT ?? "8787", 10);
-const distDir = process.env.NODE_ENV === "production" ? resolve(import.meta.dirname, "..", "dist") : null;
+const client = jevClient();
 
-const client = new TypeSafeClient({ timeout: 20_000 });
-const app = createApp({ client, distDir });
-
-app.listen(PORT, "127.0.0.1", () => {
-  console.log(`hundred-faces on http://127.0.0.1:${PORT} (model ${client.defaultModel}, batch size ${BATCH_SIZE}${distDir ? `, serving ${distDir}` : ", API only"})`);
+createNodeServer((request) => react(request, { client })).listen(PORT, "127.0.0.1", () => {
+  console.log(`hundred-faces API on http://127.0.0.1:${PORT} (model ${client.defaultModel}, batch size ${BATCH_SIZE})`);
 });

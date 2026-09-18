@@ -14,5 +14,5 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "include": ["src", "server", "scripts", "test"]
+  "include": ["api", "src", "server", "scripts", "test"]
 }

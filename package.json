@@ -5,13 +5,13 @@
   "description": "A wall of one hundred faces that react while you type, judged by TypeSafe AI's Jev.",
   "type": "module",
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "node scripts/dev.ts",
     "server": "node server/main.ts",
-    "build": "vite build",
-    "start": "NODE_ENV=production node server/main.ts",
+    "presets": "node scripts/build-presets.ts",
+    "build": "npm run presets && vite build",
     "typecheck": "tsc --noEmit",
     "test": "node --test 'test/**/*.test.ts'",
     "check": "npm run typecheck && npm test && npm run build",

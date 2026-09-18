@@ -1,8 +1,10 @@
 // Runs the API server and the Vite dev server together, so `npm run dev` is
-// the whole development setup. Either child exiting, or failing to start,
-// stops the other.
+// the whole development setup. The presets are built first so the page can
+// load them. Either child exiting, or failing to start, stops the other.
 
-import { spawn } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
+
+execFileSync("node", ["scripts/build-presets.ts"], { stdio: "inherit" });
 
 const children = [
   spawn("node", ["--watch", "server/main.ts"], { stdio: "inherit" }),

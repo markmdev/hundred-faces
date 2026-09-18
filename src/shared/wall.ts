@@ -7,8 +7,8 @@ import { PERSONAS } from "./personas.ts";
 import { buildQuestions, buildState, readAnswers, type BatchQuestions, type BatchState, type FaceAnswer } from "./questions.ts";
 import type { WallResponse } from "./types.ts";
 
-// Measured 2026-09-17; the reasoning and the numbers are in log/2026-09-17.md.
-export const BATCH_SIZE = 5;
+// Measured 2026-09-17 (log/2026-09-17.md); ten chosen 2026-09-18 (log/2026-09-18.md).
+export const BATCH_SIZE = 10;
 
 // The slice of the SDK client this module needs. The real TypeSafeClient
 // satisfies it; tests pass a fixture-backed fake.
