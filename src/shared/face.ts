@@ -5,6 +5,7 @@
 import { REACTION_FACES, REACTIONS, type FaceParams, type ReactionDistribution } from "./reactions.ts";
 
 export const FACE_SIZE = 64;
+export const HEAD = { cx: 32, cy: 32, r: 29 } as const;
 
 // Weighted sum of every pure-reaction parameter set. Probabilities from Jev
 // sum to 1; the weights are renormalised anyway so a slightly-off sum from

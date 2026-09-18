@@ -1,5 +1,6 @@
 // Wires the page together: the text box, the presets, the live update loop
-// against the server, the wall of faces, the aggregates, and the hover card.
+// against the server, the wall of faces, the aggregates, the share loop, and
+// the hover card.
 
 import { aggregateWall } from "../shared/aggregate.ts";
 import { rgbCss } from "../shared/face.ts";
@@ -7,10 +8,12 @@ import { PERSONAS } from "../shared/personas.ts";
 import { PRESETS, type Preset } from "../shared/presets.ts";
 import { NOULS, type FaceAnswer } from "../shared/questions.ts";
 import { percentages, REACTION_FACES, REACTIONS } from "../shared/reactions.ts";
+import { postOnXUrl, resultLine, shareResult, shareText } from "../shared/share.ts";
 import { MAX_MESSAGE_CHARS, MESSAGE_PARAM, type WallResponse } from "../shared/types.ts";
 import { fetchPreset, fetchWall, WallRequestError } from "./api.ts";
 import { barRow } from "./bars.ts";
 import { FaceWall } from "./faces.ts";
+import { renderWallImage } from "./image.ts";
 import { Tooltip } from "./tooltip.ts";
 
 // Keystrokes settle for this long before a request goes out.
@@ -38,6 +41,10 @@ const reactionBar = must<HTMLElement>("reaction-bar");
 const legendEl = must<HTMLElement>("legend");
 const noulsEl = must<HTMLElement>("nouls");
 const wallEl = must<HTMLElement>("wall");
+const shareEl = must<HTMLElement>("share");
+const shareX = must<HTMLAnchorElement>("share-x");
+const shareImage = must<HTMLButtonElement>("share-image");
+const shareCopy = must<HTMLButtonElement>("share-copy");
 
 const wall = new FaceWall(wallEl, PERSONAS);
 const tooltip = new Tooltip(must<HTMLElement>("tooltip"));
@@ -125,7 +132,7 @@ function renderStatus(): void {
 }
 
 // ---------------------------------------------------------------------------
-// The message in the URL
+// Share loop
 // ---------------------------------------------------------------------------
 
 // The page URL carries the message, so the link opens on the same wall.
@@ -135,6 +142,46 @@ function setUrlMessage(text: string | null): void {
   else url.searchParams.set(MESSAGE_PARAM, text);
   history.replaceState(null, "", url);
 }
+
+function renderShare(): void {
+  const shown = answers.length > 0;
+  shareEl.hidden = !shown;
+  if (shown) shareX.href = postOnXUrl(shareText(shareResult(answers), location.href));
+}
+
+shareImage.addEventListener("click", () => {
+  if (answers.length === 0) return;
+  const canvas = renderWallImage(answers, messageBox.value, `A hundred faces read it: ${resultLine(shareResult(answers))}.`);
+  canvas.toBlob((blob) => {
+    if (!blob) {
+      console.error("the wall image could not be encoded");
+      return;
+    }
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "hundred-faces.png";
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1_000);
+  }, "image/png");
+});
+
+const COPY_LABEL = shareCopy.textContent;
+let copyHandle = 0;
+shareCopy.addEventListener("click", async () => {
+  let label = "Copied";
+  try {
+    await navigator.clipboard.writeText(location.href);
+  } catch (err) {
+    console.error("copying the link failed:", err);
+    label = "Couldn't copy";
+  }
+  shareCopy.textContent = label;
+  clearTimeout(copyHandle);
+  copyHandle = window.setTimeout(() => {
+    shareCopy.textContent = COPY_LABEL;
+  }, 1_500);
+});
 
 // ---------------------------------------------------------------------------
 // Live updates
@@ -205,6 +252,7 @@ async function settle(seq: number, request: Promise<WallResponse>): Promise<void
     wall.show(answers.map((face) => face.reaction));
     wallEl.classList.remove("resting");
     renderSummary(response);
+    renderShare();
   } catch (err) {
     if (seq < shownSeq) return;
     shownSeq = seq;
@@ -222,6 +270,7 @@ function restWall(): void {
   wall.rest();
   wallEl.classList.add("resting");
   clearSummary();
+  renderShare();
 }
 
 // An empty box takes effect at once: nothing in flight may render, and the

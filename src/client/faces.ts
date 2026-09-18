@@ -2,7 +2,7 @@
 // parameters. An update animates every face from its current parameters to
 // the new blend over one short tween.
 
-import { blendFace, FACE_SIZE, faceGeometry, lerpFace } from "../shared/face.ts";
+import { blendFace, FACE_SIZE, faceGeometry, HEAD, lerpFace } from "../shared/face.ts";
 import type { Persona } from "../shared/personas.ts";
 import { REACTION_FACES, type FaceParams, type ReactionDistribution } from "../shared/reactions.ts";
 
@@ -44,9 +44,9 @@ export class FaceWall {
 
       const head = document.createElementNS(SVG_NS, "circle");
       head.setAttribute("class", "head");
-      head.setAttribute("cx", "32");
-      head.setAttribute("cy", "32");
-      head.setAttribute("r", "29");
+      head.setAttribute("cx", String(HEAD.cx));
+      head.setAttribute("cy", String(HEAD.cy));
+      head.setAttribute("r", String(HEAD.r));
 
       const leftBrow = path("brow");
       const rightBrow = path("brow");
