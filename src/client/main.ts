@@ -12,9 +12,9 @@ import { postOnXUrl, resultLine, shareResult, shareText } from "../shared/share.
 import { MESSAGE_PARAM, messageTooLong, type WallResponse } from "../shared/types.ts";
 import { fetchPreset, fetchWall, WallRequestError } from "./api.ts";
 import { barRow } from "./bars.ts";
+import { Card } from "./card.ts";
 import { FaceWall } from "./faces.ts";
 import { renderWallImage } from "./image.ts";
-import { Tooltip } from "./tooltip.ts";
 
 // Keystrokes settle for this long before a request goes out.
 const DEBOUNCE_MS = 600;
@@ -45,12 +45,12 @@ const shareEl = must<HTMLElement>("share");
 const shareX = must<HTMLAnchorElement>("share-x");
 const shareImage = must<HTMLButtonElement>("share-image");
 const shareCopy = must<HTMLButtonElement>("share-copy");
-const tooltipEl = must<HTMLElement>("tooltip");
+const cardEl = must<HTMLElement>("card");
 
 const wall = new FaceWall(wallEl, PERSONAS);
-const tooltip = new Tooltip(tooltipEl);
 // Pointer devices hover the card; anything else taps it open as a sheet.
 const hoverCapable = matchMedia("(hover: hover)").matches;
+const card = new Card(cardEl, !hoverCapable);
 
 // The wall on show: the message, the answers, and whether they came from a
 // preset recording rather than a live judgement. Null while the wall rests.
@@ -359,12 +359,12 @@ function faceOf(target: EventTarget | null): HTMLElement | null {
 function openCard(face: HTMLElement): void {
   cardFace = face;
   const index = Number.parseInt(face.dataset.index!, 10);
-  tooltip.show(PERSONAS[index]!, shown?.response.faces[index], face.getBoundingClientRect(), !hoverCapable);
+  card.show(PERSONAS[index]!, shown?.response.faces[index], face.getBoundingClientRect());
 }
 
 function closeCard(): void {
   cardFace = null;
-  tooltip.hide();
+  card.hide();
 }
 
 // The card shows the answers on the wall, so it follows every update and clear.
@@ -380,7 +380,6 @@ if (hoverCapable) {
   wallEl.addEventListener("mouseout", (event) => {
     if (!faceOf(event.relatedTarget)) closeCard();
   });
-  wallEl.addEventListener("focusout", closeCard);
 } else {
   // A tap opens the sheet; the same face, or anywhere outside it, closes it.
   wallEl.addEventListener("click", (event) => {
@@ -390,7 +389,7 @@ if (hoverCapable) {
     else openCard(face);
   });
   document.addEventListener("pointerdown", (event) => {
-    if (cardFace && !faceOf(event.target) && !(event.target instanceof Node && tooltipEl.contains(event.target))) closeCard();
+    if (cardFace && !faceOf(event.target) && !(event.target instanceof Node && cardEl.contains(event.target))) closeCard();
   });
 }
 // Keyboard focus opens the card on any device; a tap focuses too, but is not :focus-visible.
@@ -398,6 +397,14 @@ wallEl.addEventListener("focusin", (event) => {
   const face = faceOf(event.target);
   if (face?.matches(":focus-visible")) openCard(face);
 });
+// Focus leaving the wall and the card closes it, in either mode.
+for (const el of [wallEl, cardEl]) {
+  el.addEventListener("focusout", (event) => {
+    const to = event.relatedTarget;
+    if (to instanceof Node && (wallEl.contains(to) || cardEl.contains(to))) return;
+    closeCard();
+  });
+}
 
 // ---------------------------------------------------------------------------
 // Start

@@ -1,6 +1,7 @@
 // The card for one face: who they are, their seven-way reaction distribution,
 // and the three yes/no probabilities. Beside the face on a pointer device, a
-// sheet along the bottom of the screen on touch.
+// sheet along the bottom of the screen on touch; which of the two a page uses
+// is fixed at load.
 
 import { rgbCss } from "../shared/face.ts";
 import type { Persona } from "../shared/personas.ts";
@@ -8,20 +9,25 @@ import { NOULS, type FaceAnswer } from "../shared/questions.ts";
 import { percentages, REACTION_FACES, REACTIONS } from "../shared/reactions.ts";
 import { barRow } from "./bars.ts";
 
-export class Tooltip {
+export class Card {
   readonly #el: HTMLElement;
+  readonly #sheet: boolean;
 
-  constructor(el: HTMLElement) {
+  constructor(el: HTMLElement, sheet: boolean) {
     this.#el = el;
+    this.#sheet = sheet;
+    this.#el.classList.toggle("sheet", sheet);
+    // A hover card describes the face under the pointer; a sheet is something
+    // the visitor opened, and can take focus so a tap inside it does not close it.
+    this.#el.setAttribute("role", sheet ? "dialog" : "tooltip");
+    if (sheet) this.#el.tabIndex = -1;
   }
 
-  show(persona: Persona, answer: FaceAnswer | undefined, anchor: DOMRect, sheet = false): void {
+  show(persona: Persona, answer: FaceAnswer | undefined, anchor: DOMRect): void {
     this.#el.replaceChildren(...render(persona, answer));
-    this.#el.classList.toggle("sheet", sheet);
     this.#el.hidden = false;
-    if (sheet) {
-      this.#el.style.left = "";
-      this.#el.style.top = "";
+    if (this.#sheet) {
+      this.#el.setAttribute("aria-label", `${persona.name}, ${persona.age}`);
       return;
     }
     // Below the face when there is room, otherwise above; kept inside the viewport horizontally.

@@ -85,12 +85,6 @@ textarea {
   resize: vertical;
 }
 
-textarea:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-  border-color: transparent;
-}
-
 .presets {
   display: flex;
   flex-wrap: wrap;
@@ -142,7 +136,7 @@ textarea:focus {
   font-variant-numeric: tabular-nums;
 }
 
-.stat:first-child strong {
+.latency strong {
   font-size: 18px;
 }
 
@@ -261,11 +255,6 @@ textarea:focus {
   -webkit-tap-highlight-color: transparent;
 }
 
-.face:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
 .face svg {
   display: block;
   width: 100%;
@@ -324,8 +313,10 @@ textarea:focus {
   border-color: var(--ink);
 }
 
-.button:focus-visible,
-.presets button:focus-visible {
+textarea:focus-visible,
+.face:focus-visible,
+.presets button:focus-visible,
+.button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
@@ -358,7 +349,7 @@ textarea:focus {
   color: var(--ink);
 }
 
-.tooltip {
+.card {
   position: fixed;
   z-index: 10;
   width: 300px;
@@ -375,7 +366,7 @@ textarea:focus {
   overflow: auto;
 }
 
-.tooltip.sheet {
+.card.sheet {
   left: 0;
   right: 0;
   bottom: 0;
@@ -388,26 +379,26 @@ textarea:focus {
   pointer-events: auto;
 }
 
-.tooltip h2 {
+.card h2 {
   font-size: 15px;
   margin: 0 0 2px;
 }
 
-.tooltip .bio {
+.card .bio {
   color: var(--muted);
   margin: 0 0 10px;
 }
 
-.tooltip .bio span {
+.card .bio span {
   display: block;
 }
 
-.tooltip .bars {
+.card .bars {
   display: grid;
   gap: 3px;
 }
 
-.tooltip .bars + .bars {
+.card .bars + .bars {
   margin-top: 10px;
 }
 
@@ -430,10 +421,6 @@ textarea:focus {
   }
   .nouls .bar {
     flex-basis: 100%;
-  }
-  .presets button,
-  .button {
-    min-height: 44px;
   }
   .share .button {
     flex: 1 1 auto;
