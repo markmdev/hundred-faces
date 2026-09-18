@@ -5,11 +5,29 @@
   --line: #d9d7cf;
   --panel: #ffffff;
   --accent: #2f5fd6;
+  --error: #b23b2b;
   --face-ink: #2a2a28;
   --rest: #e2e0d8;
+  --shadow: rgba(0, 0, 0, 0.12);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--ink);
   background: var(--bg);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17171a;
+    --ink: #ececea;
+    --muted: #a3a29b;
+    --line: #35353b;
+    --panel: #212125;
+    --accent: #7ea2ff;
+    --error: #ff8a76;
+    --face-ink: #26262a;
+    --rest: #2c2c31;
+    --shadow: rgba(0, 0, 0, 0.5);
+  }
 }
 
 * {
@@ -24,13 +42,19 @@ body {
 .app {
   max-width: 860px;
   margin: 0 auto;
-  padding: 28px 16px 64px;
+  padding: 28px 16px 48px;
 }
 
 .intro h1 {
   font-size: 28px;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   letter-spacing: -0.01em;
+}
+
+.intro .tagline {
+  font-size: 18px;
+  color: var(--ink);
+  margin: 0 0 10px;
 }
 
 .intro p {
@@ -118,12 +142,18 @@ textarea:focus {
   font-variant-numeric: tabular-nums;
 }
 
+.stat:first-child strong {
+  font-size: 18px;
+}
+
 .status {
   margin-left: auto;
+  font-size: 14px;
+  color: var(--ink);
 }
 
 .status.error {
-  color: #b23b2b;
+  color: var(--error);
 }
 
 .reaction-bar {
@@ -228,6 +258,7 @@ textarea:focus {
   border-radius: 50%;
   aspect-ratio: 1;
   width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .face:focus-visible {
@@ -299,6 +330,34 @@ textarea:focus {
   outline-offset: 2px;
 }
 
+.how {
+  margin-top: 28px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.how summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 600;
+  min-height: 24px;
+}
+
+.how p {
+  max-width: 70ch;
+  margin: 8px 0 0;
+}
+
+.colophon {
+  margin-top: 32px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.colophon a {
+  color: var(--ink);
+}
+
 .tooltip {
   position: fixed;
   z-index: 10;
@@ -307,13 +366,26 @@ textarea:focus {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 30px var(--shadow);
   padding: 12px 14px;
   font-size: 13px;
   line-height: 1.4;
   pointer-events: none;
   max-height: calc(100vh - 16px);
   overflow: auto;
+}
+
+.tooltip.sheet {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  width: auto;
+  max-width: none;
+  max-height: 60vh;
+  border-radius: 16px 16px 0 0;
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+  pointer-events: auto;
 }
 
 .tooltip h2 {
@@ -340,10 +412,37 @@ textarea:focus {
 }
 
 @media (max-width: 520px) {
+  .app {
+    padding-top: 20px;
+  }
   .wall {
     gap: 4px;
   }
   .intro h1 {
     font-size: 24px;
+  }
+  .intro .tagline {
+    font-size: 16px;
+  }
+  .status {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+  .nouls .bar {
+    flex-basis: 100%;
+  }
+  .presets button,
+  .button {
+    min-height: 44px;
+  }
+  .share .button {
+    flex: 1 1 auto;
+  }
+}
+
+@media (pointer: coarse) {
+  .presets button,
+  .button {
+    min-height: 44px;
   }
 }

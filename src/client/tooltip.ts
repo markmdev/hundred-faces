@@ -1,5 +1,6 @@
-// The hover card for one face: who they are, their seven-way reaction
-// distribution, and the three yes/no probabilities.
+// The card for one face: who they are, their seven-way reaction distribution,
+// and the three yes/no probabilities. Beside the face on a pointer device, a
+// sheet along the bottom of the screen on touch.
 
 import { rgbCss } from "../shared/face.ts";
 import type { Persona } from "../shared/personas.ts";
@@ -14,9 +15,15 @@ export class Tooltip {
     this.#el = el;
   }
 
-  show(persona: Persona, answer: FaceAnswer | undefined, anchor: DOMRect): void {
+  show(persona: Persona, answer: FaceAnswer | undefined, anchor: DOMRect, sheet = false): void {
     this.#el.replaceChildren(...render(persona, answer));
+    this.#el.classList.toggle("sheet", sheet);
     this.#el.hidden = false;
+    if (sheet) {
+      this.#el.style.left = "";
+      this.#el.style.top = "";
+      return;
+    }
     // Below the face when there is room, otherwise above; kept inside the viewport horizontally.
     const width = this.#el.offsetWidth;
     const height = this.#el.offsetHeight;

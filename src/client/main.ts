@@ -1,6 +1,6 @@
 // Wires the page together: the text box, the presets, the live update loop
 // against the server, the wall of faces, the aggregates, the share loop, and
-// the hover card.
+// the person card (a hover card with a pointer, a bottom sheet on touch).
 
 import { aggregateWall } from "../shared/aggregate.ts";
 import { rgbCss } from "../shared/face.ts";
@@ -45,9 +45,12 @@ const shareEl = must<HTMLElement>("share");
 const shareX = must<HTMLAnchorElement>("share-x");
 const shareImage = must<HTMLButtonElement>("share-image");
 const shareCopy = must<HTMLButtonElement>("share-copy");
+const tooltipEl = must<HTMLElement>("tooltip");
 
 const wall = new FaceWall(wallEl, PERSONAS);
-const tooltip = new Tooltip(must<HTMLElement>("tooltip"));
+const tooltip = new Tooltip(tooltipEl);
+// Pointer devices hover the card; anything else taps it open as a sheet.
+const hoverCapable = matchMedia("(hover: hover)").matches;
 
 // The answers currently on the wall, in PERSONAS order; empty before the first update.
 let answers: FaceAnswer[] = [];
@@ -320,7 +323,7 @@ for (const preset of PRESETS) {
 }
 
 // ---------------------------------------------------------------------------
-// Hover card
+// Person card
 // ---------------------------------------------------------------------------
 
 function faceOf(target: EventTarget | null): HTMLElement | null {
@@ -330,7 +333,7 @@ function faceOf(target: EventTarget | null): HTMLElement | null {
 function openCard(face: HTMLElement): void {
   cardFace = face;
   const index = Number.parseInt(face.dataset.index!, 10);
-  tooltip.show(PERSONAS[index]!, answers[index], face.getBoundingClientRect());
+  tooltip.show(PERSONAS[index]!, answers[index], face.getBoundingClientRect(), !hoverCapable);
 }
 
 function closeCard(): void {
@@ -343,18 +346,32 @@ function refreshCard(): void {
   if (cardFace) openCard(cardFace);
 }
 
-wallEl.addEventListener("mouseover", (event) => {
-  const face = faceOf(event.target);
-  if (face) openCard(face);
-});
-wallEl.addEventListener("mouseout", (event) => {
-  if (!faceOf(event.relatedTarget)) closeCard();
-});
+if (hoverCapable) {
+  wallEl.addEventListener("mouseover", (event) => {
+    const face = faceOf(event.target);
+    if (face) openCard(face);
+  });
+  wallEl.addEventListener("mouseout", (event) => {
+    if (!faceOf(event.relatedTarget)) closeCard();
+  });
+  wallEl.addEventListener("focusout", closeCard);
+} else {
+  // A tap opens the sheet; the same face, or anywhere outside it, closes it.
+  wallEl.addEventListener("click", (event) => {
+    const face = faceOf(event.target);
+    if (!face) return;
+    if (face === cardFace) closeCard();
+    else openCard(face);
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (cardFace && !faceOf(event.target) && !(event.target instanceof Node && tooltipEl.contains(event.target))) closeCard();
+  });
+}
+// Keyboard focus opens the card on any device; a tap focuses too, but is not :focus-visible.
 wallEl.addEventListener("focusin", (event) => {
   const face = faceOf(event.target);
-  if (face) openCard(face);
+  if (face?.matches(":focus-visible")) openCard(face);
 });
-wallEl.addEventListener("focusout", closeCard);
 
 // ---------------------------------------------------------------------------
 // Start

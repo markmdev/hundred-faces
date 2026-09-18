@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>A hundred faces</title>
+    <meta name="description" content="Show it to a hundred people before you post it." />
     <meta property="og:title" content="A hundred faces" />
     <meta property="og:description" content="Show it to a hundred people before you post it." />
     <meta property="og:image" content="https://hundred-faces.vercel.app/og.png" />
@@ -20,21 +21,17 @@
     <main class="app">
       <header class="intro">
         <h1>A hundred faces</h1>
+        <p class="tagline">Show it to a hundred people before you post it.</p>
         <p>
-          Type anything. A hundred invented people react while you type: each is a written profile,
-          and TypeSafe AI's Jev estimates how that person would take your message. Four hundred
+          Type a post, a DM, an announcement. A hundred invented people react while you type: each is a
+          written profile, and TypeSafe AI's Jev estimates how that person would take it. Four hundred
           probabilities per update, back in about half a second.
         </p>
       </header>
 
       <section class="composer">
         <label class="visually-hidden" for="message">Message</label>
-        <textarea
-          id="message"
-          rows="3"
-          placeholder="A tweet, a price-increase announcement, a product name, a headline, a text to a friend…"
-          autofocus
-        ></textarea>
+        <textarea id="message" rows="3" placeholder="Paste the post you're about to send…" autofocus></textarea>
         <div class="presets" id="presets" role="group" aria-label="Preset messages"></div>
       </section>
 
@@ -58,8 +55,29 @@
         <button class="button" id="share-copy" type="button">Copy link</button>
       </section>
 
+      <details class="how">
+        <summary>How it works</summary>
+        <p>
+          Every face is a person written in about fifty words: age, job, where they live, temperament,
+          what they care about, how they read. When you pause, the message and the profiles go to Jev, a
+          model from TypeSafe AI that answers typed questions with calibrated probabilities instead of
+          text. Four questions per person: which of seven reactions they'd have, and whether they'd
+          understand it, trust it, and pass it on. Ten calls run in parallel and come back in about half a
+          second. The face is drawn from the whole distribution, so someone who is 60% confused and 40%
+          annoyed looks like that. The counts above the wall are people whose probability is above 50%.
+          Nothing you type is stored.
+        </p>
+      </details>
+
+      <footer class="colophon">
+        Built on <a href="https://typesafe.ai">TypeSafe AI's Jev</a> · by
+        <a href="https://x.com/markmdev" target="_blank" rel="noopener">@markmdev</a> ·
+        <a href="https://github.com/markmdev/hundred-faces">Source</a> · Nothing you type is stored.
+      </footer>
+
       <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
     </main>
     <script type="module" src="/src/client/main.ts"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </body>
 </html>
