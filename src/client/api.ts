@@ -25,9 +25,9 @@ export async function fetchWall(message: string, signal: AbortSignal, baseUrl = 
   return readWall(await fetch(wallUrl(message, baseUrl), { signal }));
 }
 
-// A preset's recorded wall, built into the site from the fixture.
-export async function fetchPreset(id: string, signal: AbortSignal, baseUrl = ""): Promise<WallResponse> {
-  return readWall(await fetch(`${baseUrl}/presets/${id}.json`, { signal }));
+// A preset's recorded wall, built into the site from the recording.
+export async function fetchPreset(id: string, signal: AbortSignal): Promise<WallResponse> {
+  return readWall(await fetch(`/presets/${id}.json`, { signal }));
 }
 
 // The wall, or the reason the server gave. A 429 from the platform's rate

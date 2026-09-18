@@ -27,7 +27,8 @@ applies; this file holds what is specific to this repo.
   assertions in `test/wall.test.ts` are the demo's claims about its own presets.
 - `server/react.ts`: the one judging handler, Web-standard, used by the Vercel
   function (`api/react.ts`) and the local server (`server/main.ts`). The wire
-  contract and the message limit are in `src/shared/types.ts`.
+  contract and the message limits are in `src/shared/types.ts`; `messageTooLong`
+  there is the one check the browser runs before sending and the server before judging.
 - Vercel, not the repo: the project `hundred-faces`, its `TYPESAFE_API_KEY`
   for preview and production, and the firewall rate-limit rule on `/api/react`
   (60 requests a minute per IP, 429). `vercel.json` holds only the build

@@ -4,7 +4,7 @@
 // answer per message. Nothing typed is logged: statuses and durations only.
 
 import { APIError } from "@typesafe-ai/sdk";
-import { MAX_MESSAGE_CHARS, MESSAGE_PARAM, type WallErrorResponse, type WallResponse } from "../src/shared/types.ts";
+import { MESSAGE_PARAM, messageTooLong, type WallErrorResponse, type WallResponse } from "../src/shared/types.ts";
 import { judgeWall, type JevClient } from "../src/shared/wall.ts";
 
 export interface Log {
@@ -36,8 +36,8 @@ async function answer(request: Request, client: JevClient, log: Log): Promise<Re
   if (site !== null && site !== "same-origin" && site !== "none") return error(403, "the wall answers its own page only");
   const message = new URL(request.url).searchParams.get(MESSAGE_PARAM);
   if (message === null || message.trim().length === 0) return error(400, `${MESSAGE_PARAM} must be a non-empty message`);
-  const length = Array.from(message).length;
-  if (length > MAX_MESSAGE_CHARS) return error(413, `message is ${length} characters; the limit is ${MAX_MESSAGE_CHARS} characters`);
+  const tooLong = messageTooLong(message);
+  if (tooLong !== null) return error(413, tooLong);
 
   try {
     const wall: WallResponse = await judgeWall(message, client, { signal: request.signal });

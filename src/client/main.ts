@@ -6,10 +6,10 @@ import { aggregateWall } from "../shared/aggregate.ts";
 import { rgbCss } from "../shared/face.ts";
 import { PERSONAS } from "../shared/personas.ts";
 import { PRESETS, type Preset } from "../shared/presets.ts";
-import { NOULS, type FaceAnswer } from "../shared/questions.ts";
+import { NOULS } from "../shared/questions.ts";
 import { percentages, REACTION_FACES, REACTIONS } from "../shared/reactions.ts";
 import { postOnXUrl, resultLine, shareResult, shareText } from "../shared/share.ts";
-import { MAX_MESSAGE_CHARS, MESSAGE_PARAM, type WallResponse } from "../shared/types.ts";
+import { MESSAGE_PARAM, messageTooLong, type WallResponse } from "../shared/types.ts";
 import { fetchPreset, fetchWall, WallRequestError } from "./api.ts";
 import { barRow } from "./bars.ts";
 import { FaceWall } from "./faces.ts";
@@ -52,8 +52,15 @@ const tooltip = new Tooltip(tooltipEl);
 // Pointer devices hover the card; anything else taps it open as a sheet.
 const hoverCapable = matchMedia("(hover: hover)").matches;
 
-// The answers currently on the wall, in PERSONAS order; empty before the first update.
-let answers: FaceAnswer[] = [];
+// The wall on show: the message, the answers, and whether they came from a
+// preset recording rather than a live judgement. Null while the wall rests.
+// The URL's message, the share row, and the saved image all describe it.
+interface ShownWall {
+  text: string;
+  response: WallResponse;
+  recorded: boolean;
+}
+let shown: ShownWall | null = null;
 // Every request gets the next sequence number; a clear takes one too, so
 // anything in flight at the clear is older than the empty box.
 let latestSeq = 0;
@@ -102,11 +109,11 @@ const noulRows = NOULS.map(({ id, label }) => {
   return { id, row };
 });
 
-function renderSummary(response: WallResponse): void {
+function renderSummary({ response, recorded }: ShownWall): void {
   const agg = aggregateWall(response.faces);
   statLatency.textContent = String(response.latencyMs);
   statTokens.textContent = response.inputTokens.toLocaleString();
-  statCalls.textContent = `${response.calls} ${response.calls === 1 ? "call" : "parallel calls"} to ${response.model}`;
+  statCalls.textContent = `${response.calls} ${response.calls === 1 ? "call" : "parallel calls"} to ${response.model}${recorded ? ", recorded" : ""}`;
   const pct = percentages(agg.reaction);
   for (const name of REACTIONS) {
     barSegments.get(name)!.style.width = `${agg.reaction[name] * 100}%`;
@@ -138,7 +145,7 @@ function renderStatus(): void {
 // Share loop
 // ---------------------------------------------------------------------------
 
-// The page URL carries the message, so the link opens on the same wall.
+// The page URL carries the shown wall's message, so the link opens on the same wall.
 function setUrlMessage(text: string | null): void {
   const url = new URL(location.href);
   if (text === null) url.searchParams.delete(MESSAGE_PARAM);
@@ -147,14 +154,15 @@ function setUrlMessage(text: string | null): void {
 }
 
 function renderShare(): void {
-  const shown = answers.length > 0;
-  shareEl.hidden = !shown;
-  if (shown) shareX.href = postOnXUrl(shareText(shareResult(answers), location.href));
+  setUrlMessage(shown?.text ?? null);
+  shareEl.hidden = shown === null;
+  if (shown) shareX.href = postOnXUrl(shareText(shareResult(shown.response.faces), location.href));
 }
 
 shareImage.addEventListener("click", () => {
-  if (answers.length === 0) return;
-  const canvas = renderWallImage(answers, messageBox.value, `A hundred faces read it: ${resultLine(shareResult(answers))}.`);
+  if (!shown) return;
+  const faces = shown.response.faces;
+  const canvas = renderWallImage(faces, shown.text, `A hundred faces read it: ${resultLine(shareResult(faces))}.`);
   canvas.toBlob((blob) => {
     if (!blob) {
       console.error("the wall image could not be encoded");
@@ -200,12 +208,18 @@ function requestUpdate(text: string): void {
     pendingText = text;
     return;
   }
+  const tooLong = messageTooLong(text);
+  if (tooLong !== null) {
+    refuse(tooLong);
+    return;
+  }
   const seq = ++latestSeq;
   const controller = new AbortController();
   inFlight = controller;
-  setUrlMessage(text);
   renderStatus();
-  void settle(seq, judge(text, controller.signal)).finally(() => {
+  void settle(seq, text, wallFor(text, controller.signal)).finally(() => {
+    // clearWall nulls inFlight, and a newer request may already own the slot
+    // by the time an aborted request's finally runs; only this request's slot is released.
     if (inFlight === controller) inFlight = null;
     if (pendingText !== null) {
       const next = pendingText;
@@ -215,17 +229,22 @@ function requestUpdate(text: string): void {
   });
 }
 
-// A preset is served from its recording; anything else is judged, with one
-// retry after a pause when the wall is busy.
-async function judge(text: string, signal: AbortSignal): Promise<WallResponse> {
+interface WallOutcome {
+  response: WallResponse;
+  recorded: boolean;
+}
+
+// A preset comes from its recording; anything else is judged, with one retry
+// after a pause when the wall is busy.
+async function wallFor(text: string, signal: AbortSignal): Promise<WallOutcome> {
   const preset = PRESETS.find((p) => p.message === text);
-  if (preset) return fetchPreset(preset.id, signal);
+  if (preset) return { response: await fetchPreset(preset.id, signal), recorded: true };
   try {
-    return await fetchWall(text, signal);
+    return { response: await fetchWall(text, signal), recorded: false };
   } catch (err) {
     if (!(err instanceof WallRequestError && err.status === 429)) throw err;
     await pause(RETRY_AFTER_MS, signal);
-    return fetchWall(text, signal);
+    return { response: await fetchWall(text, signal), recorded: false };
   }
 }
 
@@ -245,16 +264,16 @@ function pause(ms: number, signal: AbortSignal): Promise<void> {
 
 // Whatever lands with a sequence newer than the shown one becomes the shown
 // one, success or failure; anything older is ignored.
-async function settle(seq: number, request: Promise<WallResponse>): Promise<void> {
+async function settle(seq: number, text: string, outcome: Promise<WallOutcome>): Promise<void> {
   try {
-    const response = await request;
+    const { response, recorded } = await outcome;
     if (seq < shownSeq) return;
     shownSeq = seq;
     shownError = null;
-    answers = response.faces;
-    wall.show(answers.map((face) => face.reaction));
+    shown = { text, response, recorded };
+    wall.show(response.faces.map((face) => face.reaction));
     wallEl.classList.remove("resting");
-    renderSummary(response);
+    renderSummary(shown);
     renderShare();
   } catch (err) {
     if (seq < shownSeq) return;
@@ -269,11 +288,21 @@ async function settle(seq: number, request: Promise<WallResponse>): Promise<void
 }
 
 function restWall(): void {
-  answers = [];
+  shown = null;
   wall.rest();
   wallEl.classList.add("resting");
   clearSummary();
   renderShare();
+}
+
+// A message over a limit never leaves the browser: the wall rests and the
+// status says why, in place of a request.
+function refuse(reason: string): void {
+  shownSeq = ++latestSeq;
+  shownError = reason;
+  restWall();
+  renderStatus();
+  refreshCard();
 }
 
 // An empty box takes effect at once: nothing in flight may render, and the
@@ -286,7 +315,6 @@ function clearWall(): void {
   inFlight = null;
   pendingText = null;
   restWall();
-  setUrlMessage(null);
   renderStatus();
   refreshCard();
 }
@@ -294,8 +322,6 @@ function clearWall(): void {
 // ---------------------------------------------------------------------------
 // Inputs
 // ---------------------------------------------------------------------------
-
-messageBox.maxLength = MAX_MESSAGE_CHARS;
 
 messageBox.addEventListener("input", () => {
   pressPreset(null);
@@ -333,7 +359,7 @@ function faceOf(target: EventTarget | null): HTMLElement | null {
 function openCard(face: HTMLElement): void {
   cardFace = face;
   const index = Number.parseInt(face.dataset.index!, 10);
-  tooltip.show(PERSONAS[index]!, answers[index], face.getBoundingClientRect(), !hoverCapable);
+  tooltip.show(PERSONAS[index]!, shown?.response.faces[index], face.getBoundingClientRect(), !hoverCapable);
 }
 
 function closeCard(): void {

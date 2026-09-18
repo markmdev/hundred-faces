@@ -7,10 +7,28 @@ import type { FaceAnswer } from "./questions.ts";
 // The query parameter carrying the message, on the API and on the page URL.
 export const MESSAGE_PARAM = "m";
 
-// Longest message accepted, counted in code points. The message travels in
-// the URL so the CDN can cache the answer per message; 2,000 code points keeps
-// a typical post well inside URL limits and Jev's context.
+// Longest message accepted, counted in code points; 2,000 keeps a typical post
+// well inside Jev's context.
 export const MAX_MESSAGE_CHARS = 2_000;
+// Longest message accepted on the wire, as the length of
+// encodeURIComponent(message). The message travels in the URL so the CDN can
+// cache the answer per message, and Vercel's CDN answers 414 to a URL over
+// 14 KB before the function runs (vercel.com/docs/errors/URL_TOO_LONG);
+// 12,000 leaves room for the host, the path, and the parameter name.
+export const MAX_MESSAGE_URL_BYTES = 12_000;
+
+// Why a message cannot be judged, in the visitor's words, or null when it fits
+// both bounds. The browser runs it before sending and the server before
+// judging, so both sides refuse the same messages with the same reason.
+export function messageTooLong(message: string): string | null {
+  const length = Array.from(message).length;
+  if (length > MAX_MESSAGE_CHARS) return `This message is ${length} characters; the limit is ${MAX_MESSAGE_CHARS} characters.`;
+  const bytes = encodeURIComponent(message).length;
+  if (bytes > MAX_MESSAGE_URL_BYTES) {
+    return `This message is ${bytes} bytes once encoded for the link; the limit is ${MAX_MESSAGE_URL_BYTES} bytes (emoji and non-Latin text take more).`;
+  }
+  return null;
+}
 
 export interface WallResponse {
   // One entry per persona, in PERSONAS order.
