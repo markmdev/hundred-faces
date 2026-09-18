@@ -1,13 +1,17 @@
+// The share text: the top reaction of the mean distribution as a percent, the
+// understands and trusts counts, and the link, pinned word for word, plus the
+// X intent URL that carries it.
+
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
+import { loadFixture, recordedWall } from "../recordings/schema.ts";
 import { aggregateWall } from "../src/shared/aggregate.ts";
 import { PRESETS } from "../src/shared/presets.ts";
 import { percentages, topReaction } from "../src/shared/reactions.ts";
 import { postOnXUrl, resultLine, shareResult, shareText } from "../src/shared/share.ts";
-import { loadFixture, recordedWall } from "../recordings/schema.ts";
 
 describe("share text", () => {
-  it("names the top reaction of the mean distribution with the legend's percentage and the counts", () => {
+  it("names the top reaction of the mean distribution as the legend's percentage, with the counts", () => {
     const fixture = loadFixture();
     const wall = recordedWall(fixture, PRESETS.find((p) => p.id === "hot-take")!);
     const agg = aggregateWall(wall.faces);
@@ -19,13 +23,13 @@ describe("share text", () => {
     const url = "https://hundred-faces.vercel.app/?m=Unpopular+opinion";
     assert.equal(
       shareText(result, url),
-      `A hundred faces read my post: ${result.percent}/100 ${result.reaction}, ${result.understands} understand it, ${result.trusts} trust it. Show yours to the wall first: ${url}`,
+      `A hundred faces read my post: ${result.percent}% ${result.reaction}, ${result.understands} understand it, ${result.trusts} trust it. Show yours to the wall first: ${url}`,
     );
-    assert.equal(resultLine({ reaction: "annoyed", percent: 62, understands: 84, trusts: 12 }), "62/100 annoyed, 84 understand it, 12 trust it");
+    assert.equal(resultLine({ reaction: "annoyed", percent: 62, understands: 84, trusts: 12 }), "62% annoyed, 84 understand it, 12 trust it");
   });
 
   it("builds the X intent URL with the text encoded", () => {
-    const text = "A hundred faces read my post: 62/100 annoyed & more: https://hundred-faces.vercel.app/?m=a+b";
+    const text = "A hundred faces read my post: 62% annoyed & more: https://hundred-faces.vercel.app/?m=a+b";
     const url = new URL(postOnXUrl(text));
     assert.equal(url.origin + url.pathname, "https://x.com/intent/post");
     assert.equal(url.searchParams.get("text"), text);

@@ -20,8 +20,10 @@ export function shareResult(faces: readonly FaceAnswer[]): ShareResult {
   return { reaction, percent: percentages(agg.reaction)[reaction], understands: agg.understands, trusts: agg.trusts };
 }
 
+// The reaction is a share of the mean distribution, so it reads as a percent;
+// the counts are people.
 export function resultLine(result: ShareResult): string {
-  return `${result.percent}/100 ${result.reaction}, ${result.understands} understand it, ${result.trusts} trust it`;
+  return `${result.percent}% ${result.reaction}, ${result.understands} understand it, ${result.trusts} trust it`;
 }
 
 export function shareText(result: ShareResult, url: string): string {

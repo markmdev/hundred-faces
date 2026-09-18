@@ -40,7 +40,10 @@ applies; this file holds what is specific to this repo.
   print, log, or write it. The browser never sees it; only `api/` and `server/`
   hold the client. In Vercel it is set with `vercel env add`, piped, never on a
   command line.
-- Nothing typed is ever logged: the handler logs statuses and durations only.
+- Your text goes to Jev and comes back as numbers; this site keeps none of it:
+  the handler logs statuses and durations only, but the message is in the URL,
+  so Vercel's request logs, the CDN cache key, and Web Analytics (query
+  parameters) see it, and TypeSafe receives it.
 - Jev cannot count or do arithmetic: every aggregate is computed in code.
 - Every question names its persona by path and says the judgment is about that
   person, not a typical reader. Keep instructions and criteria literal and aligned.
@@ -54,7 +57,14 @@ applies; this file holds what is specific to this repo.
 
 ## Verification
 
-`npm run check` (typecheck, offline tests, build) before any report. Behaviour
+`npm run check` (typecheck, offline tests, build) before any report. Two build
+noises are not breakage: Vite prints `<script src="/_vercel/insights/script.js">
+in "/index.html" can't be bundled without type="module" attribute` (it is
+Vercel's Web Analytics script, left as is; it also 404s until Web Analytics is
+enabled in the dashboard), and Vercel's
+function build prints `error TS2688: Cannot find type definition file for
+'node'` for the root tsconfig's `types` entry; the function builds and runs
+regardless. Behaviour
 that touches the API or the page is verified on the real surface: `npm run
 probe` against Jev, and the real flow in a real browser against a preview
 deployment (type, presets, hover and tap card, clear mid-flight, a 429 and a

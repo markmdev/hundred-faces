@@ -22,9 +22,11 @@ Vercel serves the static site Vite builds into `dist/` and runs one function,
 `api/react.ts`, for judging. The function and the local development server
 share one Web-standard handler, `react(request)` in `server/react.ts`, which
 does the validation, the limits, the judging, and the headers. `vercel.json`
-names the build command and output directory and lets Vercel cancel the
-function when the browser drops the request (which is what stops the Jev calls
-when the box is cleared).
+names the build command and output directory and sets `supportsCancellation`
+on the function, which is expected to abort the request's signal when the
+browser drops the request, so the handler stops its Jev calls. Verified so
+far: the browser aborts on clear, and the local Node adapter turns a dropped
+connection into that abort; that Vercel does the same has not been observed.
 
 Judging is `GET /api/react?m=<message>`, the message URL-encoded and capped at
 2,000 code points and 12,000 bytes once encoded (413 beyond either; Vercel's
@@ -64,7 +66,16 @@ neither `same-origin` nor `none`; the message limits are 2,000 code points and
 12,000 encoded bytes; the browser judges on pause with one request in flight and the newest text queued
 behind it. On a 429 (from Jev or from the firewall) the browser waits 2 s and
 retries once, then shows "The wall is busy right now. Try again in a few
-seconds." Nothing typed is logged: the handler logs statuses and durations.
+seconds."
+
+Your text goes to Jev and comes back as numbers; this site keeps none of it.
+The handler logs each request's status and duration and nothing else. The
+message rides in the URL, so Vercel's request logs see it (kept one hour on
+Hobby) and the CDN keys its cache on it (a day, plus a week stale); TypeSafe
+receives it as the request state. Vercel Web Analytics, once enabled, stores
+query parameters with each page view (its data-point table lists "Query Params
+(Filtered)"; what the filter removes is not documented, so treat `m` as
+collected unless a `beforeSend` hook strips it).
 
 ## The share loop
 
@@ -95,7 +106,7 @@ npm run check      # typecheck + tests + build
 npm test           # tests only; offline, against recordings/jev-presets.json
 npm run record     # re-record the presets from the real API (after changing personas, questions, batch size, or presets)
 npm run measure    # batching measurement against the real API; see log/ for the numbers
-npm run probe      # movement, spread, self-consistency, and sanity probes against the real API
+npm run probe      # movement between each preset pair, spread, self-consistency, and sanity probes against the real API
 ```
 
 Tests use Node's built-in runner and run with no network. `test/react.test.ts`
@@ -112,7 +123,7 @@ against what the handler would answer.
 index.html               the page
 api/react.ts             the Vercel function: the real Jev client behind the handler
 server/                  react.ts (the handler), node.ts (Node http adapter), jev.ts (the client), main.ts (local server)
-src/client/              browser code: main.ts (update loop, share loop, card), faces.ts (SVG wall), image.ts (canvas image), tooltip.ts (card), bars.ts, api.ts
+src/client/              browser code: main.ts (update loop, share loop, card), faces.ts (SVG wall), image.ts (canvas image), card.ts (the person card), bars.ts, api.ts
 src/shared/              pure modules used by both sides
   personas.ts            the hundred people
   reactions.ts           the seven reactions, their contrastive descriptions, face parameters, and distribution helpers
@@ -137,8 +148,9 @@ vercel.json              build command, output directory, function cancellation
    waits and goes out when it settles. Whatever lands with a newer sequence
    than the wall shows becomes the wall, success or failure; an older response
    is ignored. Clearing the box takes effect at once and aborts the request in
-   flight, which is what tells the server to cancel its Jev calls. A preset is
-   loaded from its recording instead.
+   flight; the local server cancels its Jev calls on that abort, and on Vercel
+   `supportsCancellation` is expected to do the same. A preset is loaded from
+   its recording instead.
 2. The server splits the hundred personas into batches of `BATCH_SIZE`, builds
    one Jev request per batch with state `{ message, personas: [...] }` and four
    questions per persona addressed by path (`personas[3]`), and fires the
